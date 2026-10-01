@@ -2,7 +2,7 @@
 
 An interactive star-chart timeline of **45 political systems and ideologies**, from tribal councils and the first kings to neoliberalism, populism and national conservatism.
 
-**Live page:** https://petrogko.github.io/politics-history-timeline/
+**Live page:** https://petrogko.com/politics-history-timeline/
 
 ![Politics Through Time](docs/preview.png)
 
