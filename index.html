@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="45 political systems and ideologies on one timeline, from tribal councils to national conservatism: how each began, its core ideas, its critics, and what grew out of it.">
+<style>:root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>Politics Through Time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a star-chart timeline, companion to "Religions Through Time". A time band runs across the middle; each
+   political system or ideology is a star on a stem: above the band if a founding thinker or leader set it out,
+   below if it grew out of movements, events or custom. Accent: the copper-green patina of Parliament Hill's roofs.
+   Display type: Caslon, the face of the 1776 Declaration broadside. No red/blue anywhere, to stay non-partisan.
+   Deliberately single-theme (night sky). */
+:root {
+  color-scheme: dark;
+  --sky: #0b1018;
+  --sky-glow: #172334;
+  --panel: #101823;
+  --raised: #192433;
+  --band: #141e2b;
+  --ink: #ece7dc;
+  --ink-2: #b5bac4;
+  --muted: #8a92a1;
+  --rule: #29364a;
+  --rule-soft: #1b2533;
+  --era: rgba(236, 231, 220, 0.022);
+  --accent: #74cdb5;
+  --accent-soft: rgba(116, 205, 181, 0.16);
+  --accent-span: rgba(116, 205, 181, 0.24);
+  --shadow: rgba(2, 5, 10, 0.55);
+  --f-display: "Libre Caslon Display", "Libre Caslon Text", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --f-serif: "Libre Caslon Text", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-label: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html { background: var(--sky); }
+body {
+  background: radial-gradient(1200px 520px at 50% -140px, var(--sky-glow), var(--sky) 70%) no-repeat, var(--sky);
+  color: var(--ink);
+  font: 15px/1.55 var(--f-body);
+}
+.wrap { max-width: 1320px; margin: 0 auto; padding-inline: clamp(16px, 3vw, 40px); padding-block: 30px 56px; }
+.eyebrow { font: 500 11px/1 var(--f-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin: 0; }
+h1 { font: 400 clamp(40px, 6.2vw, 68px)/1 var(--f-display); margin: 14px 0 14px; letter-spacing: -0.005em; text-wrap: balance; }
+h1 em { font-family: var(--f-serif); font-style: italic; color: var(--accent); }
+.dek { max-width: 72ch; color: var(--ink-2); margin: 0; font-size: 15.5px; }
+.dek b { color: var(--ink); font-weight: 600; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between; margin-top: 26px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; }
+.chip, .seg button, .rel-chip {
+  font: 500 12.5px/1 var(--f-body); color: var(--ink-2); background: transparent;
+  border: 1px solid var(--rule); border-radius: 999px; padding: 7px 12px; cursor: pointer;
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+.chip:hover, .seg button:hover, .rel-chip:hover { border-color: var(--muted); color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--sky); border-color: var(--ink); }
+.chip .n { font-family: var(--f-mono); font-size: 11px; opacity: .7; margin-left: 4px; }
+.toggles { display: flex; flex-wrap: wrap; gap: 10px; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 2px; }
+.seg button { border: 0; padding: 6px 12px; }
+.seg button[aria-pressed="true"] { background: var(--raised); color: var(--ink); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 16px; font-size: 12.5px; color: var(--ink-2); align-items: center; }
+.legend .item { display: inline-flex; align-items: center; gap: 8px; }
+.legend svg { flex: none; overflow: visible; }
+
+.chart-shell { position: relative; margin-top: 16px; border: 1px solid var(--rule); border-radius: 16px; background: var(--panel); overflow: hidden; }
+.scroller { overflow-x: auto; overscroll-behavior-x: contain; }
+#chart { display: block; }
+.caption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; padding: 10px 16px 12px; border-top: 1px solid var(--rule-soft); font-size: 12px; color: var(--muted); }
+.scroll-hint { display: none; }
+@media (max-width: 1040px) { .scroll-hint { display: inline; } }
+
+/* chart */
+.era-band { fill: var(--era); }
+.era-name { font: 500 10px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; fill: var(--muted); }
+.axis-band { fill: var(--band); stroke: var(--rule); stroke-width: 1; }
+.tick-label { font: 400 10.5px/1 var(--f-mono); fill: var(--muted); }
+.tick { stroke: var(--rule); stroke-width: 1; }
+.now-label { font: 500 10px/1 var(--f-mono); letter-spacing: .1em; fill: var(--accent); }
+.pre-label { font: 500 9.5px/1 var(--f-mono); letter-spacing: .16em; fill: var(--muted); }
+.break { stroke: var(--muted); stroke-width: 1.2; }
+.span { fill: var(--accent-span); }
+.span-range { fill: none; stroke: var(--accent); stroke-width: 1; stroke-dasharray: 2 3; }
+.edge { fill: none; stroke: var(--ink-2); stroke-width: 1; opacity: .2; transition: opacity .2s; }
+.edge.drew { stroke-dasharray: 4 4; }
+.edge.against { stroke-dasharray: 1 4; stroke-linecap: round; }
+.edge.hot { stroke: var(--accent); opacity: .95; stroke-width: 1.4; }
+.edge.fam { opacity: .6; }
+.edge.cold { opacity: .05; }
+.stem { stroke: var(--rule); stroke-width: 1; }
+.foot { fill: var(--muted); }
+.dot { fill: var(--ink); stroke: var(--panel); stroke-width: 2; }
+.dot.hist { fill: var(--panel); stroke: var(--ink-2); stroke-width: 1.5; }
+.halo { fill: none; stroke: var(--accent); stroke-width: 1.5; opacity: 0; }
+.lbl { paint-order: stroke; stroke: var(--panel); stroke-width: 5px; stroke-linejoin: round; }
+.lbl .nm { font: 500 12.5px/1 var(--f-label); fill: var(--ink); }
+.lbl .dt { font: 400 10px/1 var(--f-mono); fill: var(--muted); }
+.hit { fill: transparent; cursor: pointer; }
+.item { transition: opacity .2s; outline: none; }
+.item:focus-visible .halo { opacity: 1; stroke-dasharray: 2 2; }
+.item.dim { opacity: .18; }
+.item.rel .halo { opacity: .8; }
+.item.rel .lbl .nm { fill: var(--accent); }
+.item.sel .dot { fill: var(--accent); stroke: var(--panel); }
+.item.sel .halo { opacity: 1; }
+.item.sel .stem { stroke: var(--accent); }
+.item.sel .lbl .nm { fill: var(--accent); font-weight: 600; }
+.item:hover .lbl .nm { text-decoration: underline; text-decoration-color: var(--muted); }
+
+.tip { position: absolute; left: 0; top: 0; pointer-events: none; width: max-content; max-width: 300px;
+  background: var(--raised); border: 1px solid var(--rule); border-radius: 12px; padding: 10px 12px 11px;
+  box-shadow: 0 10px 30px var(--shadow); font-size: 12.5px; line-height: 1.45; color: var(--ink-2); z-index: 5; }
+.tip strong { display: block; font: 600 15px/1.2 var(--f-body); color: var(--ink); }
+.tip .when { font: 400 11px/1.4 var(--f-mono); color: var(--accent); margin: 2px 0 6px; display: block; }
+.tip .foll { display: block; margin-top: 6px; color: var(--muted); font-size: 11.5px; }
+
+/* list view */
+.listwrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 760px; }
+th { text-align: left; font: 500 10.5px/1 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: 14px 14px 10px; border-bottom: 1px solid var(--rule); }
+td { padding: 10px 14px; border-bottom: 1px solid var(--rule-soft); color: var(--ink-2); vertical-align: top; }
+td:first-child { color: var(--ink); font-weight: 500; white-space: nowrap; }
+td.when { font-family: var(--f-mono); font-size: 12px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+tbody tr { cursor: pointer; }
+tbody tr:hover td { background: var(--rule-soft); }
+tbody tr[aria-selected="true"] td { background: var(--accent-soft); }
+tbody tr[aria-selected="true"] td:first-child { color: var(--accent); }
+
+/* detail */
+.detail { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 28px 40px; margin-top: 20px;
+  padding: clamp(18px, 3vw, 30px); border-radius: 16px; background: var(--panel); border: 1px solid var(--rule); }
+@media (max-width: 780px) { .detail { grid-template-columns: minmax(0, 1fr); } }
+.detail > div { min-width: 0; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; font: 400 12px/1.3 var(--f-mono); color: var(--muted); }
+.fam-tag { border: 1px solid var(--rule); border-radius: 999px; padding: 4px 9px; color: var(--ink-2); font-family: var(--f-body); font-size: 12px; }
+.detail h2 { font: 400 clamp(30px, 4.2vw, 44px)/1.05 var(--f-display); margin: 12px 0 6px; text-wrap: balance; }
+.detail .when-big { font: 500 13.5px/1.4 var(--f-mono); color: var(--accent); margin: 0 0 14px; }
+.kicker { font: 500 10.5px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 18px 0 8px; }
+.story { font-size: 16.5px; line-height: 1.6; color: var(--ink); max-width: 62ch; margin: 0; }
+.story.small { font-size: 14.5px; color: var(--ink-2); }
+dl { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin: 0; }
+dt { font: 500 10.5px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+dd { margin: 0; color: var(--ink-2); }
+.rels { display: flex; flex-wrap: wrap; gap: 6px; }
+.rel-chip { padding: 6px 10px; }
+.rel-chip .k { color: var(--muted); font-size: 11px; margin-left: 4px; }
+.none { color: var(--muted); font-size: 13px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 18px; }
+.links a { color: var(--accent); text-decoration: none; font-size: 13.5px; border-bottom: 1px solid var(--accent-soft); }
+.links a:hover { border-bottom-color: var(--accent); }
+
+footer { margin-top: 26px; font-size: 12px; color: var(--muted); max-width: 92ch; }
+footer p { margin: 0 0 6px; }
+footer a { color: var(--ink-2); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Political systems &amp; ideologies</p>
+    <h1>Politics <em>Through</em> Time</h1>
+    <p class="dek">45 ways of running a society, from tribal councils to national conservatism, on one line of time. Stars <b>above the line</b> were set out by a founding thinker or leader. Stars <b>below</b> grew out of movements, events or custom. Tap any star to see how it began, what it argues, what its critics say, and what grew out of it.</p>
+  </header>
+
+  <div class="controls">
+    <div class="chips" id="chips" role="group" aria-label="Highlight a family of ideas"></div>
+    <div class="toggles">
+      <div class="seg" role="group" aria-label="Time scale">
+        <button type="button" id="sc-stretch" aria-pressed="true">Recent stretched</button>
+        <button type="button" id="sc-true" aria-pressed="false">True to time</button>
+      </div>
+      <div class="seg" role="group" aria-label="View">
+        <button type="button" id="v-time" aria-pressed="true">Timeline</button>
+        <button type="button" id="v-list" aria-pressed="false">List</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend" aria-label="How to read the chart">
+    <span class="item"><svg width="14" height="18" viewBox="0 0 14 18"><line x1="7" y1="17" x2="7" y2="6" stroke="var(--muted)"/><circle cx="7" cy="5" r="4" fill="var(--ink)"/></svg>Above: set out by a founding thinker or leader</span>
+    <span class="item"><svg width="14" height="18" viewBox="0 0 14 18"><line x1="7" y1="1" x2="7" y2="12" stroke="var(--muted)"/><circle cx="7" cy="13" r="4" fill="var(--ink)"/></svg>Below: grew out of movements, events or custom</span>
+    <span class="item"><svg width="66" height="20" viewBox="0 0 66 20"><circle cx="9" cy="10" r="9" fill="var(--ink)"/><circle cx="29" cy="10" r="7" fill="var(--ink)"/><circle cx="45" cy="10" r="5.2" fill="var(--ink)"/><circle cx="58" cy="10" r="3.8" fill="var(--ink)"/></svg>Influence today: worldwide · major · significant · minor</span>
+    <span class="item"><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="5" fill="var(--panel)" stroke="var(--ink-2)" stroke-width="1.5"/></svg>No longer practised as a system</span>
+    <span class="item"><svg width="88" height="10" viewBox="0 0 88 10"><line x1="0" y1="5" x2="24" y2="5" stroke="var(--ink-2)"/><line x1="32" y1="5" x2="56" y2="5" stroke="var(--ink-2)" stroke-dasharray="4 4"/><line x1="64" y1="5" x2="88" y2="5" stroke="var(--ink-2)" stroke-dasharray="1 4" stroke-linecap="round"/></svg>Grew out of · drew on · reacted against</span>
+  </div>
+
+  <section class="chart-shell" id="shell">
+    <div class="scroller" id="scroller">
+      <svg id="chart" role="img" aria-label="Timeline of 45 political systems and ideologies by when they appeared"></svg>
+    </div>
+    <div class="listwrap" id="listwrap" hidden>
+      <table>
+        <thead><tr><th scope="col">System or idea</th><th scope="col">Began</th><th scope="col">How</th><th scope="col">Family</th><th scope="col">Today</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="tip" id="tip" hidden></div>
+    <div class="caption">
+      <span id="scale-note">Time is stretched toward the present so the crowded last two centuries have room. Forms of rule older than any record sit in the block on the left.</span>
+      <span class="scroll-hint">Scroll sideways to see the whole timeline.</span>
+    </div>
+  </section>
+
+  <section class="detail" id="detail" aria-live="polite"></section>
+
+  <footer>
+    <p>Dates are approximate: most ideas grew over decades, and the star sits at a widely used starting point (a founding text, a first party, a first government). "Influence today" is a judgment, not a measurement.</p>
+    <p>Each entry describes an idea in its own terms and gives its main criticism; inclusion is not endorsement. Summaries written for this chart from standard histories, with Wikipedia links for further reading. Companion to <i>Religions Through Time</i>. October 2026.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var FAMS = [
+    ["dem", "Democracy & republics"], ["lib", "Liberal"], ["con", "Conservative & traditional"], ["left", "Socialist & left"],
+    ["auth", "Rule by one or few"], ["nat", "Nation & people"], ["faith", "Faith & politics"], ["econ", "Economic ideas"],
+    ["rights", "Reform & rights movements"]
+  ];
+  var FAM_NAME = {};
+  FAMS.forEach(function (f) { FAM_NAME[f[0]] = f[1]; });
+  var W_BASE = "https://en.wikipedia.org/wiki/";
+
+  // y: plotted year (negative = BCE); pre: slot in the undated block; how: founded | grew
+  // size (influence today, a judgment): xl worldwide, l major, m significant, s minor, none = no longer practised
+  // parents: [id, kind] with kind grew (grew out of) | drew (drew on) | against (reacted against)
+  var D = [
+    { id: "tribal", label: "Tribal councils", name: "Band and tribal self-rule", fam: "dem", pre: 0, ds: "prehistoric", date: "Prehistoric (most of human history)", how: "grew", size: "s", status: "Living",
+      story: "No founder. For most of human history people lived in small bands that decided things by talking them through, with leaders who persuaded rather than commanded. Anthropologists describe these societies as broadly equal.",
+      ideas: "Consensus, sharing and respect for elders; leadership by persuasion; no permanent rulers.",
+      texts: "None (oral tradition)", critique: "Works for small groups that know each other; hard to scale to large, diverse societies.",
+      today: "Lives on in many Indigenous governance traditions and in consensus decision-making", parents: [], wiki: "Band_society" },
+    { id: "chiefdom", label: "Chiefdoms", name: "Chiefdoms and hereditary rule", fam: "auth", pre: 1, ds: "prehistoric", date: "Prehistoric, with the rise of farming", how: "grew", size: "s", status: "Living (traditional roles)",
+      story: "No founder. As farming created surpluses, some societies came to be led by hereditary chiefs who controlled land and shared out goods. This was the first step from band equality toward kings.",
+      ideas: "Rank by birth; a chief who redistributes wealth and settles disputes; loyalty to a lineage.",
+      texts: "None (oral tradition)", critique: "Power passes by birth rather than merit or consent.",
+      today: "Traditional chiefs keep recognized roles in many African and Pacific countries", parents: [["tribal", "grew"]], wiki: "Chiefdom" },
+    { id: "kingship", label: "Monarchy", name: "Kingship and monarchy", fam: "auth", y: -3100, ds: "c. 3100 BCE", date: "c. 3100 BCE (the first kings of Egypt and Sumer)", how: "grew", size: "m", status: "Living",
+      story: "Grew with the first states. When the first pharaohs unified Egypt (c. 3100 BCE) and kings ruled the cities of Sumer, rulers claimed to be gods or chosen by them. Monarchy was the normal form of government for most of recorded history.",
+      ideas: "One ruler for life, usually by inheritance; legitimacy from the gods or tradition; the king as judge, lawgiver and war leader.",
+      texts: "Royal inscriptions; the Code of Hammurabi (c. 1754 BCE)", critique: "Good government depends on getting a good ruler, and there is no peaceful way to remove a bad one.",
+      today: "About 43 countries still have a monarch; most are ceremonial (like Canada's King), and a handful are absolute (e.g. Saudi Arabia, Oman, Brunei, Eswatini)", parents: [["chiefdom", "grew"]], wiki: "Monarchy" },
+    { id: "empire", label: "Empire", name: "Empire", fam: "auth", y: -2334, ds: "c. 2334 BCE", date: "c. 2334 BCE (Sargon of Akkad)", end: 1975, endLabel: "the 1970s, when the last big colonial empires broke up", how: "founded", size: "none", status: "Historical",
+      story: "Sargon of Akkad conquered the city-states of Mesopotamia and ruled them as one realm, the first known empire. Persia, Rome, China, the Mongols, the Ottomans and Britain followed the same pattern on ever larger scales.",
+      ideas: "One centre rules many peoples and territories, usually won by conquest; tribute and taxes flow to the capital.",
+      texts: "Royal annals; later, imperial law codes such as Justinian's (529–534 CE)", critique: "Rule without the consent of the conquered, often enforced by violence.",
+      today: "No formal empires remain; people still argue about informal empire and spheres of influence", parents: [["kingship", "grew"]], wiki: "Empire" },
+    { id: "mandate", label: "Mandate of Heaven", name: "The Mandate of Heaven", fam: "faith", y: -1046, ds: "c. 1046 BCE", date: "c. 1046 BCE (the Zhou overthrow the Shang)", end: 1912, endLabel: "1912, when the last Chinese dynasty fell", how: "grew", size: "none", status: "Historical",
+      story: "When the Zhou overthrew the Shang dynasty (c. 1046 BCE), they justified it by saying Heaven had withdrawn its mandate from an unjust ruler. Every later Chinese dynasty used the idea, until the Qing fell in 1912.",
+      ideas: "Heaven grants the right to rule only to a just ruler; famine, disaster and revolt are signs the mandate has been lost.",
+      texts: "Book of Documents (Shujing)", critique: "Legitimacy is judged after the fact: whoever wins power can claim the mandate.",
+      today: "Gone as a system, but echoed in the idea that rulers must deliver good government to stay legitimate", parents: [["kingship", "grew"]], wiki: "Mandate_of_Heaven" },
+    { id: "roman", label: "Roman Republic", name: "The Roman Republic", fam: "dem", y: -509, ds: "509 BCE", date: "509 BCE (traditional date)", end: -27, endLabel: "27 BCE, when Augustus became the first emperor", how: "grew", size: "none", status: "Historical",
+      story: "Romans expelled their last king and built a republic with two consuls elected each year, a Senate and citizen assemblies. Its balance of powers was admired for centuries, but it collapsed into civil wars and one-man rule under Augustus.",
+      ideas: "No kings; power shared and checked between officials, Senate and people; short terms in office; written law (the Twelve Tables).",
+      texts: "Twelve Tables (c. 450 BCE); Polybius, Histories, book 6; Cicero, On the Republic", critique: "Run by a wealthy elite; votes weighted toward the rich; it could not stop ambitious generals.",
+      today: "Gone, but the model for senates, checks and balances and the word 'republic'; the U.S. founders studied it closely", parents: [["kingship", "against"]], wiki: "Roman_Republic" },
+    { id: "athens", label: "Athenian democracy", name: "Athenian democracy", fam: "dem", y: -508, ds: "508 BCE", date: "508/507 BCE (Cleisthenes' reforms)", end: -322, endLabel: "322 BCE, when Macedon abolished it", how: "founded", size: "none", status: "Historical",
+      story: "After the tyrant Hippias was expelled, the reformer Cleisthenes reorganized Athens so that citizens themselves governed (508/507 BCE), building on Solon's reforms of 594 BCE. It lasted, with interruptions, for nearly two centuries.",
+      ideas: "Rule by the citizens directly: an assembly where any citizen could speak and vote, officials and juries chosen by lot, ostracism of dangerous leaders.",
+      texts: "No constitution; described in Aristotle's Constitution of the Athenians and Pericles' Funeral Oration (in Thucydides)", critique: "Only adult male citizens took part: women, slaves and foreigners, most of the population, were excluded. Plato saw it as rule by the mob.",
+      today: "Gone, but the root of the word and idea of democracy, and the model for today's citizens' assemblies chosen by lot", parents: [["kingship", "against"]], wiki: "Athenian_democracy" },
+    { id: "confucian", label: "Confucian statecraft", name: "Confucian statecraft", fam: "con", y: -500, ds: "c. 500 BCE", date: "c. 500 BCE (Confucius, 551–479 BCE)", how: "founded", size: "m", status: "Living (as political culture)",
+      story: "Confucius taught that a state is well governed when rulers are virtuous and everyone fulfils their role. Under the Han dynasty it became state orthodoxy, and from 605 to 1905 China chose officials by examinations on the Confucian classics.",
+      ideas: "Rule by moral example rather than force; hierarchy and duty (ruler and subject, parent and child); government by educated, examined officials.",
+      texts: "Analects; Mencius; the Four Books and Five Classics", critique: "Strongly hierarchical, with little room for dissent or for women's equality.",
+      today: "Shapes political culture across East Asia: respect for education, merit-based civil services and strong states", parents: [["mandate", "drew"]], wiki: "Confucianism" },
+    { id: "legalism", label: "Legalism", name: "Legalism (China)", fam: "auth", y: -350, ds: "4th c. BCE", date: "4th–3rd c. BCE (Shang Yang, Han Feizi)", end: -206, endLabel: "206 BCE, when the Qin dynasty fell", how: "founded", size: "none", status: "Historical",
+      story: "The statesman Shang Yang (d. 338 BCE) and the philosopher Han Feizi (d. 233 BCE) argued that people obey only clear laws backed by harsh punishment. Qin used these ideas to unify China in 221 BCE, but its brutality led to its fall in 206 BCE.",
+      ideas: "Strict written laws applied to all, heavy rewards and punishments, a powerful ruler and state over any moral code.",
+      texts: "The Book of Lord Shang; Han Feizi", critique: "Rule by fear: the Qin burned books and crushed critics, and fell within 15 years.",
+      today: "Gone by name, but its methods lived on inside later Chinese states behind a Confucian face", parents: [["confucian", "against"]], wiki: "Legalism_(Chinese_philosophy)" },
+    { id: "caliphate", label: "Caliphate", name: "The caliphate", fam: "faith", y: 632, ds: "632 CE", date: "632 CE (Abu Bakr succeeds Muhammad)", end: 1924, endLabel: "1924, when Turkey abolished it", how: "grew", size: "none", status: "Historical",
+      story: "When Muhammad died in 632, the Muslim community chose Abu Bakr as caliph, his successor as leader of the community. The Rashidun, Umayyad and Abbasid caliphates ruled a vast empire; the Ottoman sultans later claimed the title until Turkey abolished it in 1924.",
+      ideas: "One leader for the whole Muslim community, governing by Islamic law (sharia).",
+      texts: "Qur'an and Hadith; later works on government such as al-Mawardi's Ordinances of Government (11th c.)", critique: "Succession disputes split Muslims (the Sunni–Shia divide) and caliphs often ruled as absolute monarchs.",
+      today: "Abolished in 1924; ISIS's claim to it (2014–2019) was rejected by nearly all Muslims", parents: [], wiki: "Caliphate" },
+    { id: "feudalism", label: "Feudalism", name: "Feudalism", fam: "auth", y: 800, ds: "9th c.", date: "8th–9th c., as the Carolingian empire broke up", end: 1789, endLabel: "1789 in France (serfdom lasted in Russia until 1861)", how: "grew", size: "none", status: "Historical",
+      story: "As central power collapsed in early medieval Europe, kings and lords granted land (fiefs) to warriors in return for military service, and peasants were bound to the land as serfs. Historians now debate how uniform the system really was.",
+      ideas: "Land in exchange for loyalty and service; a hierarchy from king to lords to knights to serfs; obligations by birth.",
+      texts: "No founding text; the customs were collected in the Libri Feudorum (12th c.)", critique: "Most people were unfree serfs with no political voice.",
+      today: "Gone: France abolished feudal privileges in 1789, and Russia freed its serfs in 1861", parents: [["empire", "grew"]], wiki: "Feudalism" },
+    { id: "magnacarta", label: "Magna Carta & rule of law", name: "Rule of law (Magna Carta)", fam: "dem", y: 1215, ds: "1215", date: "15 June 1215, Runnymede, England", how: "grew", size: "l", status: "Living",
+      story: "Rebel barons forced King John to accept Magna Carta, a charter putting the king under the law. The Pope annulled it within months, but it was reissued and became a lasting symbol that even rulers must obey the law.",
+      ideas: "No one is above the law; no free person may be imprisoned or punished except by lawful judgment or the law of the land.",
+      texts: "Magna Carta (1215; reissued 1216, 1217, 1225)", critique: "Originally a deal protecting barons and the Church, not ordinary people.",
+      today: "Rule of law is a principle of every democracy; three of its clauses are still law in England and Wales", parents: [["feudalism", "grew"], ["kingship", "against"]], wiki: "Magna_Carta" },
+    { id: "haudenosaunee", label: "Haudenosaunee Confederacy", name: "The Haudenosaunee Confederacy (Great Law of Peace)", fam: "dem", y: 1450, ds: "1142–1450s", date: "Between 1142 and the 1450s (date debated)", range: [1142, 1500], rangeLabel: "Founding date debated: from 1142 to the late 1400s", how: "founded", size: "s", status: "Living",
+      story: "The Peacemaker and Hiawatha united five warring nations (Mohawk, Oneida, Onondaga, Cayuga and Seneca) under the Great Law of Peace; the Tuscarora joined in 1722. In 1988 the U.S. Congress acknowledged its influence on the American founders; historians debate how much.",
+      ideas: "A federation of nations with a shared council; chiefs chosen and removable by clan mothers; decisions by consensus.",
+      texts: "The Great Law of Peace (Kaianere'kó:wa), kept orally and with wampum belts", critique: "Consensus can make decisions slow; colonial wars and treaties broke much of its territory.",
+      today: "Still exists, with its Grand Council at Onondaga; it issues its own passports", parents: [["tribal", "grew"]], wiki: "Great_Law_of_Peace" },
+    { id: "colonialism", label: "Colonial empires", name: "European colonial empires", fam: "auth", y: 1492, ds: "1490s", date: "From 1492 (Columbus) and the Portuguese voyages", end: 1975, endLabel: "the 1970s, when most colonies were independent", how: "grew", size: "none", status: "Historical",
+      story: "From the 1490s Portugal, Spain and later Britain, France and the Netherlands built overseas empires. About 12.5 million Africans were shipped across the Atlantic as slaves, and the Berlin Conference (1884–85) carved up Africa. Most colonies won independence after 1945.",
+      ideas: "Overseas territories ruled for the benefit of the home country, justified by trade, religion and later by racial theories.",
+      texts: "Papal bulls dividing new lands (1493); the General Act of the Berlin Conference (1885)", critique: "Conquest, slavery, dispossession of Indigenous peoples and exploitation of colonized lands.",
+      today: "Formally over, but its borders, languages and inequalities still shape much of the world", parents: [["empire", "grew"]], wiki: "Colonialism" },
+    { id: "absolutism", label: "Absolutism", name: "Absolute monarchy and divine right", fam: "auth", y: 1576, ds: "1576", date: "Late 1500s–1700s (Bodin 1576; Hobbes 1651)", range: [1576, 1715], rangeLabel: "From Bodin's theory (1576) to the end of Louis XIV's reign (1715)", how: "grew", size: "s", status: "Rare",
+      story: "As kings gained power over feudal nobles, thinkers such as Jean Bodin (1576) argued that sovereignty must be undivided, and James I and Bossuet taught that kings rule by divine right. Louis XIV of France became its model.",
+      ideas: "The monarch holds all sovereign power, answerable only to God; no parliament or law can bind the king.",
+      texts: "Bodin, Six Books of the Commonwealth (1576); James I, The True Law of Free Monarchies (1598); Hobbes, Leviathan (1651)", critique: "Unchecked power; subjects have no rights the king must respect.",
+      today: "Rare: a handful of absolute monarchies remain", parents: [["kingship", "grew"], ["feudalism", "against"]], wiki: "Absolute_monarchy" },
+    { id: "mercantilism", label: "Mercantilism", name: "Mercantilism", fam: "econ", y: 1620, ds: "17th c.", date: "1500s–1700s; at its height in the 1600s", range: [1500, 1776], rangeLabel: "From the 1500s to Adam Smith's attack on it (1776)", end: 1846, endLabel: "c. 1846, when Britain turned to free trade", how: "grew", size: "none", status: "Historical",
+      story: "European states treated trade as a contest for gold: export more than you import, protect home industries with tariffs and use colonies as captive markets. France's finance minister Colbert (1660s–80s) was its best-known practitioner.",
+      ideas: "National wealth means gold and trade surpluses; tariffs and monopolies protect home industry; colonies serve the home country.",
+      texts: "Thomas Mun, England's Treasure by Forraign Trade (1664)", critique: "Trade is not zero-sum: Adam Smith argued that both sides gain from free exchange.",
+      today: "Gone as a doctrine, but echoed in today's tariff and trade-surplus politics", parents: [["colonialism", "drew"], ["absolutism", "drew"]], wiki: "Mercantilism" },
+    { id: "parliament", label: "Parliamentary government", name: "Parliamentary government (the Westminster system)", fam: "dem", y: 1689, ds: "1689", date: "1265 (first elected Parliament) to 1689 (Bill of Rights)", range: [1265, 1689], rangeLabel: "From de Montfort's Parliament (1265) to the Bill of Rights (1689)", how: "grew", size: "xl", status: "Living",
+      story: "England's Parliament grew from royal councils: Simon de Montfort's Parliament (1265) first included elected townsmen. After the Glorious Revolution, the Bill of Rights (1689) put Parliament above the Crown, and from Walpole (1721) a prime minister governed with Parliament's confidence. Canada won responsible government in 1848.",
+      ideas: "The elected legislature is supreme; the government sits in it and must keep its confidence; the monarch reigns but does not rule.",
+      texts: "Bill of Rights (1689); Bagehot, The English Constitution (1867)", critique: "A majority government can concentrate power in the prime minister's office; first-past-the-post can distort results.",
+      today: "Used by most of the world's democracies, including Canada, the UK, India, Japan and Germany", parents: [["magnacarta", "grew"], ["absolutism", "against"]], wiki: "Parliamentary_system" },
+    { id: "liberalism", label: "Classical liberalism", name: "Classical liberalism", fam: "lib", y: 1689, ds: "1689", date: "1689 (Locke's Two Treatises of Government)", how: "founded", size: "xl", status: "Living",
+      story: "John Locke argued that people have natural rights to life, liberty and property, and that government exists by their consent to protect those rights. Montesquieu (separation of powers, 1748), Adam Smith and John Stuart Mill built on it.",
+      ideas: "Individual rights, government by consent, rule of law, separation of powers, free speech, religious toleration and free markets.",
+      texts: "Locke, Two Treatises of Government (1689); Montesquieu, The Spirit of the Laws (1748); Mill, On Liberty (1859)", critique: "Early liberals often excluded women, the poor and colonized peoples from the rights they proclaimed, and it offers little protection against poverty.",
+      today: "Its core underpins every liberal democracy", parents: [["parliament", "drew"], ["absolutism", "against"]], wiki: "Classical_liberalism" },
+    { id: "laissezfaire", label: "Free-market economics", name: "Free-market economics (laissez-faire)", fam: "econ", y: 1776, ds: "1776", date: "1776 (Adam Smith's The Wealth of Nations)", how: "founded", size: "l", status: "Living",
+      story: "Adam Smith argued that markets guided by self-interest and competition, the 'invisible hand', create more wealth than state direction. David Ricardo (1817) added the case for free trade, and Britain adopted it in 1846.",
+      ideas: "Free markets, free trade, competition and limited government interference in the economy.",
+      texts: "Smith, The Wealth of Nations (1776); Ricardo, Principles of Political Economy (1817)", critique: "Left alone, markets produced child labour, slums, monopolies and booms and busts.",
+      today: "The basis of mainstream economics; the debate is over how much to regulate it", parents: [["liberalism", "grew"], ["mercantilism", "against"]], wiki: "Laissez-faire" },
+    { id: "republic", label: "Constitutional republic", name: "The constitutional republic (the American model)", fam: "dem", y: 1787, ds: "1776–1787", date: "1776 (Declaration of Independence); 1787 (Constitution)", range: [1776, 1791], rangeLabel: "From the Declaration (1776) to the Bill of Rights (1791)", how: "founded", size: "l", status: "Living",
+      story: "American colonists declared independence in Lockean terms in 1776. In 1787 the founders wrote a constitution that split power between a president, a two-chamber Congress and courts, and between the nation and the states; the Bill of Rights followed in 1791.",
+      ideas: "A written constitution; separation of powers with checks and balances; federalism; an elected president; rights the government cannot override.",
+      texts: "Declaration of Independence (1776); U.S. Constitution (1787); The Federalist Papers (1787–88)", critique: "It began by accepting slavery; it can produce gridlock, and the Electoral College can elect the popular-vote loser.",
+      today: "The oldest national written constitution still in use; presidential republics across the Americas copied it", parents: [["roman", "drew"], ["liberalism", "drew"], ["parliament", "drew"]], wiki: "Republicanism_in_the_United_States" },
+    { id: "abolitionism", label: "Abolitionism", name: "Abolitionism", fam: "rights", y: 1787, ds: "1787", date: "1787 (London's abolition society)", how: "grew", size: "s", status: "Goal largely achieved",
+      story: "Quakers, evangelicals, freed slaves and Enlightenment thinkers campaigned against slavery. Britain banned the slave trade in 1807 and slavery in most colonies in 1833; the U.S. ended it in 1865 and Brazil, the last in the Americas, in 1888.",
+      ideas: "No human being can be property; slavery and the slave trade must be abolished.",
+      texts: "Olaudah Equiano's autobiography (1789); Frederick Douglass's Narrative (1845); Uncle Tom's Cabin (1852)", critique: "Abolition often came with compensation for slave owners, not the enslaved, and was followed by segregation.",
+      today: "Slavery is illegal everywhere (Mauritania was last, in 1981), yet about 50 million people were in modern slavery in 2021", parents: [["liberalism", "drew"]], wiki: "Abolitionism" },
+    { id: "frenchrev", label: "French Revolution", name: "Revolutionary republicanism (the French Revolution)", fam: "dem", y: 1789, ds: "1789", date: "1789, France", how: "grew", size: "m", status: "Living",
+      story: "In 1789 the French overthrew absolute monarchy and proclaimed the Declaration of the Rights of Man. In the new Assembly, supporters of the king sat on the right and radicals on the left, which gave us 'left' and 'right'. The revolution turned to terror (1793–94) and ended with Napoleon (1799).",
+      ideas: "Popular sovereignty: the nation, not the king, is sovereign; liberty, equality, fraternity; equal citizens under one law.",
+      texts: "Declaration of the Rights of Man and of the Citizen (1789); Rousseau, The Social Contract (1762); Sieyès, What Is the Third Estate? (1789)", critique: "It produced the Terror and ended in a military dictatorship; conservatives saw it as proof that abstract theory destroys societies.",
+      today: "France's republic still uses its motto; the left–right spectrum came from its seating plan", parents: [["liberalism", "drew"], ["republic", "drew"], ["absolutism", "against"]], wiki: "French_Revolution" },
+    { id: "conservatism", label: "Conservatism", name: "Conservatism", fam: "con", y: 1790, ds: "1790", date: "1790 (Burke's Reflections on the Revolution in France)", how: "founded", size: "l", status: "Living",
+      story: "Edmund Burke, an Anglo-Irish politician, attacked the French Revolution for tearing up institutions that had grown over centuries. Later conservatives such as Disraeli added 'one-nation' social reform, and in Canada the 'Red Tory' tradition.",
+      ideas: "Change gradually; respect tradition, institutions, family, religion and order; distrust grand plans to remake society.",
+      texts: "Burke, Reflections on the Revolution in France (1790); Oakeshott, Rationalism in Politics (1962)", critique: "Can defend unjust traditions and slow necessary reform.",
+      today: "Major parties across the democratic world, including Canada's Conservatives and the U.S. Republicans", parents: [["frenchrev", "against"], ["parliament", "drew"]], wiki: "Conservatism" },
+    { id: "nationalism", label: "Nationalism", name: "Nationalism", fam: "nat", y: 1800, ds: "c. 1800", date: "Late 1700s–1800s", how: "grew", size: "xl", status: "Living",
+      story: "The French Revolution made 'the nation' sovereign, and Napoleon's wars spread the idea. Thinkers such as Herder and Fichte taught that each people has its own culture and should have its own state; Italy (1861) and Germany (1871) unified on that basis.",
+      ideas: "Humanity is divided into nations; each nation should govern itself; loyalty to the nation comes first.",
+      texts: "Herder (1770s–90s); Fichte, Addresses to the German Nation (1808); Mazzini (1830s–60s)", critique: "Can turn into hostility to minorities and neighbours; it fuelled both world wars.",
+      today: "The world is organized into nation-states: 193 UN members", parents: [["frenchrev", "grew"]], wiki: "Nationalism" },
+    { id: "utopian", label: "Utopian socialism", name: "Utopian socialism", fam: "left", y: 1820, ds: "1820s", date: "1810s–1840s (Saint-Simon, Fourier, Owen)", end: 1850, endLabel: "c. 1850, as its model communities folded", how: "founded", size: "none", status: "Historical",
+      story: "Early industrial misery led thinkers such as Henri de Saint-Simon, Charles Fourier and Robert Owen to design cooperative societies; Owen founded New Harmony, Indiana, in 1825. Marx and Engels later called them 'utopian'.",
+      ideas: "Replace competition with cooperation; model communities where work and wealth are shared.",
+      texts: "Owen, A New View of Society (1813); Fourier's works on phalansteries", critique: "Its communities mostly collapsed within a few years.",
+      today: "Gone as a movement; cooperatives and intentional communities carry on its spirit", parents: [["frenchrev", "drew"]], wiki: "Utopian_socialism" },
+    { id: "anarchism", label: "Anarchism", name: "Anarchism", fam: "left", y: 1840, ds: "1840", date: "1840 (Proudhon's What Is Property?)", how: "founded", size: "s", status: "Living",
+      story: "Pierre-Joseph Proudhon was the first to call himself an anarchist (1840). Bakunin split with Marx in 1872 over whether workers should seize the state or abolish it; anarchists briefly ran parts of Spain in 1936.",
+      ideas: "Abolish the state and other forced hierarchies; organize society through voluntary cooperation and mutual aid.",
+      texts: "Proudhon, What Is Property? (1840); Kropotkin, Mutual Aid (1902); Emma Goldman's essays", critique: "No lasting large-scale example; critics say a power vacuum is filled by the strongest.",
+      today: "Small, but influential in protest movements and ideas of leaderless organizing", parents: [["utopian", "drew"], ["liberalism", "drew"]], wiki: "Anarchism" },
+    { id: "marxism", label: "Marxism", name: "Marxism", fam: "left", y: 1848, ds: "1848", date: "1848 (The Communist Manifesto)", how: "founded", size: "l", status: "Living",
+      story: "Karl Marx and Friedrich Engels argued that history is driven by class struggle and that capitalism would be overthrown by its workers, leading to a classless society. Capital (1867) set out Marx's critique of the economy.",
+      ideas: "Class struggle; workers are exploited under capitalism; the means of production should be owned in common.",
+      texts: "The Communist Manifesto (1848); Capital, vol. 1 (1867)", critique: "Its predictions of revolution in advanced countries failed, and states built in its name became dictatorships.",
+      today: "Shapes socialist and communist parties and much academic thought", parents: [["utopian", "drew"], ["laissezfaire", "against"]], wiki: "Marxism" },
+    { id: "feminism", label: "Feminism", name: "Feminism", fam: "rights", y: 1848, ds: "1848", date: "1792 (Wollstonecraft); 1848 (Seneca Falls)", range: [1792, 1848], rangeLabel: "From Wollstonecraft's Vindication (1792) to the Seneca Falls Convention (1848)", how: "grew", size: "l", status: "Living",
+      story: "Mary Wollstonecraft demanded education and rights for women in 1792. The Seneca Falls Convention (1848), organized largely by abolitionists, launched the suffrage campaign; New Zealand was the first country to give women the vote (1893).",
+      ideas: "Equal rights for women: the vote, education, work, property and equal treatment in law and society.",
+      texts: "Wollstonecraft, A Vindication of the Rights of Woman (1792); the Declaration of Sentiments (1848); de Beauvoir, The Second Sex (1949)", critique: "Early movements often excluded women of colour and working women; later debates divide feminists themselves.",
+      today: "Women vote in every country with elections; debates continue over pay, representation and other issues", parents: [["liberalism", "drew"], ["abolitionism", "drew"]], wiki: "Feminism" },
+    { id: "populism", label: "Populism", name: "Populism", fam: "nat", y: 1892, ds: "1892", date: "1890s (the U.S. People's Party); Russia's Narodniks, 1860s–70s", how: "grew", size: "l", status: "Living",
+      story: "The word comes from the U.S. People's Party (1892), farmers revolting against banks and railroads. Since then populism has appeared on the left and the right, from Perón in Argentina to Chávez, Orbán and Trump.",
+      ideas: "Politics as 'the pure people against a corrupt elite'; a strong leader who claims to speak for the people. More a style than a full ideology.",
+      texts: "The People's Party's Omaha Platform (1892)", critique: "Tends to weaken courts, the press and other checks on power, and to treat opponents as enemies of the people.",
+      today: "In government or opposition in many democracies, on both left and right", parents: [], wiki: "Populism" },
+    { id: "socialdem", label: "Social democracy", name: "Social democracy", fam: "left", y: 1895, ds: "1890s", date: "1890s (Bernstein and the German SPD)", how: "grew", size: "l", status: "Living",
+      story: "Socialists such as Eduard Bernstein argued that workers could win socialism's goals through elections and reform instead of revolution. Sweden's Social Democrats governed for 44 years in a row (1932–1976), building the Nordic welfare state.",
+      ideas: "A market economy plus a strong, universal welfare state, unions and progressive taxes, reached through democracy.",
+      texts: "Bernstein, Evolutionary Socialism (1899); Crosland, The Future of Socialism (1956)", critique: "High taxes and spending; the left sees it as giving up on socialism.",
+      today: "Major parties across Europe, Labour parties, and Canada's NDP", parents: [["marxism", "grew"], ["liberalism", "drew"]], wiki: "Social_democracy" },
+    { id: "progressivism", label: "Progressivism", name: "Progressivism", fam: "rights", y: 1900, ds: "1890s–1920s", date: "The Progressive Era, 1890s–1920s", range: [1890, 1920], rangeLabel: "The Progressive Era, 1890s–1920s", how: "grew", size: "m", status: "Living",
+      story: "Reformers in both U.S. parties fought corruption, monopolies and unsafe work, winning antitrust laws, the income tax, direct election of senators and women's suffrage. Theodore Roosevelt ran as a Progressive in 1912; Canada had its own Prairie Progressive Party in the 1920s.",
+      ideas: "Use government to fix the problems of industrial society: regulate big business, clean up politics and protect workers and consumers.",
+      texts: "Croly, The Promise of American Life (1909); muckraking journalism such as Sinclair's The Jungle (1906)", critique: "Costly and sometimes paternalistic; the historic movement also backed Prohibition and eugenics.",
+      today: "The name of the left wing of the U.S. Democrats and of reform movements elsewhere", parents: [["liberalism", "grew"], ["populism", "drew"]], wiki: "Progressivism" },
+    { id: "sociallib", label: "Social liberalism", name: "Social liberalism", fam: "lib", y: 1906, ds: "1900s", date: "1880s–1910s (T.H. Green, Hobhouse, Lloyd George)", how: "grew", size: "m", status: "Living",
+      story: "British 'New Liberals' argued that freedom means little without education, health and security, so the state should provide them. Lloyd George's People's Budget (1909) and the Liberal Beveridge's report (1942) laid foundations of the welfare state.",
+      ideas: "Liberty plus equal opportunity: rights and markets, with public education, social insurance and regulation.",
+      texts: "Hobhouse, Liberalism (1911); the Beveridge Report (1942)", critique: "Free-market liberals see it as big government; socialists see it as too timid.",
+      today: "The tradition of liberal parties such as Canada's Liberals", parents: [["liberalism", "grew"], ["socialdem", "drew"]], wiki: "Social_liberalism" },
+    { id: "leninism", label: "Communism (Marxism–Leninism)", name: "Communism (Marxism–Leninism)", fam: "left", y: 1917, ds: "1917", date: "1917 (the October Revolution in Russia)", how: "founded", size: "l", status: "Living",
+      story: "Lenin's disciplined party seized power in Russia in 1917 and built the Soviet Union, a one-party state with a planned economy. Under Stalin came terror and famine; after 1945 the model spread to Eastern Europe, China (1949) and beyond. The Soviet Union collapsed in 1991.",
+      ideas: "A vanguard party rules in the name of the workers; state ownership and central planning; the goal of a classless communist society.",
+      texts: "Lenin, What Is to Be Done? (1902) and The State and Revolution (1917)", critique: "Dictatorship, mass repression and economic failure, including famines that killed millions.",
+      today: "Five countries are ruled by communist parties: China, Vietnam, Laos, Cuba and North Korea", parents: [["marxism", "grew"]], wiki: "Marxism%E2%80%93Leninism" },
+    { id: "fascism", label: "Fascism", name: "Fascism", fam: "auth", y: 1919, ds: "1919", date: "1919 (Mussolini's movement); in power 1922", end: 1945, endLabel: "1945, with the end of World War II", how: "founded", size: "none", status: "Historical",
+      story: "Benito Mussolini, a former socialist, founded the Fascist movement in 1919 and took power after the March on Rome (1922). He built a one-party state that glorified the nation, violence and the leader, and allied with Hitler.",
+      ideas: "The nation above the individual; one party and one leader; contempt for liberal democracy and communism; glorification of war.",
+      texts: "Mussolini and Gentile, The Doctrine of Fascism (1932)", critique: "Dictatorship, political violence and aggressive war.",
+      today: "No fascist governments remain; neo-fascist groups exist on the fringe", parents: [["nationalism", "grew"], ["liberalism", "against"], ["marxism", "against"]], wiki: "Fascism" },
+    { id: "nazism", label: "Nazism", name: "Nazism (National Socialism)", fam: "auth", y: 1920, ds: "1920", date: "1920 (the Nazi Party); in power 1933–1945", end: 1945, endLabel: "1945, when Germany was defeated", how: "founded", size: "none", status: "Historical",
+      story: "Adolf Hitler's Nazi Party combined fascism with racial antisemitism. In power from 1933, it destroyed German democracy, started World War II and carried out the Holocaust, murdering six million Jews and millions of others.",
+      ideas: "A racial 'people's community'; antisemitism and racial hierarchy; total obedience to the leader; conquest of 'living space'.",
+      texts: "Hitler, Mein Kampf (1925)", critique: "Genocide, total war and dictatorship: the defining crimes of the 20th century.",
+      today: "Defeated in 1945; its symbols and organizations are banned in Germany; neo-Nazi groups remain on the fringe", parents: [["fascism", "drew"], ["nationalism", "grew"]], wiki: "Nazism" },
+    { id: "islamism", label: "Islamism", name: "Islamism (political Islam)", fam: "faith", y: 1928, ds: "1928", date: "1928 (the Muslim Brotherhood, Egypt)", range: [1928, 1979], rangeLabel: "From the Muslim Brotherhood (1928) to Iran's revolution (1979)", how: "founded", size: "m", status: "Living",
+      story: "Hassan al-Banna founded the Muslim Brotherhood in Egypt in 1928, arguing that Islam should guide politics against Western colonial influence. Iran's 1979 revolution created an Islamic republic ruled by a senior cleric.",
+      ideas: "Islam as a complete system for society and government; sharia as the basis of law. Ranges from parties that compete in elections to revolutionary states and violent groups.",
+      texts: "Sayyid Qutb, Milestones (1964); Khomeini, Islamic Government (1970)", critique: "Critics, including many Muslims, point to curbs on women's rights, religious minorities and dissent, and to violence by militant groups.",
+      today: "Governs Iran and Afghanistan; Islamist parties compete in elections in several countries", parents: [["caliphate", "drew"], ["colonialism", "against"]], wiki: "Islamism" },
+    { id: "keynes", label: "Keynesianism", name: "Keynesian economics", fam: "econ", y: 1936, ds: "1936", date: "1936 (Keynes's General Theory)", how: "founded", size: "m", status: "Living",
+      story: "During the Great Depression, John Maynard Keynes argued that markets can stay stuck in mass unemployment and that government spending can pull them out. It guided Western economies from 1945 until 1970s stagflation.",
+      ideas: "Governments should spend more and tax less in downturns, and cool the economy in booms, to keep employment high.",
+      texts: "Keynes, The General Theory of Employment, Interest and Money (1936)", critique: "Can lead to deficits and inflation, and governments rarely save in good times.",
+      today: "Returns in every crisis, from the 2008–09 stimulus to COVID-era spending", parents: [["laissezfaire", "against"], ["sociallib", "drew"]], wiki: "Keynesian_economics" },
+    { id: "christiandem", label: "Christian democracy", name: "Christian democracy", fam: "faith", y: 1945, ds: "1945", date: "1891 (Rerum Novarum); parties from 1945", range: [1891, 1945], rangeLabel: "From Catholic social teaching (1891) to the post-war parties (1945)", how: "grew", size: "m", status: "Living",
+      story: "Catholic social teaching (Pope Leo XIII's Rerum Novarum, 1891) sought a path between capitalism and socialism. After 1945, parties such as Germany's CDU under Adenauer and Italy's Christian Democrats rebuilt Western Europe and helped found what became the EU.",
+      ideas: "Centre-right: family, community and Christian values, with a 'social market economy' that pairs markets with welfare.",
+      texts: "Rerum Novarum (1891); Quadragesimo Anno (1931)", critique: "Fading as societies become more secular; critics say it blurs into ordinary conservatism.",
+      today: "Major parties in Germany and elsewhere in Europe and Latin America", parents: [["conservatism", "drew"]], wiki: "Christian_democracy" },
+    { id: "neoliberalism", label: "Neoliberalism", name: "Neoliberalism", fam: "econ", y: 1947, ds: "1947", date: "1947 (Mont Pelerin Society); in power from 1979", range: [1944, 1981], rangeLabel: "From Hayek's Road to Serfdom (1944) to Thatcher (1979) and Reagan (1981)", how: "founded", size: "l", status: "Living",
+      story: "Friedrich Hayek and Milton Friedman led a network (the Mont Pelerin Society, 1947) that argued for markets over state planning. After 1970s stagflation, Thatcher and Reagan put it into practice: deregulation, privatization, tax cuts and free trade.",
+      ideas: "Free markets, free trade, privatization, deregulation, low taxes and inflation control; a smaller state.",
+      texts: "Hayek, The Road to Serfdom (1944); Friedman, Capitalism and Freedom (1962)", critique: "Rising inequality, weaker public services and a role in the 2008 financial crisis; the label is mostly used by critics.",
+      today: "Shaped global economic policy from 1980 to 2008; now contested from both left and right", parents: [["laissezfaire", "grew"], ["keynes", "against"]], wiki: "Neoliberalism" },
+    { id: "humanrights", label: "Universal human rights", name: "Universal human rights", fam: "rights", y: 1948, ds: "1948", date: "10 December 1948 (the Universal Declaration)", how: "founded", size: "xl", status: "Living",
+      story: "After World War II's atrocities, the UN adopted the Universal Declaration of Human Rights in 1948, by 48 votes to none with 8 abstentions. Eleanor Roosevelt chaired the drafting committee, and the Canadian John Humphrey wrote the first draft.",
+      ideas: "Every person has the same basic rights, whatever their country: life, liberty, equality, free speech, religion and a fair trial.",
+      texts: "Universal Declaration of Human Rights (1948); European Convention on Human Rights (1950)", critique: "Hard to enforce, and some governments call it a Western idea imposed on others.",
+      today: "The basis of international law on rights and of charters such as Canada's (1982)", parents: [["liberalism", "grew"], ["frenchrev", "drew"], ["nazism", "against"]], wiki: "Universal_Declaration_of_Human_Rights" },
+    { id: "anticolonial", label: "Anti-colonial nationalism", name: "Anti-colonial nationalism and decolonization", fam: "nat", y: 1947, ds: "1885–1960s", date: "1885 (Indian National Congress) to the 1960s", range: [1885, 1975], rangeLabel: "From the Indian National Congress (1885) to the last wave of independence (1970s)", how: "grew", size: "l", status: "Living",
+      story: "Colonized peoples organized for self-rule, from India's National Congress (1885) and Gandhi's non-violent campaigns to independence in 1947. 1960 saw 17 African countries become independent; the UN grew from 51 members in 1945 to 193.",
+      ideas: "Peoples ruled by empires have the right to govern themselves; independence, national dignity and, for many, non-alignment between the superpowers.",
+      texts: "Gandhi, Hind Swaraj (1909); Fanon, The Wretched of the Earth (1961); Bandung Conference communiqué (1955)", critique: "Many new states fell to one-party rule or military coups, and colonial borders left lasting conflicts.",
+      today: "Created most of the world's states; its ideas live on in movements for Indigenous self-determination", parents: [["nationalism", "grew"], ["colonialism", "against"]], wiki: "Decolonization" },
+    { id: "libertarianism", label: "Libertarianism", name: "Libertarianism", fam: "lib", y: 1971, ds: "1971", date: "1971 (the U.S. Libertarian Party); ideas from the 1950s–70s", range: [1957, 1974], rangeLabel: "From Rand's Atlas Shrugged (1957) to Nozick (1974)", how: "grew", size: "s", status: "Living",
+      story: "Writers such as Ayn Rand, Murray Rothbard and Robert Nozick pushed classical liberalism further: the state should do little more than protect people and property. The U.S. Libertarian Party was founded in 1971; Argentina's president Javier Milei (elected 2023) calls himself a libertarian.",
+      ideas: "Maximum individual freedom in both economic and personal life; a minimal state; low taxes and few regulations.",
+      texts: "Rand, Atlas Shrugged (1957); Nozick, Anarchy, State, and Utopia (1974)", critique: "A thin safety net; it struggles with pollution, monopolies and other shared problems.",
+      today: "Small parties, but influential on the U.S. right and in tech circles", parents: [["liberalism", "grew"], ["anarchism", "drew"], ["neoliberalism", "drew"]], wiki: "Libertarianism" },
+    { id: "greens", label: "Green politics", name: "Green politics", fam: "rights", y: 1972, ds: "1970s", date: "1972 (first green party, New Zealand); German Greens 1980", range: [1962, 1980], rangeLabel: "From Silent Spring (1962) to the German Greens (1980)", how: "grew", size: "m", status: "Living",
+      story: "Rachel Carson's Silent Spring (1962) and the first Earth Day (1970) sparked an environmental movement. New Zealand's Values Party (1972) was the first national green party; the German Greens (1980) later shared power (1998–2005).",
+      ideas: "Ecological sustainability, social justice, grassroots democracy and non-violence.",
+      texts: "Carson, Silent Spring (1962); The Limits to Growth (1972)", critique: "Its policies can raise costs, and climate action is hard to coordinate across countries.",
+      today: "Green parties sit in many parliaments; climate policy is mainstream across parties", parents: [["socialdem", "drew"]], wiki: "Green_politics" },
+    { id: "thirdway", label: "Third Way", name: "The Third Way", fam: "left", y: 1994, ds: "1990s", date: "1990s (Clinton, Blair, Schröder)", how: "grew", size: "s", status: "Faded",
+      story: "Centre-left leaders such as Bill Clinton (1993–2001), Tony Blair (1997–2007) and Gerhard Schröder accepted markets and free trade while keeping targeted social spending. The sociologist Anthony Giddens gave it a name in 1998.",
+      ideas: "Markets and globalization plus investment in education, training and a reformed welfare state.",
+      texts: "Giddens, The Third Way (1998)", critique: "The left sees it as neoliberalism with a friendly face.",
+      today: "Faded after the 2008 financial crisis", parents: [["socialdem", "grew"], ["neoliberalism", "drew"]], wiki: "Third_Way" },
+    { id: "natcon", label: "National conservatism", name: "National conservatism", fam: "nat", y: 2016, ds: "2010s", date: "2010s (Orbán 2014; Brexit and Trump 2016)", how: "grew", size: "l", status: "Living",
+      story: "In the 2010s, a new right rejected free-trade globalism and mass immigration. Hungary's Viktor Orbán spoke of 'illiberal democracy' (2014), and 2016 brought Brexit and Donald Trump's 'America First'. The first National Conservatism conference was held in 2019.",
+      ideas: "The nation-state and its culture first: border control, tariffs and industrial policy, traditional values and scepticism of global institutions.",
+      texts: "Hazony, The Virtue of Nationalism (2018)", critique: "Critics say it weakens courts, the press and minority rights, and that its tariffs raise prices.",
+      today: "Shapes governments including the U.S. under Trump and Hungary under Orbán", parents: [["conservatism", "grew"], ["populism", "drew"], ["nationalism", "drew"], ["neoliberalism", "against"]], wiki: "National_conservatism" }
+  ];
+
+  var BY = {};
+  D.forEach(function (d) { BY[d.id] = d; d.kids = []; });
+  D.forEach(function (d) { d.parents.forEach(function (p) { BY[p[0]].kids.push([d.id, p[1]]); }); });
+  var EDGES = [];
+  D.forEach(function (d) { d.parents.forEach(function (p) { EDGES.push({ from: p[0], to: d.id, kind: p[1] }); }); });
+  var ORDER = D.slice().sort(function (a, b) {
+    var ay = a.pre != null ? -1e6 + a.pre : a.y, by = b.pre != null ? -1e6 + b.pre : b.y;
+    return ay - by;
+  });
+  var R = { xl: 9, l: 7, m: 5.2, s: 3.8, none: 4.6 };
+  var SIZE_NAME = { xl: "Worldwide", l: "Major", m: "Significant", s: "Minor", none: "No longer practised" };
+
+  var Y0 = -3300, Y1 = 2030, NOW = 2026;
+  var ERAS = [
+    { a: -3300, b: -800, name: "First states" },
+    { a: -800, b: 500, name: "Classical" },
+    { a: 500, b: 1500, name: "Medieval" },
+    { a: 1500, b: 1789, name: "Early modern" },
+    { a: 1789, b: 1914, name: "Revolutions" },
+    { a: 1914, b: 1991, name: "Wars & Cold War" },
+    { a: 1991, b: Y1, name: "Since 1991" }
+  ];
+  var TICKS = [1, -1000, -2000, -3000, 1000, 1500, 2000, -500, 500, 1800, 1900, 1950, 1700, 1600, 1850];
+
+  var state = { s: 0, fam: "all", sel: "parliament", view: "time" };
+  try { var saved = localStorage.getItem("ptt-scale"); if (saved === "1") state.s = 1; } catch (e) {}
+  var hash = (location.hash || "").slice(1);
+  if (BY[hash]) state.sel = hash;
+
+  var svg = document.getElementById("chart");
+  var shell = document.getElementById("shell");
+  var scroller = document.getElementById("scroller");
+  var tip = document.getElementById("tip");
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+  function fmtYear(y) { return y < 0 ? (-y) + " BCE" : (y === 1 ? "1 CE" : String(y)); }
+
+  // ---------- text measurement ----------
+  var ctx = document.createElement("canvas").getContext("2d");
+  var widths = {};
+  function measure() {
+    D.forEach(function (d) {
+      ctx.font = '500 12.5px "IBM Plex Sans Condensed", "Arial Narrow", sans-serif';
+      var a = ctx.measureText(d.label).width;
+      ctx.font = '400 10px "IBM Plex Mono", Menlo, monospace';
+      var b = ctx.measureText(d.ds).width;
+      widths[d.id] = Math.ceil(Math.max(a, b));
+    });
+  }
+
+  // ---------- layout ----------
+  var BAND = 24, BASE = 26, STEP = 33, TOPPAD = 34, BOTPAD = 26;
+  function geometry(s) {
+    var W = Math.max(scroller.clientWidth || shell.clientWidth || 1100, 1060);
+    var ml = 18, mr = 26;
+    var preW = Math.max(96, (W - ml - mr) * 0.085);
+    var x0 = ml + preW + 26, x1 = W - mr - 36;
+    return { W: W, s: s, ml: ml, preW: preW, x0: x0, mainW: x1 - x0 };
+  }
+  var K = 40; // log stretch: most ideologies are from the last 250 years, so recent decades get far more room
+  function X(g, y) {
+    var fs = 1 - Math.log(1 + Math.max(0, Y1 - y) / K) / Math.log(1 + (Y1 - Y0) / K);
+    var fl = (y - Y0) / (Y1 - Y0);
+    return g.x0 + ((1 - g.s) * fs + g.s * fl) * g.mainW;
+  }
+  function preX(g, i) { return g.ml + 16 + i * ((g.preW - 24) / 2.2); }
+
+  function layout(s) {
+    var g = geometry(s);
+    var pos = {};
+    var levels = { up: [], down: [] };
+    var maxL = { up: 0, down: 0 };
+    ORDER.forEach(function (d) {
+      var x = d.pre != null ? preX(g, d.pre) : X(g, d.y);
+      var r = R[d.size];
+      var w = widths[d.id] || 80;
+      var side = d.how === "founded" ? "up" : "down";
+      var anchor = (x + r + 6 + w > g.W - 10) ? "end" : "start";
+      var bx0 = anchor === "start" ? x - r - 3 : x - r - 6 - w - 4;
+      var bx1 = anchor === "start" ? x + r + 6 + w + 6 : x + r + 3;
+      var L = 0;
+      var lv = levels[side];
+      for (; L < 30; L++) {
+        var row = lv[L] || (lv[L] = []);
+        var clash = row.some(function (b) { return !(bx1 < b[0] || bx0 > b[1]); });
+        if (!clash) break;
+      }
+      lv[L].push([bx0, bx1]);
+      if (L > maxL[side]) maxL[side] = L;
+      pos[d.id] = { x: x, side: side, level: L, anchor: anchor, r: r };
+    });
+    var upH = BASE + maxL.up * STEP + 18;
+    var downH = BASE + maxL.down * STEP + 22;
+    var axisY = TOPPAD + upH + BAND / 2;
+    var H = axisY + BAND / 2 + downH + BOTPAD;
+    D.forEach(function (d) {
+      var p = pos[d.id];
+      var off = BAND / 2 + BASE + p.level * STEP;
+      p.y = p.side === "up" ? axisY - off : axisY + off;
+    });
+    return { g: g, pos: pos, axisY: axisY, H: H };
+  }
+
+  // ---------- static svg structure ----------
+  var gBands = el("g", {}, svg), gAxis = el("g", {}, svg), gSpan = el("g", {}, svg), gTicks = el("g", {}, svg),
+      gEdges = el("g", {}, svg), gItems = el("g", {}, svg);
+  var edgeEls = EDGES.map(function (e) { return el("path", { "class": "edge " + e.kind }, gEdges); });
+  var itemEls = {};
+  var lastPT = "mouse";
+  svg.addEventListener("pointerdown", function (ev) { lastPT = ev.pointerType; });
+  ORDER.forEach(function (d) {
+    var gi = el("g", { "class": "item", tabindex: "0", role: "button", "aria-label": d.name + ", " + d.date }, gItems);
+    var o = {
+      g: gi,
+      stem: el("line", { "class": "stem" }, gi),
+      foot: el("circle", { "class": "foot", r: "1.6" }, gi),
+      halo: el("circle", { "class": "halo" }, gi),
+      dot: el("circle", { "class": "dot" + (d.size === "none" ? " hist" : "") }, gi),
+      lbl: el("text", { "class": "lbl" }, gi),
+      hit: el("rect", { "class": "hit" }, gi)
+    };
+    o.nm = el("tspan", { "class": "nm" }, o.lbl); o.nm.textContent = d.label;
+    o.dt = el("tspan", { "class": "dt" }, o.lbl); o.dt.textContent = d.ds;
+    itemEls[d.id] = o;
+    gi.addEventListener("click", function () { select(d.id, true); });
+    gi.addEventListener("keydown", function (ev) {
+      if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); select(d.id, true); }
+      if (ev.key === "ArrowRight" || ev.key === "ArrowLeft") {
+        ev.preventDefault();
+        var i = ORDER.indexOf(d) + (ev.key === "ArrowRight" ? 1 : -1);
+        var n = ORDER[(i + ORDER.length) % ORDER.length];
+        itemEls[n.id].g.focus();
+      }
+      if (ev.key === "Escape") hideTip();
+    });
+    gi.addEventListener("pointerenter", function (ev) { if (ev.pointerType === "mouse") showTip(d.id, ev.clientX, ev.clientY); });
+    gi.addEventListener("pointermove", function (ev) { if (ev.pointerType === "mouse") placeTip(ev.clientX, ev.clientY); });
+    gi.addEventListener("pointerleave", hideTip);
+    gi.addEventListener("focus", function () {
+      if (lastPT === "touch") return;
+      var b = o.dot.getBoundingClientRect();
+      showTip(d.id, b.right, b.bottom);
+    });
+    gi.addEventListener("blur", hideTip);
+  });
+
+  // ---------- drawing ----------
+  var frame = null;
+  function draw(f) {
+    frame = f;
+    var g = f.g, ay = f.axisY, top = ay - BAND / 2, bot = ay + BAND / 2;
+    svg.setAttribute("width", g.W);
+    svg.setAttribute("height", Math.round(f.H));
+    svg.setAttribute("viewBox", "0 0 " + g.W + " " + Math.round(f.H));
+
+    // eras
+    var bh = "";
+    ERAS.forEach(function (e, i) {
+      var a = X(g, e.a), b = Math.min(X(g, e.b), g.x0 + g.mainW + 30);
+      if (i % 2 === 0) bh += '<rect class="era-band" x="' + a.toFixed(1) + '" y="0" width="' + (b - a).toFixed(1) + '" height="' + f.H.toFixed(1) + '"/>';
+      ctx.font = '500 10px "IBM Plex Mono", monospace';
+      var tw = ctx.measureText(e.name.toUpperCase()).width + e.name.length * 1.4;
+      if (b - a > tw + 12) bh += '<text class="era-name" x="' + ((a + b) / 2).toFixed(1) + '" y="20" text-anchor="middle">' + e.name + "</text>";
+    });
+    bh += '<text class="era-name" x="' + (g.ml + g.preW / 2).toFixed(1) + '" y="20" text-anchor="middle">Before states</text>';
+    gBands.innerHTML = bh;
+
+    // axis band, ticks, undated block, now marker
+    var ah = '<rect class="axis-band" x="' + g.ml + '" y="' + top + '" width="' + (g.preW + 4).toFixed(1) + '" height="' + BAND + '" rx="12"/>';
+    ah += '<rect class="axis-band" x="' + (g.x0 - 10).toFixed(1) + '" y="' + top + '" width="' + (g.mainW + 46).toFixed(1) + '" height="' + BAND + '" rx="12"/>';
+    ah += '<text class="pre-label" x="' + (g.ml + g.preW / 2 + 2).toFixed(1) + '" y="' + (ay + 3.5) + '" text-anchor="middle">UNDATED</text>';
+    var bx = g.ml + g.preW + 15;
+    ah += '<line class="break" x1="' + (bx - 4) + '" y1="' + (ay + 6) + '" x2="' + (bx) + '" y2="' + (ay - 6) + '"/>';
+    ah += '<line class="break" x1="' + (bx + 1) + '" y1="' + (ay + 6) + '" x2="' + (bx + 5) + '" y2="' + (ay - 6) + '"/>';
+    gAxis.innerHTML = ah;
+    ah = "";
+    var kept = [];
+    ctx.font = '400 10.5px "IBM Plex Mono", Menlo, monospace';
+    TICKS.forEach(function (y) {
+      var x = X(g, y), hw = ctx.measureText(fmtYear(y)).width / 2 + 9;
+      if (kept.some(function (k) { return x + hw > k[0] && x - hw < k[1]; })) return;
+      kept.push([x - hw, x + hw]);
+      ah += '<line class="tick" x1="' + x.toFixed(1) + '" y1="' + (top - 4) + '" x2="' + x.toFixed(1) + '" y2="' + top + '"/>';
+      ah += '<line class="tick" x1="' + x.toFixed(1) + '" y1="' + bot + '" x2="' + x.toFixed(1) + '" y2="' + (bot + 4) + '"/>';
+      ah += '<text class="tick-label" x="' + x.toFixed(1) + '" y="' + (ay + 3.8) + '" text-anchor="middle">' + fmtYear(y) + "</text>";
+    });
+    var nx = X(g, NOW);
+    ah += '<path d="M' + nx.toFixed(1) + "," + (top - 7) + " l4,4 l-4,4 l-4,-4z\" fill=\"var(--accent)\"/>";
+    ah += '<text class="now-label" x="' + (nx + 8).toFixed(1) + '" y="' + (top - 3) + '">TODAY</text>';
+    gTicks.innerHTML = ah;
+
+    // items
+    D.forEach(function (d) {
+      var p = f.pos[d.id], o = itemEls[d.id], w = widths[d.id] || 80;
+      var y0 = p.side === "up" ? top : bot;
+      o.stem.setAttribute("x1", p.x); o.stem.setAttribute("x2", p.x);
+      o.stem.setAttribute("y1", y0); o.stem.setAttribute("y2", p.y);
+      o.foot.setAttribute("cx", p.x); o.foot.setAttribute("cy", y0);
+      o.dot.setAttribute("cx", p.x); o.dot.setAttribute("cy", p.y); o.dot.setAttribute("r", p.r);
+      o.halo.setAttribute("cx", p.x); o.halo.setAttribute("cy", p.y); o.halo.setAttribute("r", p.r + 4.5);
+      var tx = p.anchor === "start" ? p.x + p.r + 6 : p.x - p.r - 6;
+      o.lbl.setAttribute("text-anchor", p.anchor);
+      o.nm.setAttribute("x", tx); o.nm.setAttribute("y", p.y - 0.5);
+      o.dt.setAttribute("x", tx); o.dt.setAttribute("y", p.y + 11);
+      var hx = p.anchor === "start" ? p.x - 12 : p.x - p.r - 8 - w;
+      o.hit.setAttribute("x", hx); o.hit.setAttribute("y", p.y - 14);
+      o.hit.setAttribute("width", w + p.r + 20); o.hit.setAttribute("height", 30);
+    });
+
+    // edges
+    EDGES.forEach(function (e, i) {
+      var a = f.pos[e.from], b = f.pos[e.to];
+      var mx = (a.x + b.x) / 2;
+      edgeEls[i].setAttribute("d", "M" + a.x.toFixed(1) + "," + a.y.toFixed(1) + " C" + mx.toFixed(1) + "," + a.y.toFixed(1) + " " + mx.toFixed(1) + "," + b.y.toFixed(1) + " " + b.x.toFixed(1) + "," + b.y.toFixed(1));
+    });
+    drawSpan();
+  }
+
+  function drawSpan() {
+    if (!frame) return;
+    var d = BY[state.sel], g = frame.g, top = frame.axisY - BAND / 2;
+    var h = "";
+    if (d && d.pre == null) {
+      var a = X(g, d.y), b = X(g, d.end != null ? d.end : NOW);
+      h += '<rect class="span" x="' + a.toFixed(1) + '" y="' + (top + 2) + '" width="' + Math.max(3, b - a).toFixed(1) + '" height="' + (BAND - 4) + '" rx="10"/>';
+      if (d.range) {
+        var ra = X(g, d.range[0]), rb = X(g, d.range[1]);
+        h += '<rect class="span-range" x="' + ra.toFixed(1) + '" y="' + (top - 3) + '" width="' + Math.max(2, rb - ra).toFixed(1) + '" height="' + (BAND + 6) + '" rx="12"/>';
+      }
+    }
+    gSpan.innerHTML = h;
+  }
+
+  // ---------- highlight state ----------
+  function applyState() {
+    var sel = state.sel, fam = state.fam;
+    var rel = {};
+    if (sel) {
+      BY[sel].parents.forEach(function (p) { rel[p[0]] = 1; });
+      BY[sel].kids.forEach(function (k) { rel[k[0]] = 1; });
+    }
+    D.forEach(function (d) {
+      var c = itemEls[d.id].g.classList;
+      c.toggle("dim", fam !== "all" && d.fam !== fam && d.id !== sel);
+      c.toggle("sel", d.id === sel);
+      c.toggle("rel", !!rel[d.id]);
+      itemEls[d.id].g.setAttribute("aria-pressed", d.id === sel ? "true" : "false");
+    });
+    EDGES.forEach(function (e, i) {
+      var c = edgeEls[i].classList;
+      var hot = sel && (e.from === sel || e.to === sel);
+      var famEdge = fam !== "all" && BY[e.from].fam === fam && BY[e.to].fam === fam;
+      c.toggle("hot", !!hot);
+      c.toggle("fam", !hot && famEdge);
+      c.toggle("cold", !hot && !famEdge && (fam !== "all" || !!sel));
+    });
+    drawSpan();
+    document.querySelectorAll("#chips .chip").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.fam === fam ? "true" : "false"); });
+    document.querySelectorAll("#tbody tr").forEach(function (tr) {
+      tr.hidden = fam !== "all" && BY[tr.dataset.id].fam !== fam;
+      tr.setAttribute("aria-selected", tr.dataset.id === sel ? "true" : "false");
+    });
+  }
+
+  // ---------- tooltip ----------
+  function showTip(id, cx, cy) {
+    var d = BY[id];
+    tip.innerHTML = "<strong></strong><span class=\"when\"></span><span class=\"s\"></span><span class=\"foll\"></span>";
+    tip.querySelector("strong").textContent = d.name;
+    tip.querySelector(".when").textContent = d.date + (d.end != null ? " – ended " + d.endLabel.split(",")[0] : "");
+    tip.querySelector(".s").textContent = d.story.split(/(?<=[A-Za-z)\d]{2}[.!?])\s+(?=[A-Z"'])/)[0];
+    tip.querySelector(".foll").textContent = "Today: " + d.today;
+    tip.hidden = false;
+    placeTip(cx, cy);
+  }
+  function placeTip(cx, cy) {
+    if (tip.hidden) return;
+    var r = shell.getBoundingClientRect();
+    var tw = tip.offsetWidth, th = tip.offsetHeight;
+    var x = cx - r.left + 16, y = cy - r.top + 16;
+    if (x + tw > r.width - 8) x = cx - r.left - tw - 16;
+    if (x < 8) x = 8;
+    if (y + th > r.height - 8) y = cy - r.top - th - 16;
+    if (y < 8) y = 8;
+    tip.style.transform = "translate(" + Math.round(x) + "px," + Math.round(y) + "px)";
+  }
+  function hideTip() { tip.hidden = true; }
+
+  // ---------- detail ----------
+  var KIND_UP = { grew: "grew out of", drew: "drew on", against: "reacted against" };
+  var KIND_DOWN = { grew: "grew out of it", drew: "drew on it", against: "reacted against it" };
+  function relChips(list, kinds) {
+    if (!list.length) return '<span class="none">None shown on this chart</span>';
+    return list.map(function (p) {
+      return '<button type="button" class="rel-chip" data-go="' + p[0] + '">' + esc(BY[p[0]].label) + '<span class="k">' + kinds[p[1]] + "</span></button>";
+    }).join("");
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function renderDetail() {
+    var d = BY[state.sel];
+    var det = document.getElementById("detail");
+    var span = d.pre != null ? "It is older than any written record, so it sits in the undated block on the left." :
+      (d.end != null ? "Practised until " + d.endLabel + ". The band on the timeline shows its whole span." :
+      "Still part of politics today. The band on the timeline shows its span from " + d.ds + " to now.");
+    if (d.rangeLabel) span += " The dotted outline marks the gradual or debated start: " + d.rangeLabel + ".";
+    det.innerHTML =
+      "<div>" +
+        '<div class="meta"><span class="fam-tag">' + esc(FAM_NAME[d.fam]) + "</span><span>" + (d.how === "founded" ? "Set out by a founding thinker or leader" : "Grew out of movements, events or custom") + "</span><span>" + esc(d.status) + "</span></div>" +
+        "<h2>" + esc(d.name) + "</h2>" +
+        '<p class="when-big">' + esc(d.date) + "</p>" +
+        '<p class="kicker">How it began</p>' +
+        '<p class="story">' + esc(d.story) + "</p>" +
+        '<p class="kicker">On the timeline</p><p class="story small">' + esc(span) + "</p>" +
+        '<div class="links"><a href="' + W_BASE + d.wiki + '" target="_blank" rel="noopener">Read more on Wikipedia ↗</a></div>' +
+      "</div>" +
+      "<div><dl>" +
+        "<div><dt>Core ideas</dt><dd>" + esc(d.ideas) + "</dd></div>" +
+        "<div><dt>Key texts</dt><dd>" + esc(d.texts) + "</dd></div>" +
+        "<div><dt>Main criticism</dt><dd>" + esc(d.critique) + "</dd></div>" +
+        "<div><dt>Today · influence: " + esc(SIZE_NAME[d.size].toLowerCase()) + "</dt><dd>" + esc(d.today) + "</dd></div>" +
+        "<div><dt>Came out of</dt><dd class=\"rels\">" + relChips(d.parents, KIND_UP) + "</dd></div>" +
+        "<div><dt>What came out of it</dt><dd class=\"rels\">" + relChips(d.kids, KIND_DOWN) + "</dd></div>" +
+      "</dl></div>";
+    det.querySelectorAll("[data-go]").forEach(function (b) {
+      b.addEventListener("click", function () { select(b.dataset.go, false); focusItem(b.dataset.go); });
+    });
+  }
+  function focusItem(id) {
+    if (state.view !== "time" || !frame) return;
+    var p = frame.pos[id];
+    var sw = scroller.clientWidth;
+    if (p.x < scroller.scrollLeft + 40 || p.x > scroller.scrollLeft + sw - 40) {
+      scroller.scrollTo({ left: Math.max(0, p.x - sw / 2), behavior: reduced() ? "auto" : "smooth" });
+    }
+  }
+  function select(id, fromChart) {
+    state.sel = id;
+    applyState();
+    renderDetail();
+    try { history.replaceState(null, "", "#" + id); } catch (e) {}
+    if (fromChart) {
+      var det = document.getElementById("detail");
+      var rb = det.getBoundingClientRect();
+      if (rb.top > window.innerHeight - 80) det.scrollIntoView({ block: "nearest", behavior: reduced() ? "auto" : "smooth" });
+    }
+  }
+
+  // ---------- controls ----------
+  var chips = document.getElementById("chips");
+  [["all", "All"]].concat(FAMS).forEach(function (f) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.dataset.fam = f[0];
+    var n = f[0] === "all" ? D.length : D.filter(function (d) { return d.fam === f[0]; }).length;
+    b.innerHTML = esc(f[1]) + '<span class="n">' + n + "</span>";
+    b.addEventListener("click", function () { state.fam = (state.fam === f[0] && f[0] !== "all") ? "all" : f[0]; applyState(); });
+    chips.appendChild(b);
+  });
+
+  function reduced() { return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; }
+  var anim = null;
+  function setScale(s) {
+    if (s === state.s) return;
+    state.s = s;
+    try { localStorage.setItem("ptt-scale", String(s)); } catch (e) {}
+    document.getElementById("sc-stretch").setAttribute("aria-pressed", s === 0 ? "true" : "false");
+    document.getElementById("sc-true").setAttribute("aria-pressed", s === 1 ? "true" : "false");
+    document.getElementById("scale-note").textContent = s === 0
+      ? "Time is stretched toward the present so the crowded last two centuries have room. Forms of rule older than any record sit in the block on the left."
+      : "True to time: every century gets the same width. Almost every modern ideology was born in the last 250 years.";
+    var A = frame, B = layout(s);
+    if (!A || reduced()) { draw(B); return; }
+    if (anim) cancelAnimationFrame(anim);
+    var t0 = performance.now(), dur = 650;
+    function stepFn(now) {
+      var t = Math.min(1, (now - t0) / dur);
+      var e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      var g = geometry(A.g.s + (B.g.s - A.g.s) * e);
+      var pos = {};
+      D.forEach(function (d) {
+        var a = A.pos[d.id], b = B.pos[d.id];
+        pos[d.id] = { x: a.x + (b.x - a.x) * e, y: a.y + (b.y - a.y) * e, side: b.side, anchor: e < 0.5 ? a.anchor : b.anchor, r: b.r, level: b.level };
+      });
+      draw({ g: g, pos: pos, axisY: A.axisY + (B.axisY - A.axisY) * e, H: A.H + (B.H - A.H) * e });
+      if (t < 1) anim = requestAnimationFrame(stepFn); else { anim = null; draw(B); }
+    }
+    anim = requestAnimationFrame(stepFn);
+  }
+  document.getElementById("sc-stretch").addEventListener("click", function () { setScale(0); });
+  document.getElementById("sc-true").addEventListener("click", function () { setScale(1); });
+
+  function setView(v) {
+    state.view = v;
+    document.getElementById("v-time").setAttribute("aria-pressed", v === "time" ? "true" : "false");
+    document.getElementById("v-list").setAttribute("aria-pressed", v === "list" ? "true" : "false");
+    scroller.hidden = v !== "time";
+    document.getElementById("listwrap").hidden = v !== "list";
+    document.querySelector(".caption").hidden = v !== "time";
+    hideTip();
+  }
+  document.getElementById("v-time").addEventListener("click", function () { setView("time"); });
+  document.getElementById("v-list").addEventListener("click", function () { setView("list"); });
+
+  // list view
+  var tbody = document.getElementById("tbody");
+  ORDER.forEach(function (d) {
+    var tr = document.createElement("tr");
+    tr.dataset.id = d.id; tr.tabIndex = 0;
+    tr.innerHTML = "<td>" + esc(d.name) + '</td><td class="when">' + esc(d.ds) + "</td><td>" + (d.how === "founded" ? "Founded" : "Grew") + "</td><td>" + esc(FAM_NAME[d.fam]) + "</td><td>" + esc(d.today) + "</td>";
+    tr.addEventListener("click", function () { select(d.id, true); });
+    tr.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); select(d.id, true); } });
+    tbody.appendChild(tr);
+  });
+
+  // ---------- boot ----------
+  function relayout() { measure(); draw(layout(state.s)); }
+  document.getElementById("sc-stretch").setAttribute("aria-pressed", state.s === 0 ? "true" : "false");
+  document.getElementById("sc-true").setAttribute("aria-pressed", state.s === 1 ? "true" : "false");
+  relayout();
+  applyState();
+  renderDetail();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { relayout(); applyState(); });
+  var lastW = scroller.clientWidth;
+  if (window.ResizeObserver) {
+    new ResizeObserver(function () {
+      var w = scroller.clientWidth;
+      if (Math.abs(w - lastW) > 4) { lastW = w; draw(layout(state.s)); }
+    }).observe(shell);
+  }
+  requestAnimationFrame(function () { focusItem(state.sel); });
+})();
+</script>
+</body>
+</html>
