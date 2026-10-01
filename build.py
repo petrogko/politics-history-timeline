@@ -1,59 +1,102 @@
 #!/usr/bin/env python3
-"""Build index.html (GitHub Pages) from src/politics-through-time.html (the page body, as published to claude.ai).
+"""Build the page from src/page.html (code) + src/data.json (all content).
 
-The source has no <html>/<head>/<body> skeleton because the Claude artifact host adds one. This script adds the same
-skeleton for GitHub Pages, moves the title, font links and styles into <head>, and checks the data before writing:
-unique ids, every relationship points at an entry that exists, and no line runs backwards in time.
+Writes:
+  index.html                          the GitHub Pages page (full HTML document)
+  dist/politics-through-time.html     the same page without the <html>/<head>/<body> skeleton, for the Claude artifact host
 
-Usage: python3 build.py
+Refuses to write anything if the data has a problem: missing fields, unknown families, duplicate ids, relationships to
+entries that don't exist or that run backwards in time, compass values out of range, or malformed links.
+
+Usage: python3 build.py          (then python3 check_links.py to confirm every link still loads)
 """
-import re
+import json
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-SRC = ROOT / 'src' / 'politics-through-time.html'
-OUT = ROOT / 'index.html'
-DESCRIPTION = ('45 political systems and ideologies on one timeline, from tribal councils to national conservatism: '
-               'how each began, its core ideas, its critics, and what grew out of it.')
-RESET = (':root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);'
-         'padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}'
-         'body{margin:0;padding:0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}')
+PAGE = ROOT / 'src' / 'page.html'
+DATA = ROOT / 'src' / 'data.json'
+OUT_PAGES = ROOT / 'index.html'
+OUT_ARTIFACT = ROOT / 'dist' / 'politics-through-time.html'
+DESCRIPTION = ('Political systems and ideologies on one timeline, from tribal councils to national conservatism: how each '
+               'began, key people and moments, core ideas, critics, a political compass and sources.')
+RESET = (':root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}'
+         'html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}'
+         '[hidden]:not([hidden=until-found i]){display:none!important}')
+REQUIRED = ('id', 'label', 'name', 'fam', 'ds', 'date', 'how', 'size', 'status', 'story', 'ideas', 'texts', 'critique',
+            'today', 'parents', 'wiki', 'people', 'moments', 'compass', 'refs', 'primary')
 
 
-def check(source):
-    entries = re.findall(r'\{ id: "([a-z]+)".*?parents: (\[[^\n]*?\]), wiki:', source, re.S)
-    ids = [e[0] for e in entries]
-    years = {}
-    for m in re.finditer(r'\{ id: "([a-z]+)".*?(?:\by: (-?\d+)|pre: (\d+))', source, re.S):
-        years[m.group(1)] = int(m.group(2)) if m.group(2) else -10**6
+def check(data):
     problems = []
-    if len(ids) != len(set(ids)):
-        problems.append('duplicate ids: ' + ', '.join(sorted({i for i in ids if ids.count(i) > 1})))
-    known = set(ids)
-    for child, parents in entries:
-        for parent, kind in re.findall(r'\["([a-z]+)", "([a-z]+)"\]', parents):
-            if parent not in known:
-                problems.append(f'{child}: unknown parent "{parent}"')
+    fams = {f[0] for f in data['families']}
+    entries = data['entries']
+    ids = [e.get('id') for e in entries]
+    dupes = sorted({i for i in ids if ids.count(i) > 1})
+    if dupes:
+        problems.append('duplicate ids: ' + ', '.join(dupes))
+    by = {e['id']: e for e in entries}
+    year = lambda e: e['y'] if 'y' in e else -10**6
+    for e in entries:
+        eid = e.get('id', '?')
+        missing = [k for k in REQUIRED if k not in e]
+        if missing:
+            problems.append(f'{eid}: missing {", ".join(missing)}')
+            continue
+        if ('y' in e) == ('pre' in e):
+            problems.append(f'{eid}: needs exactly one of y or pre')
+        if e['fam'] not in fams:
+            problems.append(f'{eid}: unknown family {e["fam"]}')
+        if e['how'] not in ('founded', 'grew'):
+            problems.append(f'{eid}: how must be founded or grew')
+        if e['size'] not in ('xl', 'l', 'm', 's', 'none'):
+            problems.append(f'{eid}: unknown size {e["size"]}')
+        if ('end' in e) != ('endLabel' in e) or ('range' in e) != ('rangeLabel' in e):
+            problems.append(f'{eid}: end/range need their labels')
+        for parent, kind in e['parents']:
+            if parent not in by:
+                problems.append(f'{eid}: unknown parent {parent}')
+            elif year(by[parent]) > year(e):
+                problems.append(f'{eid} ({year(e)}) is earlier than its parent {parent} ({year(by[parent])})')
             if kind not in ('grew', 'drew', 'against'):
-                problems.append(f'{child}: unknown relationship "{kind}"')
-            if parent in years and child in years and years[parent] > years[child]:
-                problems.append(f'{child} ({years[child]}) is earlier than its parent {parent} ({years[parent]})')
-    return ids, problems
+                problems.append(f'{eid}: unknown relationship {kind}')
+        x, y = e['compass']
+        if not (-10 <= x <= 10 and -10 <= y <= 10):
+            problems.append(f'{eid}: compass out of range')
+        if any(len(p) != 3 for p in e['people']) or any(len(m) != 2 for m in e['moments']):
+            problems.append(f'{eid}: people need [name, years, role] and moments [when, what]')
+        links = list(e['refs']) + ([e['primary']] if e['primary'] else [])
+        if any(len(r) != 2 or not str(r[1]).startswith('https://') for r in links):
+            problems.append(f'{eid}: refs/primary must be [label, https URL]')
+    for m in data['milestones']:
+        if not {'y', 'label', 'when', 'note'} <= set(m):
+            problems.append(f'milestone {m.get("label", "?")}: missing fields')
+    return problems
 
 
 def main():
-    source = SRC.read_text(encoding='utf-8')
-    ids, problems = check(source)
+    data = json.loads(DATA.read_text(encoding='utf-8'))
+    problems = check(data)
     if problems:
         sys.exit('Data problems, nothing written:\n  ' + '\n  '.join(problems))
-    head, body = source.split('</style>', 1)
-    page = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
+    page = PAGE.read_text(encoding='utf-8')
+    marker = '/*__DATA__*/null'
+    if page.count(marker) != 1:
+        sys.exit('src/page.html must contain the data marker exactly once')
+    payload = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+    body = page.replace(marker, payload)
+    OUT_ARTIFACT.parent.mkdir(exist_ok=True)
+    OUT_ARTIFACT.write_text(body, encoding='utf-8')
+    head, rest = body.split('</style>', 1)
+    full = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
             '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
             f'<meta name="description" content="{DESCRIPTION}">\n<style>{RESET}</style>\n'
-            f'{head.strip()}\n</style>\n</head>\n<body>\n{body.strip()}\n</body>\n</html>\n')
-    OUT.write_text(page, encoding='utf-8')
-    print(f'Wrote {OUT.name}: {len(ids)} entries, {len(page):,} bytes.')
+            f'{head.strip()}\n</style>\n</head>\n<body>\n{rest.strip()}\n</body>\n</html>\n')
+    OUT_PAGES.write_text(full, encoding='utf-8')
+    n = len(data['entries'])
+    print(f'Wrote {OUT_PAGES.name} ({len(full):,} bytes) and {OUT_ARTIFACT.relative_to(ROOT)}: '
+          f'{n} entries, {len(data["milestones"])} turning points.')
 
 
 if __name__ == '__main__':

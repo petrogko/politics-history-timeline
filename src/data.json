@@ -1,0 +1,4839 @@
+{
+ "families": [
+  [
+   "dem",
+   "Democracy & republics"
+  ],
+  [
+   "lib",
+   "Liberal"
+  ],
+  [
+   "con",
+   "Conservative & traditional"
+  ],
+  [
+   "left",
+   "Socialist & left"
+  ],
+  [
+   "auth",
+   "Rule by one or few"
+  ],
+  [
+   "nat",
+   "Nation & people"
+  ],
+  [
+   "faith",
+   "Faith & politics"
+  ],
+  [
+   "econ",
+   "Economic ideas"
+  ],
+  [
+   "rights",
+   "Reform & rights movements"
+  ]
+ ],
+ "milestones": [
+  {
+   "y": -1754,
+   "label": "Code of Hammurabi",
+   "when": "c. 1754 BCE",
+   "note": "One of the first written law codes: the king's laws carved in stone for all to see."
+  },
+  {
+   "y": -221,
+   "label": "Qin unifies China",
+   "when": "221 BCE",
+   "note": "The first emperor builds a centralized state whose model lasts, in some form, for 2,000 years."
+  },
+  {
+   "y": 476,
+   "label": "Fall of the Western Roman Empire",
+   "when": "476",
+   "note": "Central power collapses in Western Europe, opening the way to feudalism."
+  },
+  {
+   "y": 1517,
+   "label": "The Reformation",
+   "when": "1517",
+   "note": "Luther's challenge splits Western Christianity; wars of religion follow."
+  },
+  {
+   "y": 1648,
+   "label": "Peace of Westphalia",
+   "when": "1648",
+   "note": "Ends the Thirty Years' War; often seen as the start of the modern system of sovereign states."
+  },
+  {
+   "y": 1848,
+   "label": "Revolutions of 1848",
+   "when": "1848",
+   "note": "Uprisings across Europe for constitutions and national unity. Most fail, but serfdom ends in the Austrian Empire."
+  },
+  {
+   "y": 1914,
+   "label": "World War I",
+   "when": "1914–1918",
+   "note": "Four empires fall (Russian, German, Austro-Hungarian and Ottoman) and mass politics arrives."
+  },
+  {
+   "y": 1929,
+   "label": "The Great Depression",
+   "when": "1929",
+   "note": "Mass unemployment discredits laissez-faire and fuels both fascism and the welfare state."
+  },
+  {
+   "y": 1945,
+   "label": "End of World War II; the UN is founded",
+   "when": "1945",
+   "note": "The UN Charter, human rights and decolonization reshape world politics."
+  },
+  {
+   "y": 1989,
+   "label": "Fall of the Berlin Wall",
+   "when": "1989",
+   "note": "Communism collapses in Eastern Europe; the Soviet Union follows in 1991."
+  },
+  {
+   "y": 2008,
+   "label": "Global financial crisis",
+   "when": "2008",
+   "note": "Bank failures and recession shake faith in deregulated markets and feed a new populism."
+  }
+ ],
+ "sources": [
+  [
+   "Stanford Encyclopedia of Philosophy",
+   "https://plato.stanford.edu/"
+  ],
+  [
+   "Internet Encyclopedia of Philosophy",
+   "https://iep.utm.edu/"
+  ],
+  [
+   "World History Encyclopedia",
+   "https://www.worldhistory.org/"
+  ],
+  [
+   "Wikipedia (linked on every entry)",
+   "https://en.wikipedia.org/"
+  ],
+  [
+   "The Avalon Project: documents in law, history and diplomacy (Yale Law School)",
+   "https://avalon.law.yale.edu/"
+  ],
+  [
+   "Project Gutenberg (founding texts)",
+   "https://www.gutenberg.org/"
+  ],
+  [
+   "Marxists Internet Archive (socialist and communist texts)",
+   "https://www.marxists.org/"
+  ],
+  [
+   "Chinese Text Project (classical Chinese texts)",
+   "https://ctext.org/"
+  ],
+  [
+   "Andrew Heywood, Political Ideologies: An Introduction (textbook)",
+   null
+  ],
+  [
+   "Michael Freeden, Ideology: A Very Short Introduction (2003)",
+   null
+  ],
+  [
+   "Francis Fukuyama, The Origins of Political Order (2011) and Political Order and Political Decay (2014)",
+   null
+  ],
+  [
+   "S. E. Finer, The History of Government from the Earliest Times (1997)",
+   null
+  ]
+ ],
+ "entries": [
+  {
+   "id": "tribal",
+   "label": "Tribal councils",
+   "name": "Band and tribal self-rule",
+   "fam": "dem",
+   "pre": 0,
+   "ds": "prehistoric",
+   "date": "Prehistoric (most of human history)",
+   "how": "grew",
+   "size": "s",
+   "status": "Living",
+   "story": "No founder. For most of human history people lived in small bands that decided things by talking them through, with leaders who persuaded rather than commanded. Anthropologists describe these societies as broadly equal.",
+   "ideas": "Consensus, sharing and respect for elders; leadership by persuasion; no permanent rulers.",
+   "texts": "None (oral tradition)",
+   "critique": "Works for small groups that know each other; hard to scale to large, diverse societies.",
+   "today": "Lives on in many Indigenous governance traditions and in consensus decision-making",
+   "parents": [],
+   "wiki": "Band_society",
+   "people": [],
+   "moments": [
+    [
+     "Prehistory",
+     "Most humans live in small foraging bands that decide things by discussion"
+    ],
+    [
+     "c. 9500 BCE",
+     "Farming begins in the Fertile Crescent; larger settled communities start to form"
+    ],
+    [
+     "Today",
+     "Consensus traditions continue in many Indigenous nations"
+    ]
+   ],
+   "compass": [
+    -6,
+    -6
+   ],
+   "refs": [],
+   "primary": null
+  },
+  {
+   "id": "chiefdom",
+   "label": "Chiefdoms",
+   "name": "Chiefdoms and hereditary rule",
+   "fam": "auth",
+   "pre": 1,
+   "ds": "prehistoric",
+   "date": "Prehistoric, with the rise of farming",
+   "how": "grew",
+   "size": "s",
+   "status": "Living (traditional roles)",
+   "story": "No founder. As farming created surpluses, some societies came to be led by hereditary chiefs who controlled land and shared out goods. This was the first step from band equality toward kings.",
+   "ideas": "Rank by birth; a chief who redistributes wealth and settles disputes; loyalty to a lineage.",
+   "texts": "None (oral tradition)",
+   "critique": "Power passes by birth rather than merit or consent.",
+   "today": "Traditional chiefs keep recognized roles in many African and Pacific countries",
+   "parents": [
+    [
+     "tribal",
+     "grew"
+    ]
+   ],
+   "wiki": "Chiefdom",
+   "people": [],
+   "moments": [
+    [
+     "After farming",
+     "Surpluses let hereditary chiefs control land and share out goods"
+    ],
+    [
+     "1500s–1800s",
+     "Europeans meet chiefdoms across the Pacific, Africa and the Americas"
+    ],
+    [
+     "Today",
+     "Many countries give traditional leaders formal roles, e.g. South Africa's houses of traditional leaders"
+    ]
+   ],
+   "compass": [
+    0,
+    4
+   ],
+   "refs": [],
+   "primary": null
+  },
+  {
+   "id": "kingship",
+   "label": "Monarchy",
+   "name": "Kingship and monarchy",
+   "fam": "auth",
+   "y": -3100,
+   "ds": "c. 3100 BCE",
+   "date": "c. 3100 BCE (the first kings of Egypt and Sumer)",
+   "how": "grew",
+   "size": "m",
+   "status": "Living",
+   "story": "Grew with the first states. When the first pharaohs unified Egypt (c. 3100 BCE) and kings ruled the cities of Sumer, rulers claimed to be gods or chosen by them. Monarchy was the normal form of government for most of recorded history.",
+   "ideas": "One ruler for life, usually by inheritance; legitimacy from the gods or tradition; the king as judge, lawgiver and war leader.",
+   "texts": "Royal inscriptions; the Code of Hammurabi (c. 1754 BCE)",
+   "critique": "Good government depends on getting a good ruler, and there is no peaceful way to remove a bad one.",
+   "today": "About 43 countries still have a monarch; most are ceremonial (like Canada's King), and a handful are absolute (e.g. Saudi Arabia, Oman, Brunei, Eswatini)",
+   "parents": [
+    [
+     "chiefdom",
+     "grew"
+    ]
+   ],
+   "wiki": "Monarchy",
+   "people": [
+    [
+     "Narmer",
+     "c. 3100 BCE",
+     "traditionally the first king of a united Egypt"
+    ],
+    [
+     "Hammurabi",
+     "r. c. 1792–1750 BCE",
+     "Babylonian king and lawgiver"
+    ],
+    [
+     "Charlemagne",
+     "c. 747–814",
+     "Frankish king, crowned emperor in 800"
+    ],
+    [
+     "Charles III",
+     "b. 1948",
+     "King of Canada, the UK and 13 other realms"
+    ]
+   ],
+   "moments": [
+    [
+     "c. 3100 BCE",
+     "Egypt united under the first pharaohs"
+    ],
+    [
+     "c. 1754 BCE",
+     "Hammurabi's law code presents the king as lawgiver"
+    ],
+    [
+     "800",
+     "Charlemagne crowned emperor in Rome"
+    ],
+    [
+     "1649",
+     "England executes Charles I and briefly abolishes the monarchy"
+    ],
+    [
+     "1952",
+     "Elizabeth II begins a 70-year reign"
+    ]
+   ],
+   "compass": [
+    2,
+    7
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Sovereignty",
+     "https://plato.stanford.edu/entries/sovereignty/"
+    ]
+   ],
+   "primary": [
+    "The Code of Hammurabi (Avalon Project translation)",
+    "https://avalon.law.yale.edu/ancient/hamframe.asp"
+   ]
+  },
+  {
+   "id": "empire",
+   "label": "Empire",
+   "name": "Empire",
+   "fam": "auth",
+   "y": -2334,
+   "ds": "c. 2334 BCE",
+   "date": "c. 2334 BCE (Sargon of Akkad)",
+   "end": 1975,
+   "endLabel": "the 1970s, when the last big colonial empires broke up",
+   "how": "founded",
+   "size": "none",
+   "status": "Historical",
+   "story": "Sargon of Akkad conquered the city-states of Mesopotamia and ruled them as one realm, the first known empire. Persia, Rome, China, the Mongols, the Ottomans and Britain followed the same pattern on ever larger scales.",
+   "ideas": "One centre rules many peoples and territories, usually won by conquest; tribute and taxes flow to the capital.",
+   "texts": "Royal annals; later, imperial law codes such as Justinian's (529–534 CE)",
+   "critique": "Rule without the consent of the conquered, often enforced by violence.",
+   "today": "No formal empires remain; people still argue about informal empire and spheres of influence",
+   "parents": [
+    [
+     "kingship",
+     "grew"
+    ]
+   ],
+   "wiki": "Empire",
+   "people": [
+    [
+     "Sargon of Akkad",
+     "r. c. 2334–2279 BCE",
+     "founded the first known empire"
+    ],
+    [
+     "Cyrus the Great",
+     "c. 600–530 BCE",
+     "founded the Persian Empire"
+    ],
+    [
+     "Augustus",
+     "63 BCE–14 CE",
+     "first Roman emperor"
+    ],
+    [
+     "Genghis Khan",
+     "c. 1162–1227",
+     "founded the Mongol Empire"
+    ]
+   ],
+   "moments": [
+    [
+     "c. 2334 BCE",
+     "Sargon unites Mesopotamia"
+    ],
+    [
+     "550 BCE",
+     "Cyrus founds the Persian Empire"
+    ],
+    [
+     "27 BCE",
+     "Augustus becomes the first Roman emperor"
+    ],
+    [
+     "1206",
+     "Genghis Khan unites the Mongols"
+    ],
+    [
+     "1920s",
+     "The British Empire covers about a quarter of the world's land"
+    ]
+   ],
+   "compass": [
+    2,
+    8
+   ],
+   "refs": [
+    [
+     "World History Encyclopedia: Akkadian Empire",
+     "https://www.worldhistory.org/Akkadian_Empire/"
+    ]
+   ],
+   "primary": null
+  },
+  {
+   "id": "mandate",
+   "label": "Mandate of Heaven",
+   "name": "The Mandate of Heaven",
+   "fam": "faith",
+   "y": -1046,
+   "ds": "c. 1046 BCE",
+   "date": "c. 1046 BCE (the Zhou overthrow the Shang)",
+   "end": 1912,
+   "endLabel": "1912, when the last Chinese dynasty fell",
+   "how": "grew",
+   "size": "none",
+   "status": "Historical",
+   "story": "When the Zhou overthrew the Shang dynasty (c. 1046 BCE), they justified it by saying Heaven had withdrawn its mandate from an unjust ruler. Every later Chinese dynasty used the idea, until the Qing fell in 1912.",
+   "ideas": "Heaven grants the right to rule only to a just ruler; famine, disaster and revolt are signs the mandate has been lost.",
+   "texts": "Book of Documents (Shujing)",
+   "critique": "Legitimacy is judged after the fact: whoever wins power can claim the mandate.",
+   "today": "Gone as a system, but echoed in the idea that rulers must deliver good government to stay legitimate",
+   "parents": [
+    [
+     "kingship",
+     "grew"
+    ]
+   ],
+   "wiki": "Mandate_of_Heaven",
+   "people": [
+    [
+     "King Wu of Zhou",
+     "d. c. 1043 BCE",
+     "overthrew the Shang"
+    ],
+    [
+     "Duke of Zhou",
+     "11th c. BCE",
+     "credited with the doctrine"
+    ],
+    [
+     "Mencius",
+     "c. 372–289 BCE",
+     "taught that the people may overthrow a tyrant"
+    ]
+   ],
+   "moments": [
+    [
+     "c. 1046 BCE",
+     "The Zhou overthrow the Shang, citing Heaven's mandate"
+    ],
+    [
+     "4th c. BCE",
+     "Mencius: Heaven sees as the people see"
+    ],
+    [
+     "1644",
+     "The Qing take power, claiming the mandate from the fallen Ming"
+    ],
+    [
+     "1912",
+     "The last emperor abdicates"
+    ]
+   ],
+   "compass": [
+    0,
+    6
+   ],
+   "refs": [
+    [
+     "World History Encyclopedia: Mandate of Heaven",
+     "https://www.worldhistory.org/Mandate_of_Heaven/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Mencius",
+     "https://plato.stanford.edu/entries/mencius/"
+    ]
+   ],
+   "primary": [
+    "Book of Documents (Shujing), Chinese Text Project",
+    "https://ctext.org/shang-shu"
+   ]
+  },
+  {
+   "id": "roman",
+   "label": "Roman Republic",
+   "name": "The Roman Republic",
+   "fam": "dem",
+   "y": -509,
+   "ds": "509 BCE",
+   "date": "509 BCE (traditional date)",
+   "end": -27,
+   "endLabel": "27 BCE, when Augustus became the first emperor",
+   "how": "grew",
+   "size": "none",
+   "status": "Historical",
+   "story": "Romans expelled their last king and built a republic with two consuls elected each year, a Senate and citizen assemblies. Its balance of powers was admired for centuries, but it collapsed into civil wars and one-man rule under Augustus.",
+   "ideas": "No kings; power shared and checked between officials, Senate and people; short terms in office; written law (the Twelve Tables).",
+   "texts": "Twelve Tables (c. 450 BCE); Polybius, Histories, book 6; Cicero, On the Republic",
+   "critique": "Run by a wealthy elite; votes weighted toward the rich; it could not stop ambitious generals.",
+   "today": "Gone, but the model for senates, checks and balances and the word 'republic'; the U.S. founders studied it closely",
+   "parents": [
+    [
+     "kingship",
+     "against"
+    ]
+   ],
+   "wiki": "Roman_Republic",
+   "people": [
+    [
+     "Lucius Junius Brutus",
+     "6th c. BCE",
+     "legendary founder"
+    ],
+    [
+     "Cicero",
+     "106–43 BCE",
+     "statesman; On the Republic"
+    ],
+    [
+     "Julius Caesar",
+     "100–44 BCE",
+     "general whose dictatorship ended it"
+    ],
+    [
+     "Augustus",
+     "63 BCE–14 CE",
+     "first emperor"
+    ]
+   ],
+   "moments": [
+    [
+     "509 BCE",
+     "The last king is expelled (traditional date)"
+    ],
+    [
+     "c. 450 BCE",
+     "The Twelve Tables: Rome's first written laws"
+    ],
+    [
+     "287 BCE",
+     "Laws passed by the plebeian assembly bind all citizens"
+    ],
+    [
+     "49 BCE",
+     "Caesar crosses the Rubicon; civil war"
+    ],
+    [
+     "27 BCE",
+     "Augustus becomes emperor"
+    ]
+   ],
+   "compass": [
+    2,
+    0
+   ],
+   "refs": [
+    [
+     "World History Encyclopedia: Roman Republic",
+     "https://www.worldhistory.org/Roman_Republic/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Republicanism",
+     "https://plato.stanford.edu/entries/republicanism/"
+    ]
+   ],
+   "primary": [
+    "The Twelve Tables (Avalon Project)",
+    "https://avalon.law.yale.edu/ancient/twelve_tables.asp"
+   ]
+  },
+  {
+   "id": "athens",
+   "label": "Athenian democracy",
+   "name": "Athenian democracy",
+   "fam": "dem",
+   "y": -508,
+   "ds": "508 BCE",
+   "date": "508/507 BCE (Cleisthenes' reforms)",
+   "end": -322,
+   "endLabel": "322 BCE, when Macedon abolished it",
+   "how": "founded",
+   "size": "none",
+   "status": "Historical",
+   "story": "After the tyrant Hippias was expelled, the reformer Cleisthenes reorganized Athens so that citizens themselves governed (508/507 BCE), building on Solon's reforms of 594 BCE. It lasted, with interruptions, for nearly two centuries.",
+   "ideas": "Rule by the citizens directly: an assembly where any citizen could speak and vote, officials and juries chosen by lot, ostracism of dangerous leaders.",
+   "texts": "No constitution; described in Aristotle's Constitution of the Athenians and Pericles' Funeral Oration (in Thucydides)",
+   "critique": "Only adult male citizens took part: women, slaves and foreigners, most of the population, were excluded. Plato saw it as rule by the mob.",
+   "today": "Gone, but the root of the word and idea of democracy, and the model for today's citizens' assemblies chosen by lot",
+   "parents": [
+    [
+     "kingship",
+     "against"
+    ]
+   ],
+   "wiki": "Athenian_democracy",
+   "people": [
+    [
+     "Solon",
+     "c. 630–560 BCE",
+     "reforms of 594 BCE"
+    ],
+    [
+     "Cleisthenes",
+     "6th c. BCE",
+     "reforms of 508/507 BCE"
+    ],
+    [
+     "Pericles",
+     "c. 495–429 BCE",
+     "led Athens at its height"
+    ],
+    [
+     "Aristotle",
+     "384–322 BCE",
+     "described its constitution"
+    ]
+   ],
+   "moments": [
+    [
+     "594 BCE",
+     "Solon's reforms end debt slavery"
+    ],
+    [
+     "508/507 BCE",
+     "Cleisthenes' reforms: rule by the citizens"
+    ],
+    [
+     "462 BCE",
+     "Ephialtes strips the aristocratic council of power"
+    ],
+    [
+     "431 BCE",
+     "Pericles' Funeral Oration"
+    ],
+    [
+     "322 BCE",
+     "Macedon abolishes the democracy"
+    ]
+   ],
+   "compass": [
+    0,
+    -4
+   ],
+   "refs": [
+    [
+     "World History Encyclopedia: Athenian Democracy",
+     "https://www.worldhistory.org/Athenian_Democracy/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Democracy",
+     "https://plato.stanford.edu/entries/democracy/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Aristotle's Political Theory",
+     "https://plato.stanford.edu/entries/aristotle-politics/"
+    ]
+   ],
+   "primary": [
+    "Aristotle, The Athenian Constitution (Project Gutenberg)",
+    "https://www.gutenberg.org/ebooks/26095"
+   ]
+  },
+  {
+   "id": "confucian",
+   "label": "Confucian statecraft",
+   "name": "Confucian statecraft",
+   "fam": "con",
+   "y": -500,
+   "ds": "c. 500 BCE",
+   "date": "c. 500 BCE (Confucius, 551–479 BCE)",
+   "how": "founded",
+   "size": "m",
+   "status": "Living (as political culture)",
+   "story": "Confucius taught that a state is well governed when rulers are virtuous and everyone fulfils their role. Under the Han dynasty it became state orthodoxy, and from 605 to 1905 China chose officials by examinations on the Confucian classics.",
+   "ideas": "Rule by moral example rather than force; hierarchy and duty (ruler and subject, parent and child); government by educated, examined officials.",
+   "texts": "Analects; Mencius; the Four Books and Five Classics",
+   "critique": "Strongly hierarchical, with little room for dissent or for women's equality.",
+   "today": "Shapes political culture across East Asia: respect for education, merit-based civil services and strong states",
+   "parents": [
+    [
+     "mandate",
+     "drew"
+    ]
+   ],
+   "wiki": "Confucianism",
+   "people": [
+    [
+     "Confucius",
+     "551–479 BCE",
+     "founder"
+    ],
+    [
+     "Mencius",
+     "c. 372–289 BCE",
+     "the people come first"
+    ],
+    [
+     "Xunzi",
+     "c. 310–235 BCE",
+     "human nature needs ritual and education"
+    ],
+    [
+     "Zhu Xi",
+     "1130–1200",
+     "Neo-Confucian synthesis"
+    ]
+   ],
+   "moments": [
+    [
+     "c. 500 BCE",
+     "Confucius teaches in the state of Lu"
+    ],
+    [
+     "136 BCE",
+     "Han Emperor Wu makes the Confucian classics state orthodoxy"
+    ],
+    [
+     "605",
+     "The Sui dynasty begins the imperial examinations"
+    ],
+    [
+     "1905",
+     "The Qing abolish the examinations"
+    ]
+   ],
+   "compass": [
+    0,
+    5
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Confucius",
+     "https://plato.stanford.edu/entries/confucius/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Mencius",
+     "https://plato.stanford.edu/entries/mencius/"
+    ],
+    [
+     "Internet Encyclopedia of Philosophy: Confucius",
+     "https://iep.utm.edu/confuciu/"
+    ]
+   ],
+   "primary": [
+    "The Analects (Chinese Text Project)",
+    "https://ctext.org/analects"
+   ]
+  },
+  {
+   "id": "legalism",
+   "label": "Legalism",
+   "name": "Legalism (China)",
+   "fam": "auth",
+   "y": -350,
+   "ds": "4th c. BCE",
+   "date": "4th–3rd c. BCE (Shang Yang, Han Feizi)",
+   "end": -206,
+   "endLabel": "206 BCE, when the Qin dynasty fell",
+   "how": "founded",
+   "size": "none",
+   "status": "Historical",
+   "story": "The statesman Shang Yang (d. 338 BCE) and the philosopher Han Feizi (d. 233 BCE) argued that people obey only clear laws backed by harsh punishment. Qin used these ideas to unify China in 221 BCE, but its brutality led to its fall in 206 BCE.",
+   "ideas": "Strict written laws applied to all, heavy rewards and punishments, a powerful ruler and state over any moral code.",
+   "texts": "The Book of Lord Shang; Han Feizi",
+   "critique": "Rule by fear: the Qin burned books and crushed critics, and fell within 15 years.",
+   "today": "Gone by name, but its methods lived on inside later Chinese states behind a Confucian face",
+   "parents": [
+    [
+     "confucian",
+     "against"
+    ]
+   ],
+   "wiki": "Legalism_(Chinese_philosophy)",
+   "people": [
+    [
+     "Shang Yang",
+     "d. 338 BCE",
+     "reformed the state of Qin"
+    ],
+    [
+     "Han Feizi",
+     "c. 280–233 BCE",
+     "main theorist"
+    ],
+    [
+     "Li Si",
+     "c. 280–208 BCE",
+     "Qin chancellor"
+    ],
+    [
+     "Qin Shi Huang",
+     "259–210 BCE",
+     "first emperor of China"
+    ]
+   ],
+   "moments": [
+    [
+     "356 BCE",
+     "Shang Yang's reforms in Qin begin"
+    ],
+    [
+     "221 BCE",
+     "Qin unifies China"
+    ],
+    [
+     "213 BCE",
+     "Burning of the books (traditional account)"
+    ],
+    [
+     "206 BCE",
+     "The Qin dynasty collapses"
+    ]
+   ],
+   "compass": [
+    0,
+    9
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Legalism in Chinese Philosophy",
+     "https://plato.stanford.edu/entries/chinese-legalism/"
+    ]
+   ],
+   "primary": [
+    "Han Feizi (Chinese Text Project)",
+    "https://ctext.org/hanfeizi"
+   ]
+  },
+  {
+   "id": "caliphate",
+   "label": "Caliphate",
+   "name": "The caliphate",
+   "fam": "faith",
+   "y": 632,
+   "ds": "632 CE",
+   "date": "632 CE (Abu Bakr succeeds Muhammad)",
+   "end": 1924,
+   "endLabel": "1924, when Turkey abolished it",
+   "how": "grew",
+   "size": "none",
+   "status": "Historical",
+   "story": "When Muhammad died in 632, most of the Muslim community accepted Abu Bakr as caliph, his successor as leader of the community; Shia Muslims hold that Muhammad had designated Ali. The Rashidun, Umayyad and Abbasid caliphates ruled a vast empire; the Ottoman sultans later claimed the title until Turkey abolished it in 1924.",
+   "ideas": "One leader for the whole Muslim community, governing by Islamic law (sharia).",
+   "texts": "Qur'an and Hadith; later works on government such as al-Mawardi's Ordinances of Government (11th c.)",
+   "critique": "Succession disputes split Muslims (the Sunni–Shia divide) and caliphs often ruled as absolute monarchs.",
+   "today": "Abolished in 1924; ISIS's claim to it (2014–2019) was rejected by nearly all Muslims",
+   "parents": [],
+   "wiki": "Caliphate",
+   "people": [
+    [
+     "Abu Bakr",
+     "c. 573–634",
+     "first caliph"
+    ],
+    [
+     "Umar ibn al-Khattab",
+     "c. 584–644",
+     "second caliph; rapid expansion"
+    ],
+    [
+     "Ali ibn Abi Talib",
+     "c. 600–661",
+     "fourth caliph; for Shia Muslims the rightful first successor"
+    ],
+    [
+     "Harun al-Rashid",
+     "c. 763–809",
+     "Abbasid caliph of the golden age"
+    ]
+   ],
+   "moments": [
+    [
+     "632",
+     "Abu Bakr chosen as caliph"
+    ],
+    [
+     "661",
+     "The Umayyad caliphate rules from Damascus"
+    ],
+    [
+     "750",
+     "The Abbasids take power and found Baghdad (762)"
+    ],
+    [
+     "1258",
+     "The Mongols sack Baghdad"
+    ],
+    [
+     "1924",
+     "Turkey abolishes the caliphate"
+    ]
+   ],
+   "compass": [
+    1,
+    7
+   ],
+   "refs": [
+    [
+     "World History Encyclopedia: Rashidun Caliphate",
+     "https://www.worldhistory.org/Rashidun_Caliphate/"
+    ]
+   ],
+   "primary": null
+  },
+  {
+   "id": "feudalism",
+   "label": "Feudalism",
+   "name": "Feudalism",
+   "fam": "auth",
+   "y": 800,
+   "ds": "9th c.",
+   "date": "8th–9th c., as the Carolingian empire broke up",
+   "end": 1789,
+   "endLabel": "1789 in France (serfdom lasted in Russia until 1861)",
+   "how": "grew",
+   "size": "none",
+   "status": "Historical",
+   "story": "As central power collapsed in early medieval Europe, kings and lords granted land (fiefs) to warriors in return for military service, and peasants were bound to the land as serfs. Historians now debate how uniform the system really was.",
+   "ideas": "Land in exchange for loyalty and service; a hierarchy from king to lords to knights to serfs; obligations by birth.",
+   "texts": "No founding text; the customs were collected in the Libri Feudorum (12th c.)",
+   "critique": "Most people were unfree serfs with no political voice.",
+   "today": "Gone: France abolished feudal privileges in 1789, and Russia freed its serfs in 1861",
+   "parents": [
+    [
+     "empire",
+     "grew"
+    ]
+   ],
+   "wiki": "Feudalism",
+   "people": [
+    [
+     "Charlemagne",
+     "c. 747–814",
+     "Frankish emperor"
+    ],
+    [
+     "William the Conqueror",
+     "c. 1028–1087",
+     "imposed Norman feudal order on England"
+    ],
+    [
+     "Marc Bloch",
+     "1886–1944",
+     "historian, Feudal Society"
+    ],
+    [
+     "Susan Reynolds",
+     "1929–2021",
+     "historian who questioned the concept"
+    ]
+   ],
+   "moments": [
+    [
+     "8th–9th c.",
+     "Carolingian grants of land for military service"
+    ],
+    [
+     "1066",
+     "The Norman Conquest of England"
+    ],
+    [
+     "1381",
+     "The Peasants' Revolt in England"
+    ],
+    [
+     "1789",
+     "France abolishes feudal privileges (4 August)"
+    ],
+    [
+     "1861",
+     "Russia frees its serfs"
+    ]
+   ],
+   "compass": [
+    3,
+    7
+   ],
+   "refs": [
+    [
+     "World History Encyclopedia: Feudalism",
+     "https://www.worldhistory.org/Feudalism/"
+    ]
+   ],
+   "primary": null
+  },
+  {
+   "id": "magnacarta",
+   "label": "Magna Carta & rule of law",
+   "name": "Rule of law (Magna Carta)",
+   "fam": "dem",
+   "y": 1215,
+   "ds": "1215",
+   "date": "15 June 1215, Runnymede, England",
+   "how": "grew",
+   "size": "l",
+   "status": "Living",
+   "story": "Rebel barons forced King John to accept Magna Carta, a charter putting the king under the law. The Pope annulled it within months, but it was reissued and became a lasting symbol that even rulers must obey the law.",
+   "ideas": "No one is above the law; no free person may be imprisoned or punished except by lawful judgment or the law of the land.",
+   "texts": "Magna Carta (1215; reissued 1216, 1217, 1225)",
+   "critique": "Originally a deal protecting barons and the Church, not ordinary people.",
+   "today": "Rule of law is a principle of every democracy; three of its clauses are still law in England and Wales",
+   "parents": [
+    [
+     "feudalism",
+     "grew"
+    ],
+    [
+     "kingship",
+     "against"
+    ]
+   ],
+   "wiki": "Magna_Carta",
+   "people": [
+    [
+     "King John",
+     "1166–1216",
+     "forced to seal it"
+    ],
+    [
+     "Stephen Langton",
+     "c. 1150–1228",
+     "Archbishop of Canterbury; helped shape it"
+    ],
+    [
+     "Edward Coke",
+     "1552–1634",
+     "revived it against royal power"
+    ]
+   ],
+   "moments": [
+    [
+     "1215",
+     "Sealed at Runnymede"
+    ],
+    [
+     "1225",
+     "Reissued; becomes a lasting statute"
+    ],
+    [
+     "1297",
+     "Confirmed in English statute law"
+    ],
+    [
+     "1628",
+     "The Petition of Right builds on it"
+    ],
+    [
+     "Today",
+     "Three of its clauses are still in force in England and Wales"
+    ]
+   ],
+   "compass": [
+    2,
+    -2
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: The Rule of Law",
+     "https://plato.stanford.edu/entries/rule-of-law/"
+    ],
+    [
+     "World History Encyclopedia: Magna Carta",
+     "https://www.worldhistory.org/Magna_Carta/"
+    ],
+    [
+     "U.S. National Archives: Magna Carta translation",
+     "https://www.archives.gov/exhibits/featured-documents/magna-carta/translation.html"
+    ]
+   ],
+   "primary": [
+    "Magna Carta, English translation (Avalon Project)",
+    "https://avalon.law.yale.edu/medieval/magframe.asp"
+   ]
+  },
+  {
+   "id": "haudenosaunee",
+   "label": "Haudenosaunee Confederacy",
+   "name": "The Haudenosaunee Confederacy (Great Law of Peace)",
+   "fam": "dem",
+   "y": 1450,
+   "ds": "1142–1450s",
+   "date": "Between 1142 and the 1450s (date debated)",
+   "range": [
+    1142,
+    1500
+   ],
+   "rangeLabel": "Founding date debated: from 1142 to the late 1400s",
+   "how": "founded",
+   "size": "s",
+   "status": "Living",
+   "story": "The Peacemaker and Hiawatha united five warring nations (Mohawk, Oneida, Onondaga, Cayuga and Seneca) under the Great Law of Peace; the Tuscarora joined in 1722. In 1988 the U.S. Congress acknowledged its influence on the American founders; historians debate how much.",
+   "ideas": "A federation of nations with a shared council; chiefs chosen and removable by clan mothers; decisions by consensus.",
+   "texts": "The Great Law of Peace (Kaianere'kó:wa), kept orally and with wampum belts",
+   "critique": "Consensus can make decisions slow; colonial wars and treaties broke much of its territory.",
+   "today": "Still exists, with its Grand Council at Onondaga; it issues its own passports",
+   "parents": [
+    [
+     "tribal",
+     "grew"
+    ]
+   ],
+   "wiki": "Great_Law_of_Peace",
+   "people": [
+    [
+     "The Peacemaker (Deganawida)",
+     "",
+     "founder"
+    ],
+    [
+     "Hiawatha (Ayenwatha)",
+     "",
+     "co-founder"
+    ],
+    [
+     "Jigonhsasee",
+     "",
+     "remembered as the Mother of Nations"
+    ]
+   ],
+   "moments": [
+    [
+     "1142–1450s",
+     "Five nations unite under the Great Law (date debated)"
+    ],
+    [
+     "1722",
+     "The Tuscarora join: the Six Nations"
+    ],
+    [
+     "1784",
+     "Many Haudenosaunee settle on the Grand River in Ontario"
+    ],
+    [
+     "1988",
+     "The U.S. Congress acknowledges its influence"
+    ],
+    [
+     "Today",
+     "The Grand Council still meets at Onondaga"
+    ]
+   ],
+   "compass": [
+    -4,
+    -5
+   ],
+   "refs": [
+    [
+     "Haudenosaunee Confederacy (official site)",
+     "https://www.haudenosauneeconfederacy.com/"
+    ]
+   ],
+   "primary": null
+  },
+  {
+   "id": "colonialism",
+   "label": "Colonial empires",
+   "name": "European colonial empires",
+   "fam": "auth",
+   "y": 1492,
+   "ds": "1490s",
+   "date": "From 1492 (Columbus) and the Portuguese voyages",
+   "end": 1975,
+   "endLabel": "the 1970s, when most colonies were independent",
+   "how": "grew",
+   "size": "none",
+   "status": "Historical",
+   "story": "From the 1490s Portugal, Spain and later Britain, France and the Netherlands built overseas empires. About 12.5 million Africans were shipped across the Atlantic as slaves, and the Berlin Conference (1884–85) carved up Africa. Most colonies won independence after 1945.",
+   "ideas": "Overseas territories ruled for the benefit of the home country, justified by trade, religion and later by racial theories.",
+   "texts": "Papal bulls dividing new lands (1493); the General Act of the Berlin Conference (1885)",
+   "critique": "Conquest, slavery, dispossession of Indigenous peoples and exploitation of colonized lands.",
+   "today": "Formally over, but its borders, languages and inequalities still shape much of the world",
+   "parents": [
+    [
+     "empire",
+     "grew"
+    ]
+   ],
+   "wiki": "Colonialism",
+   "people": [
+    [
+     "Christopher Columbus",
+     "1451–1506",
+     "voyages from 1492"
+    ],
+    [
+     "Vasco da Gama",
+     "c. 1469–1524",
+     "sea route to India, 1498"
+    ],
+    [
+     "Leopold II of Belgium",
+     "1835–1909",
+     "ruled the Congo Free State as his own"
+    ],
+    [
+     "Cecil Rhodes",
+     "1853–1902",
+     "British imperialist in southern Africa"
+    ]
+   ],
+   "moments": [
+    [
+     "1492",
+     "Columbus reaches the Caribbean"
+    ],
+    [
+     "1494",
+     "Treaty of Tordesillas divides the world between Spain and Portugal"
+    ],
+    [
+     "1600",
+     "The English East India Company is chartered"
+    ],
+    [
+     "1884–85",
+     "The Berlin Conference carves up Africa"
+    ],
+    [
+     "1960",
+     "17 African colonies become independent"
+    ]
+   ],
+   "compass": [
+    5,
+    8
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Colonialism",
+     "https://plato.stanford.edu/entries/colonialism/"
+    ]
+   ],
+   "primary": null
+  },
+  {
+   "id": "absolutism",
+   "label": "Absolutism",
+   "name": "Absolute monarchy and divine right",
+   "fam": "auth",
+   "y": 1576,
+   "ds": "1576",
+   "date": "Late 1500s–1700s (Bodin 1576; Hobbes 1651)",
+   "range": [
+    1576,
+    1715
+   ],
+   "rangeLabel": "From Bodin's theory (1576) to the end of Louis XIV's reign (1715)",
+   "how": "grew",
+   "size": "s",
+   "status": "Rare",
+   "story": "As kings gained power over feudal nobles, thinkers such as Jean Bodin (1576) argued that sovereignty must be undivided, and James I and Bossuet taught that kings rule by divine right. Louis XIV of France became its model.",
+   "ideas": "The monarch holds all sovereign power, answerable only to God; no parliament or law can bind the king.",
+   "texts": "Bodin, Six Books of the Commonwealth (1576); James I, The True Law of Free Monarchies (1598); Hobbes, Leviathan (1651)",
+   "critique": "Unchecked power; subjects have no rights the king must respect.",
+   "today": "Rare: a handful of absolute monarchies remain",
+   "parents": [
+    [
+     "kingship",
+     "grew"
+    ],
+    [
+     "feudalism",
+     "against"
+    ]
+   ],
+   "wiki": "Absolute_monarchy",
+   "people": [
+    [
+     "Jean Bodin",
+     "1530–1596",
+     "theory of undivided sovereignty"
+    ],
+    [
+     "James VI and I",
+     "1566–1625",
+     "divine right of kings"
+    ],
+    [
+     "Thomas Hobbes",
+     "1588–1679",
+     "Leviathan"
+    ],
+    [
+     "Louis XIV",
+     "1638–1715",
+     "the model absolute king"
+    ]
+   ],
+   "moments": [
+    [
+     "1576",
+     "Bodin's Six Books of the Commonwealth"
+    ],
+    [
+     "1598",
+     "James VI's The True Law of Free Monarchies"
+    ],
+    [
+     "1651",
+     "Hobbes's Leviathan"
+    ],
+    [
+     "1661",
+     "Louis XIV begins his personal rule"
+    ],
+    [
+     "1789",
+     "The French Revolution ends absolutism in France"
+    ]
+   ],
+   "compass": [
+    2,
+    9
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Hobbes's Moral and Political Philosophy",
+     "https://plato.stanford.edu/entries/hobbes-moral/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Sovereignty",
+     "https://plato.stanford.edu/entries/sovereignty/"
+    ]
+   ],
+   "primary": [
+    "Hobbes, Leviathan (Project Gutenberg)",
+    "https://www.gutenberg.org/ebooks/3207"
+   ]
+  },
+  {
+   "id": "mercantilism",
+   "label": "Mercantilism",
+   "name": "Mercantilism",
+   "fam": "econ",
+   "y": 1620,
+   "ds": "17th c.",
+   "date": "1500s–1700s; at its height in the 1600s",
+   "range": [
+    1500,
+    1776
+   ],
+   "rangeLabel": "From the 1500s to Adam Smith's attack on it (1776)",
+   "end": 1846,
+   "endLabel": "c. 1846, when Britain turned to free trade",
+   "how": "grew",
+   "size": "none",
+   "status": "Historical",
+   "story": "European states treated trade as a contest for gold: export more than you import, protect home industries with tariffs and use colonies as captive markets. France's finance minister Colbert (1660s–80s) was its best-known practitioner.",
+   "ideas": "National wealth means gold and trade surpluses; tariffs and monopolies protect home industry; colonies serve the home country.",
+   "texts": "Thomas Mun, England's Treasure by Forraign Trade (1664)",
+   "critique": "Trade is not zero-sum: Adam Smith argued that both sides gain from free exchange.",
+   "today": "Gone as a doctrine, but echoed in today's tariff and trade-surplus politics",
+   "parents": [
+    [
+     "colonialism",
+     "drew"
+    ],
+    [
+     "absolutism",
+     "drew"
+    ]
+   ],
+   "wiki": "Mercantilism",
+   "people": [
+    [
+     "Thomas Mun",
+     "1571–1641",
+     "England's Treasure by Forraign Trade"
+    ],
+    [
+     "Jean-Baptiste Colbert",
+     "1619–1683",
+     "French finance minister"
+    ],
+    [
+     "Alexander Hamilton",
+     "1755/57–1804",
+     "Report on Manufactures (1791)"
+    ]
+   ],
+   "moments": [
+    [
+     "1651",
+     "England's first Navigation Act protects English shipping"
+    ],
+    [
+     "1664",
+     "Mun's book is published"
+    ],
+    [
+     "1665",
+     "Colbert takes charge of France's finances"
+    ],
+    [
+     "1776",
+     "Adam Smith attacks the \"mercantile system\""
+    ],
+    [
+     "1846",
+     "Britain repeals the Corn Laws"
+    ]
+   ],
+   "compass": [
+    3,
+    5
+   ],
+   "refs": [
+    [
+     "Econlib: Mercantilism",
+     "https://www.econlib.org/library/Enc/Mercantilism.html"
+    ]
+   ],
+   "primary": null
+  },
+  {
+   "id": "parliament",
+   "label": "Parliamentary government",
+   "name": "Parliamentary government (the Westminster system)",
+   "fam": "dem",
+   "y": 1689,
+   "ds": "1689",
+   "date": "1265 (first elected Parliament) to 1689 (Bill of Rights)",
+   "range": [
+    1265,
+    1689
+   ],
+   "rangeLabel": "From de Montfort's Parliament (1265) to the Bill of Rights (1689)",
+   "how": "grew",
+   "size": "xl",
+   "status": "Living",
+   "story": "England's Parliament grew from royal councils: Simon de Montfort's Parliament (1265) first included elected townsmen. After the Glorious Revolution, the Bill of Rights (1689) put Parliament above the Crown, and from Walpole (1721) a prime minister governed with Parliament's confidence. Canada won responsible government in 1848.",
+   "ideas": "The elected legislature is supreme; the government sits in it and must keep its confidence; the monarch reigns but does not rule.",
+   "texts": "Bill of Rights (1689); Bagehot, The English Constitution (1867)",
+   "critique": "A majority government can concentrate power in the prime minister's office; first-past-the-post can distort results.",
+   "today": "Used by most of the world's democracies, including Canada, the UK, India, Japan and Germany",
+   "parents": [
+    [
+     "magnacarta",
+     "grew"
+    ],
+    [
+     "absolutism",
+     "against"
+    ]
+   ],
+   "wiki": "Parliamentary_system",
+   "people": [
+    [
+     "Simon de Montfort",
+     "c. 1208–1265",
+     "called the 1265 Parliament"
+    ],
+    [
+     "Robert Walpole",
+     "1676–1745",
+     "first prime minister"
+    ],
+    [
+     "Robert Baldwin",
+     "1804–1858",
+     "won responsible government in Canada"
+    ],
+    [
+     "Louis-Hippolyte LaFontaine",
+     "1807–1864",
+     "co-leader with Baldwin"
+    ],
+    [
+     "Walter Bagehot",
+     "1826–1877",
+     "The English Constitution"
+    ]
+   ],
+   "moments": [
+    [
+     "1265",
+     "De Montfort's Parliament includes elected townsmen"
+    ],
+    [
+     "1689",
+     "The Bill of Rights puts Parliament over the Crown"
+    ],
+    [
+     "1721",
+     "Walpole becomes the first prime minister"
+    ],
+    [
+     "1832",
+     "The Great Reform Act widens the vote"
+    ],
+    [
+     "1848",
+     "Responsible government in Nova Scotia and the Province of Canada"
+    ]
+   ],
+   "compass": [
+    1,
+    -2
+   ],
+   "refs": [
+    [
+     "House of Commons of Canada: the parliamentary framework",
+     "https://www.ourcommons.ca/procedure/our-procedure/parliamentaryFramework/c_g_parliamentaryframework-e.html"
+    ]
+   ],
+   "primary": [
+    "Bill of Rights 1689 (legislation.gov.uk)",
+    "https://www.legislation.gov.uk/aep/WillandMarSess2/1/2"
+   ]
+  },
+  {
+   "id": "liberalism",
+   "label": "Classical liberalism",
+   "name": "Classical liberalism",
+   "fam": "lib",
+   "y": 1689,
+   "ds": "1689",
+   "date": "1689 (Locke's Two Treatises of Government)",
+   "how": "founded",
+   "size": "xl",
+   "status": "Living",
+   "story": "John Locke argued that people have natural rights to life, liberty and property, and that government exists by their consent to protect those rights. Montesquieu (separation of powers, 1748), Adam Smith and John Stuart Mill built on it.",
+   "ideas": "Individual rights, government by consent, rule of law, separation of powers, free speech, religious toleration and free markets.",
+   "texts": "Locke, Two Treatises of Government (1689); Montesquieu, The Spirit of the Laws (1748); Mill, On Liberty (1859)",
+   "critique": "Early liberals often excluded women, the poor and colonized peoples from the rights they proclaimed, and it offers little protection against poverty.",
+   "today": "Its core underpins every liberal democracy",
+   "parents": [
+    [
+     "parliament",
+     "drew"
+    ],
+    [
+     "absolutism",
+     "against"
+    ]
+   ],
+   "wiki": "Classical_liberalism",
+   "people": [
+    [
+     "John Locke",
+     "1632–1704",
+     "natural rights and consent"
+    ],
+    [
+     "Montesquieu",
+     "1689–1755",
+     "separation of powers"
+    ],
+    [
+     "Adam Smith",
+     "1723–1790",
+     "free markets"
+    ],
+    [
+     "John Stuart Mill",
+     "1806–1873",
+     "On Liberty"
+    ]
+   ],
+   "moments": [
+    [
+     "1689",
+     "Locke's Two Treatises of Government"
+    ],
+    [
+     "1748",
+     "Montesquieu's The Spirit of the Laws"
+    ],
+    [
+     "1776",
+     "Smith's The Wealth of Nations"
+    ],
+    [
+     "1859",
+     "Mill's On Liberty"
+    ],
+    [
+     "1989",
+     "The fall of the Berlin Wall; liberal democracy spreads"
+    ]
+   ],
+   "compass": [
+    6,
+    -6
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Liberalism",
+     "https://plato.stanford.edu/entries/liberalism/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Locke's Political Philosophy",
+     "https://plato.stanford.edu/entries/locke-political/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Montesquieu",
+     "https://plato.stanford.edu/entries/montesquieu/"
+    ]
+   ],
+   "primary": [
+    "Locke, Second Treatise of Government (Project Gutenberg)",
+    "https://www.gutenberg.org/ebooks/7370"
+   ]
+  },
+  {
+   "id": "constmonarchy",
+   "label": "Constitutional monarchy",
+   "name": "Constitutional monarchy",
+   "fam": "con",
+   "y": 1689,
+   "ds": "1688–89",
+   "date": "1688–89 (the Glorious Revolution)",
+   "how": "grew",
+   "size": "l",
+   "status": "Living",
+   "story": "England's Glorious Revolution replaced James II with William and Mary, who accepted the Bill of Rights (1689) and with it a Crown answerable to law and Parliament. Over the following centuries monarchs kept their thrones but lost real power.",
+   "ideas": "A hereditary monarch as non-partisan head of state and symbol of continuity; real power with elected governments; the monarch acts on ministers' advice.",
+   "texts": "Bill of Rights (1689); Bagehot, The English Constitution (1867); Canada's Constitution Act, 1867",
+   "critique": "Inherited office clashes with equality, it costs public money, and some see it as a colonial relic.",
+   "today": "Dozens of countries, including Canada, the UK, Australia, Japan, Spain, Sweden and the Netherlands",
+   "parents": [
+    [
+     "kingship",
+     "grew"
+    ],
+    [
+     "parliament",
+     "drew"
+    ]
+   ],
+   "wiki": "Constitutional_monarchy",
+   "compass": [
+    1,
+    1
+   ],
+   "refs": [
+    [
+     "House of Commons of Canada: the parliamentary framework",
+     "https://www.ourcommons.ca/procedure/our-procedure/parliamentaryFramework/c_g_parliamentaryframework-e.html"
+    ]
+   ],
+   "primary": [
+    "Constitution Act, 1867 (Justice Laws, Government of Canada)",
+    "https://laws-lois.justice.gc.ca/eng/const/page-1.html"
+   ],
+   "people": [
+    [
+     "William III and Mary II",
+     "r. from 1689",
+     "accepted the Bill of Rights"
+    ],
+    [
+     "Queen Victoria",
+     "1819–1901",
+     "model of the modern constitutional monarch"
+    ],
+    [
+     "Walter Bagehot",
+     "1826–1877",
+     "its \"dignified\" and \"efficient\" parts"
+    ],
+    [
+     "Elizabeth II",
+     "1926–2022",
+     "Queen of Canada for 70 years"
+    ]
+   ],
+   "moments": [
+    [
+     "1689",
+     "The Bill of Rights limits the Crown"
+    ],
+    [
+     "1867",
+     "Canada is created as a constitutional monarchy"
+    ],
+    [
+     "1931",
+     "The Statute of Westminster gives the dominions their own Crowns in practice"
+    ],
+    [
+     "1978",
+     "Spain's new constitution keeps a constitutional monarch"
+    ],
+    [
+     "2022",
+     "Charles III succeeds Elizabeth II"
+    ]
+   ]
+  },
+  {
+   "id": "laissezfaire",
+   "label": "Free-market economics",
+   "name": "Free-market economics (laissez-faire)",
+   "fam": "econ",
+   "y": 1776,
+   "ds": "1776",
+   "date": "1776 (Adam Smith's The Wealth of Nations)",
+   "how": "founded",
+   "size": "l",
+   "status": "Living",
+   "story": "Adam Smith argued that markets guided by self-interest and competition, the 'invisible hand', create more wealth than state direction. David Ricardo (1817) added the case for free trade, and Britain adopted it in 1846.",
+   "ideas": "Free markets, free trade, competition and limited government interference in the economy.",
+   "texts": "Smith, The Wealth of Nations (1776); Ricardo, Principles of Political Economy (1817)",
+   "critique": "Left alone, markets produced child labour, slums, monopolies and booms and busts.",
+   "today": "The basis of mainstream economics; the debate is over how much to regulate it",
+   "parents": [
+    [
+     "liberalism",
+     "grew"
+    ],
+    [
+     "mercantilism",
+     "against"
+    ]
+   ],
+   "wiki": "Laissez-faire",
+   "people": [
+    [
+     "François Quesnay",
+     "1694–1774",
+     "Physiocrat"
+    ],
+    [
+     "Adam Smith",
+     "1723–1790",
+     "The Wealth of Nations"
+    ],
+    [
+     "David Ricardo",
+     "1772–1823",
+     "comparative advantage"
+    ],
+    [
+     "Richard Cobden",
+     "1804–1865",
+     "led the campaign for free trade"
+    ]
+   ],
+   "moments": [
+    [
+     "1776",
+     "The Wealth of Nations"
+    ],
+    [
+     "1817",
+     "Ricardo's Principles of Political Economy"
+    ],
+    [
+     "1846",
+     "Britain repeals the Corn Laws"
+    ],
+    [
+     "1860",
+     "Cobden–Chevalier free-trade treaty with France"
+    ],
+    [
+     "1929",
+     "The Great Depression shakes faith in unregulated markets"
+    ]
+   ],
+   "compass": [
+    9,
+    -4
+   ],
+   "refs": [
+    [
+     "Econlib: Adam Smith",
+     "https://www.econlib.org/library/Enc/bios/Smith.html"
+    ]
+   ],
+   "primary": [
+    "Smith, The Wealth of Nations (Project Gutenberg)",
+    "https://www.gutenberg.org/ebooks/3300"
+   ]
+  },
+  {
+   "id": "republic",
+   "label": "Constitutional republic",
+   "name": "The constitutional republic (the American model)",
+   "fam": "dem",
+   "y": 1787,
+   "ds": "1776–1787",
+   "date": "1776 (Declaration of Independence); 1787 (Constitution)",
+   "range": [
+    1776,
+    1791
+   ],
+   "rangeLabel": "From the Declaration (1776) to the Bill of Rights (1791)",
+   "how": "founded",
+   "size": "l",
+   "status": "Living",
+   "story": "American colonists declared independence in Lockean terms in 1776. In 1787 the founders wrote a constitution that split power between a president, a two-chamber Congress and courts, and between the nation and the states; the Bill of Rights followed in 1791.",
+   "ideas": "A written constitution; separation of powers with checks and balances; federalism; an elected president; rights the government cannot override.",
+   "texts": "Declaration of Independence (1776); U.S. Constitution (1787); The Federalist Papers (1787–88)",
+   "critique": "It began by accepting slavery; it can produce gridlock, and the Electoral College can elect the popular-vote loser.",
+   "today": "The oldest national written constitution still in use; presidential republics across the Americas copied it",
+   "parents": [
+    [
+     "roman",
+     "drew"
+    ],
+    [
+     "liberalism",
+     "drew"
+    ],
+    [
+     "parliament",
+     "drew"
+    ]
+   ],
+   "wiki": "Republicanism_in_the_United_States",
+   "people": [
+    [
+     "George Washington",
+     "1732–1799",
+     "first president"
+    ],
+    [
+     "Thomas Jefferson",
+     "1743–1826",
+     "Declaration of Independence"
+    ],
+    [
+     "James Madison",
+     "1751–1836",
+     "Constitution and Bill of Rights"
+    ],
+    [
+     "Alexander Hamilton",
+     "1755/57–1804",
+     "The Federalist Papers"
+    ]
+   ],
+   "moments": [
+    [
+     "1776",
+     "Declaration of Independence"
+    ],
+    [
+     "1787",
+     "The Constitution is written in Philadelphia"
+    ],
+    [
+     "1789",
+     "Washington becomes president"
+    ],
+    [
+     "1791",
+     "The Bill of Rights is ratified"
+    ],
+    [
+     "1865",
+     "The 13th Amendment abolishes slavery"
+    ]
+   ],
+   "compass": [
+    4,
+    -4
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Republicanism",
+     "https://plato.stanford.edu/entries/republicanism/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Federalism",
+     "https://plato.stanford.edu/entries/federalism/"
+    ],
+    [
+     "U.S. National Archives: America's Founding Documents",
+     "https://www.archives.gov/founding-docs"
+    ]
+   ],
+   "primary": [
+    "U.S. Constitution, transcript (National Archives)",
+    "https://www.archives.gov/founding-docs/constitution-transcript"
+   ]
+  },
+  {
+   "id": "abolitionism",
+   "label": "Abolitionism",
+   "name": "Abolitionism",
+   "fam": "rights",
+   "y": 1787,
+   "ds": "1787",
+   "date": "1787 (London's abolition society)",
+   "how": "grew",
+   "size": "s",
+   "status": "Goal largely achieved",
+   "story": "Quakers, evangelicals, freed slaves and Enlightenment thinkers campaigned against slavery. Britain banned the slave trade in 1807 and slavery in most colonies in 1833; the U.S. ended it in 1865 and Brazil, the last in the Americas, in 1888.",
+   "ideas": "No human being can be property; slavery and the slave trade must be abolished.",
+   "texts": "Olaudah Equiano's autobiography (1789); Frederick Douglass's Narrative (1845); Uncle Tom's Cabin (1852)",
+   "critique": "Abolition often came with compensation for slave owners, not the enslaved, and was followed by segregation.",
+   "today": "Slavery is illegal everywhere (Mauritania was last, in 1981), yet about 50 million people were in modern slavery in 2021",
+   "parents": [
+    [
+     "liberalism",
+     "drew"
+    ]
+   ],
+   "wiki": "Abolitionism",
+   "people": [
+    [
+     "Olaudah Equiano",
+     "c. 1745–1797",
+     "freed slave and author"
+    ],
+    [
+     "William Wilberforce",
+     "1759–1833",
+     "led the campaign in Parliament"
+    ],
+    [
+     "Frederick Douglass",
+     "c. 1818–1895",
+     "escaped slavery; orator"
+    ],
+    [
+     "Harriet Tubman",
+     "c. 1822–1913",
+     "Underground Railroad"
+    ]
+   ],
+   "moments": [
+    [
+     "1787",
+     "Abolition society founded in London"
+    ],
+    [
+     "1793",
+     "Upper Canada's Act Against Slavery limits slavery"
+    ],
+    [
+     "1807",
+     "Britain bans the slave trade"
+    ],
+    [
+     "1833",
+     "Slavery abolished in most of the British Empire"
+    ],
+    [
+     "1865",
+     "The 13th Amendment ends slavery in the U.S."
+    ]
+   ],
+   "compass": [
+    -1,
+    -6
+   ],
+   "refs": [],
+   "primary": [
+    "Equiano, The Interesting Narrative (1789) (Project Gutenberg)",
+    "https://www.gutenberg.org/ebooks/15399"
+   ]
+  },
+  {
+   "id": "frenchrev",
+   "label": "French Revolution",
+   "name": "Revolutionary republicanism (the French Revolution)",
+   "fam": "dem",
+   "y": 1789,
+   "ds": "1789",
+   "date": "1789, France",
+   "how": "grew",
+   "size": "m",
+   "status": "Living",
+   "story": "In 1789 the French overthrew absolute monarchy and proclaimed the Declaration of the Rights of Man. In the new Assembly, supporters of the king sat on the right and radicals on the left, which gave us 'left' and 'right'. The revolution turned to terror (1793–94) and ended with Napoleon (1799).",
+   "ideas": "Popular sovereignty: the nation, not the king, is sovereign; liberty, equality, fraternity; equal citizens under one law.",
+   "texts": "Declaration of the Rights of Man and of the Citizen (1789); Rousseau, The Social Contract (1762); Sieyès, What Is the Third Estate? (1789)",
+   "critique": "It produced the Terror and ended in a military dictatorship; conservatives saw it as proof that abstract theory destroys societies.",
+   "today": "France's republic still uses its motto; the left–right spectrum came from its seating plan",
+   "parents": [
+    [
+     "liberalism",
+     "drew"
+    ],
+    [
+     "republic",
+     "drew"
+    ],
+    [
+     "absolutism",
+     "against"
+    ]
+   ],
+   "wiki": "French_Revolution",
+   "people": [
+    [
+     "Abbé Sieyès",
+     "1748–1836",
+     "What Is the Third Estate?"
+    ],
+    [
+     "Lafayette",
+     "1757–1834",
+     "drafted the Declaration of Rights"
+    ],
+    [
+     "Maximilien Robespierre",
+     "1758–1794",
+     "led the Terror"
+    ],
+    [
+     "Napoleon Bonaparte",
+     "1769–1821",
+     "ended the revolution with his coup"
+    ]
+   ],
+   "moments": [
+    [
+     "1789",
+     "The Bastille falls (14 July); the Declaration of the Rights of Man (26 August)"
+    ],
+    [
+     "1792",
+     "The monarchy is abolished; the First Republic"
+    ],
+    [
+     "1793–94",
+     "The Terror"
+    ],
+    [
+     "1799",
+     "Napoleon's coup"
+    ],
+    [
+     "1848",
+     "The Second Republic brings universal male suffrage"
+    ]
+   ],
+   "compass": [
+    -3,
+    -1
+   ],
+   "refs": [
+    [
+     "Liberty, Equality, Fraternity: Exploring the French Revolution (George Mason University)",
+     "https://revolution.chnm.org/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Jean Jacques Rousseau",
+     "https://plato.stanford.edu/entries/rousseau/"
+    ]
+   ],
+   "primary": [
+    "Declaration of the Rights of Man and of the Citizen (Avalon Project)",
+    "https://avalon.law.yale.edu/18th_century/rightsof.asp"
+   ]
+  },
+  {
+   "id": "utilitarianism",
+   "label": "Utilitarianism",
+   "name": "Utilitarianism",
+   "fam": "lib",
+   "y": 1789,
+   "ds": "1789",
+   "date": "1789 (Bentham's Introduction to the Principles of Morals and Legislation)",
+   "how": "founded",
+   "size": "m",
+   "status": "Living",
+   "story": "Jeremy Bentham argued that every law should face one test: does it produce the greatest happiness for the greatest number? His followers, the 'philosophic radicals', pushed for reform of prisons, the vote and the law, and John Stuart Mill refined the idea.",
+   "ideas": "Judge laws and policies by their consequences for human well-being; reform institutions on evidence rather than tradition.",
+   "texts": "Bentham, An Introduction to the Principles of Morals and Legislation (1789); Mill, Utilitarianism (1861)",
+   "critique": "It can justify sacrificing individuals or minorities for the majority, and happiness is hard to measure.",
+   "today": "Lives on in cost–benefit analysis, public health policy and effective altruism",
+   "parents": [
+    [
+     "liberalism",
+     "drew"
+    ]
+   ],
+   "wiki": "Utilitarianism",
+   "compass": [
+    2,
+    -3
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: The History of Utilitarianism",
+     "https://plato.stanford.edu/entries/utilitarianism-history/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Jeremy Bentham",
+     "https://plato.stanford.edu/entries/bentham/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: John Stuart Mill",
+     "https://plato.stanford.edu/entries/mill/"
+    ]
+   ],
+   "primary": [
+    "Mill, Utilitarianism (Project Gutenberg)",
+    "https://www.gutenberg.org/ebooks/11224"
+   ],
+   "people": [
+    [
+     "Jeremy Bentham",
+     "1748–1832",
+     "founder"
+    ],
+    [
+     "James Mill",
+     "1773–1836",
+     "philosophic radical"
+    ],
+    [
+     "John Stuart Mill",
+     "1806–1873",
+     "refined it"
+    ],
+    [
+     "Henry Sidgwick",
+     "1838–1900",
+     "The Methods of Ethics"
+    ]
+   ],
+   "moments": [
+    [
+     "1789",
+     "Bentham's Principles"
+    ],
+    [
+     "1791",
+     "Bentham publishes his Panopticon prison design"
+    ],
+    [
+     "1832",
+     "The Great Reform Act, a reform the radicals had campaigned for"
+    ],
+    [
+     "1861",
+     "Mill's Utilitarianism"
+    ]
+   ]
+  },
+  {
+   "id": "conservatism",
+   "label": "Conservatism",
+   "name": "Conservatism",
+   "fam": "con",
+   "y": 1790,
+   "ds": "1790",
+   "date": "1790 (Burke's Reflections on the Revolution in France)",
+   "how": "founded",
+   "size": "l",
+   "status": "Living",
+   "story": "Edmund Burke, an Anglo-Irish politician, attacked the French Revolution for tearing up institutions that had grown over centuries. Later conservatives such as Disraeli added 'one-nation' social reform, and in Canada the 'Red Tory' tradition.",
+   "ideas": "Change gradually; respect tradition, institutions, family, religion and order; distrust grand plans to remake society.",
+   "texts": "Burke, Reflections on the Revolution in France (1790); Oakeshott, Rationalism in Politics (1962)",
+   "critique": "Can defend unjust traditions and slow necessary reform.",
+   "today": "Major parties across the democratic world, including Canada's Conservatives and the U.S. Republicans",
+   "parents": [
+    [
+     "frenchrev",
+     "against"
+    ],
+    [
+     "parliament",
+     "drew"
+    ]
+   ],
+   "wiki": "Conservatism",
+   "people": [
+    [
+     "Edmund Burke",
+     "1729–1797",
+     "founder"
+    ],
+    [
+     "Benjamin Disraeli",
+     "1804–1881",
+     "one-nation Toryism"
+    ],
+    [
+     "John A. Macdonald",
+     "1815–1891",
+     "Canada's first prime minister"
+    ],
+    [
+     "Michael Oakeshott",
+     "1901–1990",
+     "philosopher"
+    ],
+    [
+     "Russell Kirk",
+     "1918–1994",
+     "The Conservative Mind"
+    ]
+   ],
+   "moments": [
+    [
+     "1790",
+     "Burke's Reflections"
+    ],
+    [
+     "1834",
+     "Peel's Tamworth Manifesto: the British Conservative Party takes shape"
+    ],
+    [
+     "1867",
+     "Macdonald's Conservatives lead Confederation"
+    ],
+    [
+     "1953",
+     "Kirk's The Conservative Mind"
+    ],
+    [
+     "1979–81",
+     "Thatcher and Reagan reshape conservatism"
+    ]
+   ],
+   "compass": [
+    4,
+    4
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Conservatism",
+     "https://plato.stanford.edu/entries/conservatism/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Edmund Burke",
+     "https://plato.stanford.edu/entries/burke/"
+    ]
+   ],
+   "primary": [
+    "Burke, Reflections on the Revolution in France, in his Works vol. 3 (Project Gutenberg)",
+    "https://www.gutenberg.org/ebooks/15679"
+   ]
+  },
+  {
+   "id": "nationalism",
+   "label": "Nationalism",
+   "name": "Nationalism",
+   "fam": "nat",
+   "y": 1800,
+   "ds": "c. 1800",
+   "date": "Late 1700s–1800s",
+   "how": "grew",
+   "size": "xl",
+   "status": "Living",
+   "story": "The French Revolution made 'the nation' sovereign, and Napoleon's wars spread the idea. Thinkers such as Herder and Fichte taught that each people has its own culture and should have its own state; Italy (1861) and Germany (1871) unified on that basis.",
+   "ideas": "Humanity is divided into nations; each nation should govern itself; loyalty to the nation comes first.",
+   "texts": "Herder (1770s–90s); Fichte, Addresses to the German Nation (1808); Mazzini (1830s–60s)",
+   "critique": "Can turn into hostility to minorities and neighbours; it fuelled both world wars.",
+   "today": "The world is organized into nation-states: 193 UN members",
+   "parents": [
+    [
+     "frenchrev",
+     "grew"
+    ]
+   ],
+   "wiki": "Nationalism",
+   "people": [
+    [
+     "Johann Gottfried Herder",
+     "1744–1803",
+     "each people has its own culture"
+    ],
+    [
+     "Johann Gottlieb Fichte",
+     "1762–1814",
+     "Addresses to the German Nation"
+    ],
+    [
+     "Giuseppe Mazzini",
+     "1805–1872",
+     "Italian unification"
+    ],
+    [
+     "Otto von Bismarck",
+     "1815–1898",
+     "unified Germany"
+    ]
+   ],
+   "moments": [
+    [
+     "1789",
+     "The Revolution proclaims the sovereign nation"
+    ],
+    [
+     "1808",
+     "Fichte's Addresses to the German Nation"
+    ],
+    [
+     "1848",
+     "The \"Springtime of Peoples\" revolutions"
+    ],
+    [
+     "1861 / 1871",
+     "Italy and Germany unify"
+    ],
+    [
+     "1918",
+     "Wilson's call for self-determination; empires break up"
+    ]
+   ],
+   "compass": [
+    1,
+    4
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Nationalism",
+     "https://plato.stanford.edu/entries/nationalism/"
+    ]
+   ],
+   "primary": null
+  },
+  {
+   "id": "utopian",
+   "label": "Utopian socialism",
+   "name": "Utopian socialism",
+   "fam": "left",
+   "y": 1820,
+   "ds": "1820s",
+   "date": "1810s–1840s (Saint-Simon, Fourier, Owen)",
+   "end": 1850,
+   "endLabel": "c. 1850, as its model communities folded",
+   "how": "founded",
+   "size": "none",
+   "status": "Historical",
+   "story": "Early industrial misery led thinkers such as Henri de Saint-Simon, Charles Fourier and Robert Owen to design cooperative societies; Owen founded New Harmony, Indiana, in 1825. Marx and Engels later called them 'utopian'.",
+   "ideas": "Replace competition with cooperation; model communities where work and wealth are shared.",
+   "texts": "Owen, A New View of Society (1813); Fourier's works on phalansteries",
+   "critique": "Its communities mostly collapsed within a few years.",
+   "today": "Gone as a movement; cooperatives and intentional communities carry on its spirit",
+   "parents": [
+    [
+     "frenchrev",
+     "drew"
+    ]
+   ],
+   "wiki": "Utopian_socialism",
+   "people": [
+    [
+     "Henri de Saint-Simon",
+     "1760–1825",
+     "industrial society run by experts"
+    ],
+    [
+     "Robert Owen",
+     "1771–1858",
+     "New Lanark and New Harmony"
+    ],
+    [
+     "Charles Fourier",
+     "1772–1837",
+     "cooperative \"phalanx\" communities"
+    ],
+    [
+     "Étienne Cabet",
+     "1788–1856",
+     "Icarian communities"
+    ]
+   ],
+   "moments": [
+    [
+     "1800",
+     "Owen takes over the New Lanark mills"
+    ],
+    [
+     "1813",
+     "Owen's A New View of Society"
+    ],
+    [
+     "1825",
+     "New Harmony founded in Indiana"
+    ],
+    [
+     "1848",
+     "The Communist Manifesto dismisses them as \"utopian\""
+    ]
+   ],
+   "compass": [
+    -8,
+    -3
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Socialism",
+     "https://plato.stanford.edu/entries/socialism/"
+    ]
+   ],
+   "primary": null
+  },
+  {
+   "id": "anarchism",
+   "label": "Anarchism",
+   "name": "Anarchism",
+   "fam": "left",
+   "y": 1840,
+   "ds": "1840",
+   "date": "1840 (Proudhon's What Is Property?)",
+   "how": "founded",
+   "size": "s",
+   "status": "Living",
+   "story": "Pierre-Joseph Proudhon was the first to call himself an anarchist (1840). Bakunin split with Marx in 1872 over whether workers should seize the state or abolish it; anarchists briefly ran parts of Spain in 1936.",
+   "ideas": "Abolish the state and other forced hierarchies; organize society through voluntary cooperation and mutual aid.",
+   "texts": "Proudhon, What Is Property? (1840); Kropotkin, Mutual Aid (1902); Emma Goldman's essays",
+   "critique": "No lasting large-scale example; critics say a power vacuum is filled by the strongest.",
+   "today": "Small, but influential in protest movements and ideas of leaderless organizing",
+   "parents": [
+    [
+     "utopian",
+     "drew"
+    ],
+    [
+     "liberalism",
+     "drew"
+    ]
+   ],
+   "wiki": "Anarchism",
+   "people": [
+    [
+     "Pierre-Joseph Proudhon",
+     "1809–1865",
+     "first self-described anarchist"
+    ],
+    [
+     "Mikhail Bakunin",
+     "1814–1876",
+     "Marx's rival in the First International"
+    ],
+    [
+     "Peter Kropotkin",
+     "1842–1921",
+     "Mutual Aid"
+    ],
+    [
+     "Emma Goldman",
+     "1869–1940",
+     "activist and writer"
+    ]
+   ],
+   "moments": [
+    [
+     "1840",
+     "Proudhon's What Is Property?"
+    ],
+    [
+     "1872",
+     "Anarchists expelled from the First International"
+    ],
+    [
+     "1886",
+     "The Haymarket affair in Chicago"
+    ],
+    [
+     "1936",
+     "Anarchists run much of Catalonia in the Spanish Civil War"
+    ],
+    [
+     "2011",
+     "The Occupy movement's leaderless organizing"
+    ]
+   ],
+   "compass": [
+    -8,
+    -10
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Anarchism",
+     "https://plato.stanford.edu/entries/anarchism/"
+    ]
+   ],
+   "primary": [
+    "Proudhon, What Is Property? (Project Gutenberg)",
+    "https://www.gutenberg.org/ebooks/360"
+   ]
+  },
+  {
+   "id": "marxism",
+   "label": "Marxism",
+   "name": "Marxism",
+   "fam": "left",
+   "y": 1848,
+   "ds": "1848",
+   "date": "1848 (The Communist Manifesto)",
+   "how": "founded",
+   "size": "l",
+   "status": "Living",
+   "story": "Karl Marx and Friedrich Engels argued that history is driven by class struggle and that capitalism would be overthrown by its workers, leading to a classless society. Capital (1867) set out Marx's critique of the economy.",
+   "ideas": "Class struggle; workers are exploited under capitalism; the means of production should be owned in common.",
+   "texts": "The Communist Manifesto (1848); Capital, vol. 1 (1867)",
+   "critique": "Its predictions of revolution in advanced countries failed, and states built in its name became dictatorships.",
+   "today": "Shapes socialist and communist parties and much academic thought",
+   "parents": [
+    [
+     "utopian",
+     "drew"
+    ],
+    [
+     "laissezfaire",
+     "against"
+    ]
+   ],
+   "wiki": "Marxism",
+   "people": [
+    [
+     "Karl Marx",
+     "1818–1883",
+     "founder"
+    ],
+    [
+     "Friedrich Engels",
+     "1820–1895",
+     "co-founder"
+    ],
+    [
+     "Karl Kautsky",
+     "1854–1938",
+     "leading theorist after Marx"
+    ],
+    [
+     "Rosa Luxemburg",
+     "1871–1919",
+     "revolutionary theorist"
+    ]
+   ],
+   "moments": [
+    [
+     "1848",
+     "The Communist Manifesto"
+    ],
+    [
+     "1864",
+     "The First International is founded"
+    ],
+    [
+     "1867",
+     "Capital, volume 1"
+    ],
+    [
+     "1889",
+     "The Second International is founded"
+    ],
+    [
+     "1917",
+     "The Bolsheviks take power in Marx's name"
+    ]
+   ],
+   "compass": [
+    -9,
+    2
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Karl Marx",
+     "https://plato.stanford.edu/entries/marx/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Socialism",
+     "https://plato.stanford.edu/entries/socialism/"
+    ]
+   ],
+   "primary": [
+    "The Communist Manifesto (Marxists Internet Archive)",
+    "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/"
+   ]
+  },
+  {
+   "id": "feminism",
+   "label": "Feminism",
+   "name": "Feminism",
+   "fam": "rights",
+   "y": 1848,
+   "ds": "1848",
+   "date": "1792 (Wollstonecraft); 1848 (Seneca Falls)",
+   "range": [
+    1792,
+    1848
+   ],
+   "rangeLabel": "From Wollstonecraft's Vindication (1792) to the Seneca Falls Convention (1848)",
+   "how": "grew",
+   "size": "l",
+   "status": "Living",
+   "story": "Mary Wollstonecraft demanded education and rights for women in 1792. The Seneca Falls Convention (1848), organized largely by abolitionists, launched the suffrage campaign; New Zealand was the first country to give women the vote (1893).",
+   "ideas": "Equal rights for women: the vote, education, work, property and equal treatment in law and society.",
+   "texts": "Wollstonecraft, A Vindication of the Rights of Woman (1792); the Declaration of Sentiments (1848); de Beauvoir, The Second Sex (1949)",
+   "critique": "Early movements often excluded women of colour and working women; later debates divide feminists themselves.",
+   "today": "Women vote in every country with elections; debates continue over pay, representation and other issues",
+   "parents": [
+    [
+     "liberalism",
+     "drew"
+    ],
+    [
+     "abolitionism",
+     "drew"
+    ]
+   ],
+   "wiki": "Feminism",
+   "people": [
+    [
+     "Mary Wollstonecraft",
+     "1759–1797",
+     "A Vindication of the Rights of Woman"
+    ],
+    [
+     "Elizabeth Cady Stanton",
+     "1815–1902",
+     "Seneca Falls Convention"
+    ],
+    [
+     "Emmeline Pankhurst",
+     "1858–1928",
+     "British suffragettes"
+    ],
+    [
+     "Nellie McClung",
+     "1873–1951",
+     "Canadian suffragist; the Persons Case"
+    ],
+    [
+     "Simone de Beauvoir",
+     "1908–1986",
+     "The Second Sex"
+    ]
+   ],
+   "moments": [
+    [
+     "1792",
+     "Wollstonecraft's Vindication"
+    ],
+    [
+     "1848",
+     "The Seneca Falls Convention"
+    ],
+    [
+     "1893",
+     "New Zealand gives women the vote"
+    ],
+    [
+     "1918",
+     "Most Canadian women get the federal vote"
+    ],
+    [
+     "1929",
+     "The Persons Case: Canadian women are \"persons\""
+    ]
+   ],
+   "compass": [
+    -3,
+    -5
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Feminist Political Philosophy",
+     "https://plato.stanford.edu/entries/feminism-political/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Mary Wollstonecraft",
+     "https://plato.stanford.edu/entries/wollstonecraft/"
+    ],
+    [
+     "U.S. National Park Service: the Declaration of Sentiments (1848)",
+     "https://www.nps.gov/wori/learn/historyculture/declaration-of-sentiments.htm"
+    ]
+   ],
+   "primary": [
+    "Wollstonecraft, A Vindication of the Rights of Woman (Project Gutenberg)",
+    "https://www.gutenberg.org/ebooks/3420"
+   ]
+  },
+  {
+   "id": "christiansocialism",
+   "label": "Christian socialism",
+   "name": "Christian socialism and the Social Gospel",
+   "fam": "faith",
+   "y": 1848,
+   "ds": "1848",
+   "date": "1848 (Maurice and Kingsley in England); the Social Gospel, 1880s–1920s",
+   "range": [
+    1848,
+    1920
+   ],
+   "rangeLabel": "From the Christian Socialists (1848) to the Social Gospel's peak (1920s)",
+   "how": "grew",
+   "size": "s",
+   "status": "Living",
+   "story": "In 1848 the Anglican thinkers F. D. Maurice and Charles Kingsley argued that Christianity demands cooperation, not cut-throat competition. In North America the Social Gospel applied the same idea to slums and labour; in Canada it shaped the CCF, whose leaders included the ministers J. S. Woodsworth and Tommy Douglas.",
+   "ideas": "The Gospel requires social justice: cooperation, fair wages, care for the poor and public action against poverty.",
+   "texts": "Kingsley, Alton Locke (1850); Rauschenbusch, Christianity and the Social Crisis (1907); the CCF's Regina Manifesto (1933)",
+   "critique": "Secular socialists found it too moderate; conservative Christians said it put politics before faith.",
+   "today": "Influences the Christian left and the CCF–NDP tradition in Canada",
+   "parents": [
+    [
+     "utopian",
+     "drew"
+    ]
+   ],
+   "wiki": "Christian_socialism",
+   "compass": [
+    -6,
+    0
+   ],
+   "refs": [],
+   "primary": [
+    "Kingsley, Alton Locke (1850), a Christian Socialist novel (Project Gutenberg)",
+    "https://www.gutenberg.org/ebooks/8374"
+   ],
+   "people": [
+    [
+     "F. D. Maurice",
+     "1805–1872",
+     "Anglican founder"
+    ],
+    [
+     "Charles Kingsley",
+     "1819–1875",
+     "novelist and reformer"
+    ],
+    [
+     "Walter Rauschenbusch",
+     "1861–1918",
+     "Social Gospel theologian"
+    ],
+    [
+     "J. S. Woodsworth",
+     "1874–1942",
+     "Methodist minister; first CCF leader"
+    ],
+    [
+     "Tommy Douglas",
+     "1904–1986",
+     "Baptist minister; CCF premier of Saskatchewan"
+    ]
+   ],
+   "moments": [
+    [
+     "1848",
+     "The Christian Socialist movement begins in London"
+    ],
+    [
+     "1907",
+     "Rauschenbusch's Christianity and the Social Crisis"
+    ],
+    [
+     "1919",
+     "The Winnipeg General Strike; Woodsworth is arrested"
+    ],
+    [
+     "1932–33",
+     "The CCF is founded; the Regina Manifesto"
+    ],
+    [
+     "1962",
+     "Saskatchewan's CCF government launches medicare"
+    ]
+   ]
+  },
+  {
+   "id": "directdemocracy",
+   "label": "Direct democracy",
+   "name": "Direct democracy (the Swiss model)",
+   "fam": "dem",
+   "y": 1874,
+   "ds": "1874",
+   "date": "Switzerland: 1848 constitution; referendum 1874; initiative 1891",
+   "range": [
+    1848,
+    1891
+   ],
+   "rangeLabel": "From the federal constitution (1848) to the popular initiative (1891)",
+   "how": "grew",
+   "size": "s",
+   "status": "Living",
+   "story": "Switzerland's federal constitution (1848) was approved by the voters; the optional referendum followed in 1874 and the popular initiative in 1891, letting citizens challenge laws and propose constitutional changes themselves. Swiss voters now decide several national questions a year.",
+   "ideas": "Citizens vote directly on laws and constitutional changes through referendums and citizen-initiated proposals, alongside elected parliaments.",
+   "texts": "Swiss Federal Constitution (1848; revised 1874 and 1999)",
+   "critique": "Low turnout, complex questions and well-funded campaigns can sway results, and minorities can be outvoted.",
+   "today": "Switzerland, many U.S. states (ballot initiatives since South Dakota in 1898) and referendums worldwide",
+   "parents": [
+    [
+     "athens",
+     "drew"
+    ]
+   ],
+   "wiki": "Direct_democracy",
+   "compass": [
+    0,
+    -6
+   ],
+   "refs": [
+    [
+     "ch.ch (Swiss authorities): political rights",
+     "https://www.ch.ch/en/political-system/political-rights/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Jean Jacques Rousseau",
+     "https://plato.stanford.edu/entries/rousseau/"
+    ]
+   ],
+   "primary": [
+    "Swiss Federal Constitution (English, Fedlex)",
+    "https://www.fedlex.admin.ch/eli/cc/1999/404/en"
+   ],
+   "people": [
+    [
+     "Jean-Jacques Rousseau",
+     "1712–1778",
+     "Geneva-born; argued sovereignty cannot be represented"
+    ],
+    [
+     "William S. U'Ren",
+     "1859–1949",
+     "brought the initiative to Oregon (1902)"
+    ]
+   ],
+   "moments": [
+    [
+     "1848",
+     "The Swiss federal constitution is approved by referendum"
+    ],
+    [
+     "1874",
+     "Optional referendum on federal laws"
+    ],
+    [
+     "1891",
+     "Popular initiative for constitutional amendments"
+    ],
+    [
+     "1902",
+     "Oregon adopts the initiative and referendum"
+    ],
+    [
+     "1971",
+     "Swiss men vote to give women the federal vote"
+    ]
+   ]
+  },
+  {
+   "id": "populism",
+   "label": "Populism",
+   "name": "Populism",
+   "fam": "nat",
+   "y": 1892,
+   "ds": "1892",
+   "date": "1890s (the U.S. People's Party); Russia's Narodniks, 1860s–70s",
+   "how": "grew",
+   "size": "l",
+   "status": "Living",
+   "story": "The word comes from the U.S. People's Party (1892), farmers revolting against banks and railroads. Since then populism has appeared on the left and the right, from Perón in Argentina to Chávez, Orbán and Trump.",
+   "ideas": "Politics as 'the pure people against a corrupt elite'; a strong leader who claims to speak for the people. More a style than a full ideology.",
+   "texts": "The People's Party's Omaha Platform (1892)",
+   "critique": "Tends to weaken courts, the press and other checks on power, and to treat opponents as enemies of the people.",
+   "today": "In government or opposition in many democracies, on both left and right",
+   "parents": [],
+   "wiki": "Populism",
+   "people": [
+    [
+     "Ignatius Donnelly",
+     "1831–1901",
+     "wrote the Omaha Platform's preamble"
+    ],
+    [
+     "William Jennings Bryan",
+     "1860–1925",
+     "\"Cross of Gold\" speech (1896)"
+    ],
+    [
+     "Juan Perón",
+     "1895–1974",
+     "Argentina's populist president"
+    ],
+    [
+     "Cas Mudde",
+     "b. 1967",
+     "political scientist whose definition is the most widely used"
+    ]
+   ],
+   "moments": [
+    [
+     "1874",
+     "Russia's Narodniks \"go to the people\""
+    ],
+    [
+     "1892",
+     "The People's Party adopts the Omaha Platform"
+    ],
+    [
+     "1896",
+     "Bryan's \"Cross of Gold\" speech"
+    ],
+    [
+     "1946",
+     "Perón is elected in Argentina"
+    ],
+    [
+     "2016",
+     "Brexit and Trump"
+    ]
+   ],
+   "compass": [
+    -1,
+    3
+   ],
+   "refs": [],
+   "primary": [
+    "The Omaha Platform of the People's Party, 1892 (Wikisource)",
+    "https://en.wikisource.org/wiki/Omaha_Platform"
+   ]
+  },
+  {
+   "id": "socialdem",
+   "label": "Social democracy",
+   "name": "Social democracy",
+   "fam": "left",
+   "y": 1895,
+   "ds": "1890s",
+   "date": "1890s (Bernstein and the German SPD)",
+   "how": "grew",
+   "size": "l",
+   "status": "Living",
+   "story": "Socialists such as Eduard Bernstein argued that workers could win socialism's goals through elections and reform instead of revolution. Sweden's Social Democrats governed for 44 years in a row (1932–1976), building the Nordic welfare state.",
+   "ideas": "A market economy plus a strong, universal welfare state, unions and progressive taxes, reached through democracy.",
+   "texts": "Bernstein, Evolutionary Socialism (1899); Crosland, The Future of Socialism (1956)",
+   "critique": "High taxes and spending; the left sees it as giving up on socialism.",
+   "today": "Major parties across Europe, Labour parties, and Canada's NDP",
+   "parents": [
+    [
+     "marxism",
+     "grew"
+    ],
+    [
+     "liberalism",
+     "drew"
+    ]
+   ],
+   "wiki": "Social_democracy",
+   "people": [
+    [
+     "Ferdinand Lassalle",
+     "1825–1864",
+     "founded the first German workers' party"
+    ],
+    [
+     "Eduard Bernstein",
+     "1850–1932",
+     "Evolutionary Socialism"
+    ],
+    [
+     "Per Albin Hansson",
+     "1885–1946",
+     "Sweden's \"people's home\""
+    ],
+    [
+     "Clement Attlee",
+     "1883–1967",
+     "built Britain's welfare state"
+    ],
+    [
+     "Olof Palme",
+     "1927–1986",
+     "Swedish prime minister"
+    ]
+   ],
+   "moments": [
+    [
+     "1875",
+     "The SPD's forerunner forms at Gotha"
+    ],
+    [
+     "1899",
+     "Bernstein's Evolutionary Socialism"
+    ],
+    [
+     "1932",
+     "Sweden's Social Democrats begin 44 years in power"
+    ],
+    [
+     "1945–51",
+     "Attlee's Labour creates the NHS and the welfare state"
+    ],
+    [
+     "1961",
+     "Canada's NDP is founded"
+    ]
+   ],
+   "compass": [
+    -5,
+    -1
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Socialism",
+     "https://plato.stanford.edu/entries/socialism/"
+    ]
+   ],
+   "primary": [
+    "Bernstein, Evolutionary Socialism (Marxists Internet Archive)",
+    "https://www.marxists.org/reference/archive/bernstein/works/1899/evsoc/index.htm"
+   ]
+  },
+  {
+   "id": "zionism",
+   "label": "Zionism",
+   "name": "Zionism",
+   "fam": "nat",
+   "y": 1897,
+   "ds": "1897",
+   "date": "1897 (the First Zionist Congress, Basel)",
+   "how": "founded",
+   "size": "m",
+   "status": "Living",
+   "story": "Facing pogroms in Russia and antisemitism in Western Europe, Theodor Herzl argued in The Jewish State (1896) that Jews needed a state of their own, and convened the First Zionist Congress in 1897. The movement led to the founding of Israel in 1948, amid war with Palestinian Arab forces and neighbouring Arab states; some 700,000 Palestinians fled or were expelled, which Palestinians remember as the Nakba (catastrophe).",
+   "ideas": "Jews are a nation entitled to self-determination in their historic homeland, the Land of Israel. It ranges from secular and socialist (Labour) Zionism to religious Zionism and right-wing (Revisionist) Zionism.",
+   "texts": "Herzl, The Jewish State (1896); the Basel Program (1897); Israel's Declaration of Independence (1948)",
+   "critique": "Palestinians and other critics say it led to their dispossession and to occupation; supporters see it as the liberation movement of a persecuted people. Some religious Jews oppose it too.",
+   "today": "The founding ideology of Israel; at the centre of debates over Israel and Palestine",
+   "parents": [
+    [
+     "nationalism",
+     "grew"
+    ]
+   ],
+   "wiki": "Zionism",
+   "compass": [
+    0,
+    3
+   ],
+   "refs": [
+    [
+     "Avalon Project: the Balfour Declaration (1917)",
+     "https://avalon.law.yale.edu/20th_century/balfour.asp"
+    ],
+    [
+     "United Nations: the Question of Palestine, history",
+     "https://www.un.org/unispal/history/"
+    ]
+   ],
+   "primary": [
+    "Herzl, The Jewish State (Project Gutenberg)",
+    "https://www.gutenberg.org/ebooks/25282"
+   ],
+   "people": [
+    [
+     "Theodor Herzl",
+     "1860–1904",
+     "founder of political Zionism"
+    ],
+    [
+     "Chaim Weizmann",
+     "1874–1952",
+     "won the Balfour Declaration; Israel's first president"
+    ],
+    [
+     "Ze'ev Jabotinsky",
+     "1880–1940",
+     "Revisionist Zionism"
+    ],
+    [
+     "David Ben-Gurion",
+     "1886–1973",
+     "Israel's first prime minister"
+    ]
+   ],
+   "moments": [
+    [
+     "1896",
+     "Herzl's The Jewish State"
+    ],
+    [
+     "1897",
+     "The First Zionist Congress, Basel"
+    ],
+    [
+     "1917",
+     "Britain's Balfour Declaration"
+    ],
+    [
+     "1948",
+     "Israel is founded; the Nakba"
+    ],
+    [
+     "1967",
+     "The Six-Day War: Israel takes the West Bank, Gaza, Sinai and the Golan Heights"
+    ]
+   ]
+  },
+  {
+   "id": "progressivism",
+   "label": "Progressivism",
+   "name": "Progressivism",
+   "fam": "rights",
+   "y": 1900,
+   "ds": "1890s–1920s",
+   "date": "The Progressive Era, 1890s–1920s",
+   "range": [
+    1890,
+    1920
+   ],
+   "rangeLabel": "The Progressive Era, 1890s–1920s",
+   "how": "grew",
+   "size": "m",
+   "status": "Living",
+   "story": "Reformers in both U.S. parties fought corruption, monopolies and unsafe work, winning antitrust laws, the income tax, direct election of senators and women's suffrage. Theodore Roosevelt ran as a Progressive in 1912; Canada had its own Prairie Progressive Party in the 1920s.",
+   "ideas": "Use government to fix the problems of industrial society: regulate big business, clean up politics and protect workers and consumers.",
+   "texts": "Croly, The Promise of American Life (1909); muckraking journalism such as Sinclair's The Jungle (1906)",
+   "critique": "Costly and sometimes paternalistic; the historic movement also backed Prohibition and eugenics.",
+   "today": "The name of the left wing of the U.S. Democrats and of reform movements elsewhere",
+   "parents": [
+    [
+     "liberalism",
+     "grew"
+    ],
+    [
+     "populism",
+     "drew"
+    ]
+   ],
+   "wiki": "Progressivism",
+   "people": [
+    [
+     "Robert La Follette",
+     "1855–1925",
+     "Wisconsin reformer"
+    ],
+    [
+     "Theodore Roosevelt",
+     "1858–1919",
+     "Progressive Party candidate, 1912"
+    ],
+    [
+     "Jane Addams",
+     "1860–1935",
+     "Hull House and social reform"
+    ],
+    [
+     "Upton Sinclair",
+     "1878–1968",
+     "The Jungle"
+    ]
+   ],
+   "moments": [
+    [
+     "1890",
+     "The Sherman Antitrust Act"
+    ],
+    [
+     "1906",
+     "The Pure Food and Drug Act follows The Jungle"
+    ],
+    [
+     "1912",
+     "Roosevelt runs as a Progressive (\"Bull Moose\")"
+    ],
+    [
+     "1913",
+     "Federal income tax and direct election of senators"
+    ],
+    [
+     "1921",
+     "Canada's Progressive Party wins 58 seats and becomes the second-largest party"
+    ]
+   ],
+   "compass": [
+    -4,
+    -2
+   ],
+   "refs": [],
+   "primary": [
+    "Croly, The Promise of American Life (Project Gutenberg)",
+    "https://www.gutenberg.org/ebooks/14422"
+   ]
+  },
+  {
+   "id": "panafricanism",
+   "label": "Pan-Africanism",
+   "name": "Pan-Africanism",
+   "fam": "nat",
+   "y": 1900,
+   "ds": "1900",
+   "date": "1900 (the first Pan-African Conference, London)",
+   "how": "grew",
+   "size": "m",
+   "status": "Living",
+   "story": "Henry Sylvester Williams organized the first Pan-African Conference in London in 1900, where W. E. B. Du Bois declared that 'the problem of the twentieth century is the problem of the colour-line'. Marcus Garvey built a mass movement in the 1920s, and leaders such as Kwame Nkrumah carried it into African independence.",
+   "ideas": "Unity and solidarity among Africans and people of African descent; independence and self-reliance for Africa.",
+   "texts": "Du Bois, To the Nations of the World (1900); Nkrumah, Africa Must Unite (1963)",
+   "critique": "Continental unity proved elusive, and some of its leaders became autocrats.",
+   "today": "The African Union (2002) and diaspora movements carry it on",
+   "parents": [
+    [
+     "nationalism",
+     "grew"
+    ],
+    [
+     "abolitionism",
+     "drew"
+    ]
+   ],
+   "wiki": "Pan-Africanism",
+   "compass": [
+    -3,
+    1
+   ],
+   "refs": [
+    [
+     "African Union: about the AU",
+     "https://au.int/en/overview"
+    ]
+   ],
+   "primary": null,
+   "people": [
+    [
+     "Henry Sylvester Williams",
+     "1869–1911",
+     "organized the 1900 conference"
+    ],
+    [
+     "W. E. B. Du Bois",
+     "1868–1963",
+     "led the Pan-African Congresses"
+    ],
+    [
+     "Marcus Garvey",
+     "1887–1940",
+     "built a mass movement (UNIA)"
+    ],
+    [
+     "Kwame Nkrumah",
+     "1909–1972",
+     "Ghana's first leader"
+    ]
+   ],
+   "moments": [
+    [
+     "1900",
+     "The first Pan-African Conference, London"
+    ],
+    [
+     "1919",
+     "Du Bois's first Pan-African Congress, Paris"
+    ],
+    [
+     "1945",
+     "The Manchester Pan-African Congress"
+    ],
+    [
+     "1957",
+     "Ghana becomes independent"
+    ],
+    [
+     "1963",
+     "The Organisation of African Unity is founded"
+    ]
+   ]
+  },
+  {
+   "id": "sociallib",
+   "label": "Social liberalism",
+   "name": "Social liberalism",
+   "fam": "lib",
+   "y": 1906,
+   "ds": "1900s",
+   "date": "1880s–1910s (T.H. Green, Hobhouse, Lloyd George)",
+   "how": "grew",
+   "size": "m",
+   "status": "Living",
+   "story": "British 'New Liberals' argued that freedom means little without education, health and security, so the state should provide them. Lloyd George's People's Budget (1909) and the Liberal Beveridge's report (1942) laid foundations of the welfare state.",
+   "ideas": "Liberty plus equal opportunity: rights and markets, with public education, social insurance and regulation.",
+   "texts": "Hobhouse, Liberalism (1911); the Beveridge Report (1942)",
+   "critique": "Free-market liberals see it as big government; socialists see it as too timid.",
+   "today": "The tradition of liberal parties such as Canada's Liberals",
+   "parents": [
+    [
+     "liberalism",
+     "grew"
+    ],
+    [
+     "socialdem",
+     "drew"
+    ]
+   ],
+   "wiki": "Social_liberalism",
+   "people": [
+    [
+     "T. H. Green",
+     "1836–1882",
+     "philosopher of positive liberty"
+    ],
+    [
+     "L. T. Hobhouse",
+     "1864–1929",
+     "Liberalism"
+    ],
+    [
+     "David Lloyd George",
+     "1863–1945",
+     "the People's Budget"
+    ],
+    [
+     "William Beveridge",
+     "1879–1963",
+     "the Beveridge Report"
+    ],
+    [
+     "John Rawls",
+     "1921–2002",
+     "A Theory of Justice"
+    ]
+   ],
+   "moments": [
+    [
+     "1909",
+     "The People's Budget"
+    ],
+    [
+     "1911",
+     "Britain's National Insurance Act"
+    ],
+    [
+     "1942",
+     "The Beveridge Report"
+    ],
+    [
+     "1965–66",
+     "Canada adds public pensions and medicare under Liberal PM Pearson"
+    ],
+    [
+     "1971",
+     "Rawls's A Theory of Justice"
+    ]
+   ],
+   "compass": [
+    -2,
+    -3
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Liberalism",
+     "https://plato.stanford.edu/entries/liberalism/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: John Rawls",
+     "https://plato.stanford.edu/entries/rawls/"
+    ]
+   ],
+   "primary": [
+    "Hobhouse, Liberalism (Project Gutenberg)",
+    "https://www.gutenberg.org/ebooks/28278"
+   ]
+  },
+  {
+   "id": "leninism",
+   "label": "Communism (Marxism–Leninism)",
+   "name": "Communism (Marxism–Leninism)",
+   "fam": "left",
+   "y": 1917,
+   "ds": "1917",
+   "date": "1917 (the October Revolution in Russia)",
+   "how": "founded",
+   "size": "l",
+   "status": "Living",
+   "story": "Lenin's disciplined party seized power in Russia in 1917 and built the Soviet Union, a one-party state with a planned economy. Under Stalin came terror and famine; after 1945 the model spread to Eastern Europe, China (1949) and beyond. The Soviet Union collapsed in 1991.",
+   "ideas": "A vanguard party rules in the name of the workers; state ownership and central planning; the goal of a classless communist society.",
+   "texts": "Lenin, What Is to Be Done? (1902) and The State and Revolution (1917)",
+   "critique": "Dictatorship, mass repression and economic failure, including famines that killed millions.",
+   "today": "Five countries are ruled by communist parties: China, Vietnam, Laos, Cuba and North Korea",
+   "parents": [
+    [
+     "marxism",
+     "grew"
+    ]
+   ],
+   "wiki": "Marxism%E2%80%93Leninism",
+   "people": [
+    [
+     "Vladimir Lenin",
+     "1870–1924",
+     "founder"
+    ],
+    [
+     "Joseph Stalin",
+     "1878–1953",
+     "dictator"
+    ],
+    [
+     "Leon Trotsky",
+     "1879–1940",
+     "led the Red Army; later exiled"
+    ],
+    [
+     "Mikhail Gorbachev",
+     "1931–2022",
+     "last Soviet leader"
+    ]
+   ],
+   "moments": [
+    [
+     "1902",
+     "What Is to Be Done?"
+    ],
+    [
+     "1917",
+     "The October Revolution"
+    ],
+    [
+     "1932–33",
+     "Famine under Stalin (the Holodomor in Ukraine)"
+    ],
+    [
+     "1949",
+     "Communists win the Chinese civil war"
+    ],
+    [
+     "1991",
+     "The Soviet Union dissolves"
+    ]
+   ],
+   "compass": [
+    -9,
+    8
+   ],
+   "refs": [],
+   "primary": [
+    "Lenin, What Is to Be Done? (Marxists Internet Archive)",
+    "https://www.marxists.org/archive/lenin/works/1901/witbd/"
+   ]
+  },
+  {
+   "id": "fascism",
+   "label": "Fascism",
+   "name": "Fascism",
+   "fam": "auth",
+   "y": 1919,
+   "ds": "1919",
+   "date": "1919 (Mussolini's movement); in power 1922",
+   "end": 1945,
+   "endLabel": "1945, with the end of World War II",
+   "how": "founded",
+   "size": "none",
+   "status": "Historical",
+   "story": "Benito Mussolini, a former socialist, founded the Fascist movement in 1919 and took power after the March on Rome (1922). He built a one-party state that glorified the nation, violence and the leader, and allied with Hitler.",
+   "ideas": "The nation above the individual; one party and one leader; contempt for liberal democracy and communism; glorification of war.",
+   "texts": "Mussolini and Gentile, The Doctrine of Fascism (1932)",
+   "critique": "Dictatorship, political violence and aggressive war.",
+   "today": "No fascist governments remain; neo-fascist groups exist on the fringe",
+   "parents": [
+    [
+     "nationalism",
+     "grew"
+    ],
+    [
+     "liberalism",
+     "against"
+    ],
+    [
+     "marxism",
+     "against"
+    ]
+   ],
+   "wiki": "Fascism",
+   "people": [
+    [
+     "Giovanni Gentile",
+     "1875–1944",
+     "philosopher of fascism"
+    ],
+    [
+     "Benito Mussolini",
+     "1883–1945",
+     "founder"
+    ],
+    [
+     "Robert Paxton",
+     "b. 1932",
+     "historian of fascism"
+    ]
+   ],
+   "moments": [
+    [
+     "1919",
+     "Mussolini founds the Fasci di Combattimento"
+    ],
+    [
+     "1922",
+     "The March on Rome"
+    ],
+    [
+     "1925",
+     "Mussolini declares a dictatorship"
+    ],
+    [
+     "1940",
+     "Italy enters World War II beside Germany"
+    ],
+    [
+     "1945",
+     "Mussolini is executed; fascism ends in Italy"
+    ]
+   ],
+   "compass": [
+    4,
+    10
+   ],
+   "refs": [],
+   "primary": null
+  },
+  {
+   "id": "nazism",
+   "label": "Nazism",
+   "name": "Nazism (National Socialism)",
+   "fam": "auth",
+   "y": 1920,
+   "ds": "1920",
+   "date": "1920 (the Nazi Party); in power 1933–1945",
+   "end": 1945,
+   "endLabel": "1945, when Germany was defeated",
+   "how": "founded",
+   "size": "none",
+   "status": "Historical",
+   "story": "Adolf Hitler's Nazi Party combined fascism with racial antisemitism. In power from 1933, it destroyed German democracy, started World War II and carried out the Holocaust, murdering six million Jews and millions of others.",
+   "ideas": "A racial 'people's community'; antisemitism and racial hierarchy; total obedience to the leader; conquest of 'living space'.",
+   "texts": "Hitler, Mein Kampf (1925)",
+   "critique": "Genocide, total war and dictatorship: the defining crimes of the 20th century.",
+   "today": "Defeated in 1945; its symbols and organizations are banned in Germany; neo-Nazi groups remain on the fringe",
+   "parents": [
+    [
+     "fascism",
+     "drew"
+    ],
+    [
+     "nationalism",
+     "grew"
+    ]
+   ],
+   "wiki": "Nazism",
+   "people": [
+    [
+     "Adolf Hitler",
+     "1889–1945",
+     "leader"
+    ],
+    [
+     "Joseph Goebbels",
+     "1897–1945",
+     "propaganda minister"
+    ],
+    [
+     "Heinrich Himmler",
+     "1900–1945",
+     "head of the SS; organized the Holocaust"
+    ]
+   ],
+   "moments": [
+    [
+     "1920",
+     "The Nazi Party adopts its program"
+    ],
+    [
+     "1923",
+     "The failed Beer Hall Putsch"
+    ],
+    [
+     "1933",
+     "Hitler becomes chancellor"
+    ],
+    [
+     "1935",
+     "The Nuremberg race laws"
+    ],
+    [
+     "1945",
+     "Germany defeated; the Nuremberg trials begin"
+    ]
+   ],
+   "compass": [
+    3,
+    10
+   ],
+   "refs": [
+    [
+     "U.S. Holocaust Memorial Museum: Introduction to the Holocaust",
+     "https://encyclopedia.ushmm.org/content/en/article/introduction-to-the-holocaust"
+    ],
+    [
+     "U.S. Holocaust Memorial Museum: Nazi propaganda",
+     "https://encyclopedia.ushmm.org/content/en/article/nazi-propaganda"
+    ]
+   ],
+   "primary": null
+  },
+  {
+   "id": "islamism",
+   "label": "Islamism",
+   "name": "Islamism (political Islam)",
+   "fam": "faith",
+   "y": 1928,
+   "ds": "1928",
+   "date": "1928 (the Muslim Brotherhood, Egypt)",
+   "range": [
+    1928,
+    1979
+   ],
+   "rangeLabel": "From the Muslim Brotherhood (1928) to Iran's revolution (1979)",
+   "how": "founded",
+   "size": "m",
+   "status": "Living",
+   "story": "Hassan al-Banna founded the Muslim Brotherhood in Egypt in 1928, arguing that Islam should guide politics against Western colonial influence. Iran's 1979 revolution created an Islamic republic ruled by a senior cleric.",
+   "ideas": "Islam as a complete system for society and government; sharia as the basis of law. Ranges from parties that compete in elections to revolutionary states and violent groups.",
+   "texts": "Sayyid Qutb, Milestones (1964); Khomeini, Islamic Government (1970)",
+   "critique": "Critics, including many Muslims, point to curbs on women's rights, religious minorities and dissent, and to violence by militant groups.",
+   "today": "Governs Iran and Afghanistan; Islamist parties compete in elections in several countries",
+   "parents": [
+    [
+     "caliphate",
+     "drew"
+    ],
+    [
+     "colonialism",
+     "against"
+    ]
+   ],
+   "wiki": "Islamism",
+   "people": [
+    [
+     "Abul A'la Maududi",
+     "1903–1979",
+     "founded Jamaat-e-Islami"
+    ],
+    [
+     "Hassan al-Banna",
+     "1906–1949",
+     "founded the Muslim Brotherhood"
+    ],
+    [
+     "Sayyid Qutb",
+     "1906–1966",
+     "Milestones"
+    ],
+    [
+     "Ruhollah Khomeini",
+     "1902–1989",
+     "led Iran's revolution"
+    ],
+    [
+     "Rached Ghannouchi",
+     "b. 1941",
+     "leader of Tunisia's Ennahda"
+    ]
+   ],
+   "moments": [
+    [
+     "1928",
+     "The Muslim Brotherhood is founded in Egypt"
+    ],
+    [
+     "1941",
+     "Maududi founds Jamaat-e-Islami"
+    ],
+    [
+     "1979",
+     "The Iranian Revolution"
+    ],
+    [
+     "1996",
+     "The Taliban take Kabul"
+    ],
+    [
+     "2011",
+     "Islamist parties win elections after the Arab Spring"
+    ]
+   ],
+   "compass": [
+    0,
+    7
+   ],
+   "refs": [],
+   "primary": null
+  },
+  {
+   "id": "keynes",
+   "label": "Keynesianism",
+   "name": "Keynesian economics",
+   "fam": "econ",
+   "y": 1936,
+   "ds": "1936",
+   "date": "1936 (Keynes's General Theory)",
+   "how": "founded",
+   "size": "m",
+   "status": "Living",
+   "story": "During the Great Depression, John Maynard Keynes argued that markets can stay stuck in mass unemployment and that government spending can pull them out. It guided Western economies from 1945 until 1970s stagflation.",
+   "ideas": "Governments should spend more and tax less in downturns, and cool the economy in booms, to keep employment high.",
+   "texts": "Keynes, The General Theory of Employment, Interest and Money (1936)",
+   "critique": "Can lead to deficits and inflation, and governments rarely save in good times.",
+   "today": "Returns in every crisis, from the 2008–09 stimulus to COVID-era spending",
+   "parents": [
+    [
+     "laissezfaire",
+     "against"
+    ],
+    [
+     "sociallib",
+     "drew"
+    ]
+   ],
+   "wiki": "Keynesian_economics",
+   "people": [
+    [
+     "John Maynard Keynes",
+     "1883–1946",
+     "founder"
+    ],
+    [
+     "Joan Robinson",
+     "1903–1983",
+     "Cambridge economist"
+    ],
+    [
+     "Paul Samuelson",
+     "1915–2009",
+     "brought Keynes into the textbooks"
+    ]
+   ],
+   "moments": [
+    [
+     "1936",
+     "The General Theory"
+    ],
+    [
+     "1944",
+     "Keynes helps design the post-war system at Bretton Woods"
+    ],
+    [
+     "1946",
+     "The U.S. Employment Act"
+    ],
+    [
+     "1970s",
+     "Stagflation undermines it"
+    ],
+    [
+     "2008–09",
+     "Stimulus packages revive it"
+    ]
+   ],
+   "compass": [
+    -3,
+    0
+   ],
+   "refs": [
+    [
+     "Econlib: Keynesian economics",
+     "https://www.econlib.org/library/Enc/KeynesianEconomics.html"
+    ]
+   ],
+   "primary": [
+    "Keynes, The General Theory (Marxists Internet Archive reference section)",
+    "https://www.marxists.org/reference/subject/economics/keynes/general-theory/"
+   ]
+  },
+  {
+   "id": "christiandem",
+   "label": "Christian democracy",
+   "name": "Christian democracy",
+   "fam": "faith",
+   "y": 1945,
+   "ds": "1945",
+   "date": "1891 (Rerum Novarum); parties from 1945",
+   "range": [
+    1891,
+    1945
+   ],
+   "rangeLabel": "From Catholic social teaching (1891) to the post-war parties (1945)",
+   "how": "grew",
+   "size": "m",
+   "status": "Living",
+   "story": "Catholic social teaching (Pope Leo XIII's Rerum Novarum, 1891) sought a path between capitalism and socialism. After 1945, parties such as Germany's CDU under Adenauer and Italy's Christian Democrats rebuilt Western Europe and helped found what became the EU.",
+   "ideas": "Centre-right: family, community and Christian values, with a 'social market economy' that pairs markets with welfare.",
+   "texts": "Rerum Novarum (1891); Quadragesimo Anno (1931)",
+   "critique": "Fading as societies become more secular; critics say it blurs into ordinary conservatism.",
+   "today": "Major parties in Germany and elsewhere in Europe and Latin America",
+   "parents": [
+    [
+     "conservatism",
+     "drew"
+    ]
+   ],
+   "wiki": "Christian_democracy",
+   "people": [
+    [
+     "Pope Leo XIII",
+     "1810–1903",
+     "Rerum Novarum"
+    ],
+    [
+     "Konrad Adenauer",
+     "1876–1967",
+     "first West German chancellor"
+    ],
+    [
+     "Alcide De Gasperi",
+     "1881–1954",
+     "Italy's post-war prime minister"
+    ],
+    [
+     "Robert Schuman",
+     "1886–1963",
+     "launched European integration"
+    ],
+    [
+     "Angela Merkel",
+     "b. 1954",
+     "CDU chancellor, 2005–2021"
+    ]
+   ],
+   "moments": [
+    [
+     "1891",
+     "Rerum Novarum"
+    ],
+    [
+     "1945",
+     "The CDU is founded in Germany"
+    ],
+    [
+     "1950",
+     "The Schuman Declaration launches European integration"
+    ],
+    [
+     "1957",
+     "The Treaty of Rome"
+    ],
+    [
+     "2005–21",
+     "Merkel's CDU leads Germany"
+    ]
+   ],
+   "compass": [
+    1,
+    3
+   ],
+   "refs": [
+    [
+     "European Union: the Schuman Declaration (1950)",
+     "https://european-union.europa.eu/principles-countries-history/history-eu/1945-59/schuman-declaration-may-1950_en"
+    ]
+   ],
+   "primary": [
+    "Rerum Novarum (1891) (Vatican)",
+    "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_15051891_rerum-novarum.html"
+   ]
+  },
+  {
+   "id": "neoliberalism",
+   "label": "Neoliberalism",
+   "name": "Neoliberalism",
+   "fam": "econ",
+   "y": 1947,
+   "ds": "1947",
+   "date": "1947 (Mont Pelerin Society); in power from 1979",
+   "range": [
+    1944,
+    1981
+   ],
+   "rangeLabel": "From Hayek's Road to Serfdom (1944) to Thatcher (1979) and Reagan (1981)",
+   "how": "founded",
+   "size": "l",
+   "status": "Living",
+   "story": "Friedrich Hayek and Milton Friedman led a network (the Mont Pelerin Society, 1947) that argued for markets over state planning. After 1970s stagflation, Thatcher and Reagan put it into practice: deregulation, privatization, tax cuts and free trade.",
+   "ideas": "Free markets, free trade, privatization, deregulation, low taxes and inflation control; a smaller state.",
+   "texts": "Hayek, The Road to Serfdom (1944); Friedman, Capitalism and Freedom (1962)",
+   "critique": "Rising inequality, weaker public services and a role in the 2008 financial crisis; the label is mostly used by critics.",
+   "today": "Shaped global economic policy from 1980 to 2008; now contested from both left and right",
+   "parents": [
+    [
+     "laissezfaire",
+     "grew"
+    ],
+    [
+     "keynes",
+     "against"
+    ]
+   ],
+   "wiki": "Neoliberalism",
+   "people": [
+    [
+     "Friedrich Hayek",
+     "1899–1992",
+     "The Road to Serfdom"
+    ],
+    [
+     "Milton Friedman",
+     "1912–2006",
+     "Chicago School"
+    ],
+    [
+     "Margaret Thatcher",
+     "1925–2013",
+     "UK prime minister, 1979–90"
+    ],
+    [
+     "Ronald Reagan",
+     "1911–2004",
+     "U.S. president, 1981–89"
+    ],
+    [
+     "Brian Mulroney",
+     "1939–2024",
+     "Canadian PM; free trade and privatization"
+    ]
+   ],
+   "moments": [
+    [
+     "1944",
+     "The Road to Serfdom"
+    ],
+    [
+     "1947",
+     "The Mont Pelerin Society is founded"
+    ],
+    [
+     "1979",
+     "Thatcher is elected"
+    ],
+    [
+     "1989",
+     "The \"Washington Consensus\" is named"
+    ],
+    [
+     "2008",
+     "The financial crisis discredits it for many"
+    ]
+   ],
+   "compass": [
+    8,
+    1
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Neoliberalism",
+     "https://plato.stanford.edu/entries/neoliberalism/"
+    ],
+    [
+     "Econlib: Milton Friedman",
+     "https://www.econlib.org/library/Enc/bios/Friedman.html"
+    ]
+   ],
+   "primary": [
+    "Mont Pelerin Society: Statement of Aims (1947)",
+    "https://www.montpelerin.org/statement-of-aims/"
+   ]
+  },
+  {
+   "id": "anticolonial",
+   "label": "Anti-colonial nationalism",
+   "name": "Anti-colonial nationalism and decolonization",
+   "fam": "nat",
+   "y": 1947,
+   "ds": "1885–1960s",
+   "date": "1885 (Indian National Congress) to the 1960s",
+   "range": [
+    1885,
+    1975
+   ],
+   "rangeLabel": "From the Indian National Congress (1885) to the last wave of independence (1970s)",
+   "how": "grew",
+   "size": "l",
+   "status": "Living",
+   "story": "Colonized peoples organized for self-rule, from India's National Congress (1885) and Gandhi's non-violent campaigns to independence in 1947. 1960 saw 17 African countries become independent; the UN grew from 51 members in 1945 to 193.",
+   "ideas": "Peoples ruled by empires have the right to govern themselves; independence, national dignity and, for many, non-alignment between the superpowers.",
+   "texts": "Gandhi, Hind Swaraj (1909); Fanon, The Wretched of the Earth (1961); Bandung Conference communiqué (1955)",
+   "critique": "Many new states fell to one-party rule or military coups, and colonial borders left lasting conflicts.",
+   "today": "Created most of the world's states; its ideas live on in movements for Indigenous self-determination",
+   "parents": [
+    [
+     "nationalism",
+     "grew"
+    ],
+    [
+     "colonialism",
+     "against"
+    ],
+    [
+     "panafricanism",
+     "drew"
+    ]
+   ],
+   "wiki": "Decolonization",
+   "people": [
+    [
+     "Mahatma Gandhi",
+     "1869–1948",
+     "non-violent independence movement"
+    ],
+    [
+     "Jawaharlal Nehru",
+     "1889–1964",
+     "India's first prime minister"
+    ],
+    [
+     "Ho Chi Minh",
+     "1890–1969",
+     "Vietnamese independence leader"
+    ],
+    [
+     "Kwame Nkrumah",
+     "1909–1972",
+     "Ghana's first leader"
+    ],
+    [
+     "Frantz Fanon",
+     "1925–1961",
+     "The Wretched of the Earth"
+    ]
+   ],
+   "moments": [
+    [
+     "1885",
+     "The Indian National Congress is founded"
+    ],
+    [
+     "1930",
+     "Gandhi's Salt March"
+    ],
+    [
+     "1947",
+     "India and Pakistan become independent"
+    ],
+    [
+     "1955",
+     "The Bandung Conference"
+    ],
+    [
+     "1960",
+     "The \"Year of Africa\": 17 countries become independent"
+    ]
+   ],
+   "compass": [
+    -3,
+    2
+   ],
+   "refs": [
+    [
+     "U.S. Office of the Historian: Decolonization of Asia and Africa, 1945–1960",
+     "https://history.state.gov/milestones/1945-1952/asia-and-africa"
+    ]
+   ],
+   "primary": [
+    "Gandhi, Hind Swaraj (1909) (PDF, mkgandhi.org)",
+    "https://www.mkgandhi.org/ebks/hind_swaraj.pdf"
+   ]
+  },
+  {
+   "id": "panarabism",
+   "label": "Pan-Arabism",
+   "name": "Pan-Arabism (Arab nationalism)",
+   "fam": "nat",
+   "y": 1947,
+   "ds": "1940s–60s",
+   "date": "1940s–1960s (the Ba'ath Party 1947; Egypt's revolution 1952)",
+   "range": [
+    1916,
+    1967
+   ],
+   "rangeLabel": "From the Arab Revolt (1916) to the 1967 war",
+   "how": "grew",
+   "size": "s",
+   "status": "Faded",
+   "story": "Arab nationalism grew under Ottoman and then European rule, from the Arab Revolt of 1916. The Ba'ath Party (1947) and Egypt's Gamal Abdel Nasser, who led its 1952 revolution, championed one Arab nation; Egypt and Syria even merged as the United Arab Republic (1958–61). Defeat in the 1967 war badly weakened it.",
+   "ideas": "The Arabs are one nation that should unite in one state, free of foreign control; usually secular and socialist-leaning.",
+   "texts": "Michel Aflaq's writings; the Ba'ath Party constitution (1947)",
+   "critique": "It produced one-party military regimes (Nasser's Egypt, Ba'athist Syria and Iraq) and never achieved unity.",
+   "today": "Faded; the Arab League (1945) is its main surviving institution",
+   "parents": [
+    [
+     "nationalism",
+     "grew"
+    ],
+    [
+     "colonialism",
+     "against"
+    ]
+   ],
+   "wiki": "Pan-Arabism",
+   "compass": [
+    -4,
+    6
+   ],
+   "refs": [
+    [
+     "Avalon Project: Pact of the League of Arab States (1945)",
+     "https://avalon.law.yale.edu/20th_century/arableag.asp"
+    ]
+   ],
+   "primary": null,
+   "people": [
+    [
+     "Sharif Hussein of Mecca",
+     "c. 1853–1931",
+     "led the Arab Revolt"
+    ],
+    [
+     "Michel Aflaq",
+     "1910–1989",
+     "co-founded the Ba'ath Party"
+    ],
+    [
+     "Salah al-Din al-Bitar",
+     "1912–1980",
+     "co-founded the Ba'ath Party"
+    ],
+    [
+     "Gamal Abdel Nasser",
+     "1918–1970",
+     "Egypt's president"
+    ]
+   ],
+   "moments": [
+    [
+     "1916",
+     "The Arab Revolt against the Ottomans"
+    ],
+    [
+     "1947",
+     "The Ba'ath Party is founded in Damascus"
+    ],
+    [
+     "1956",
+     "Nasser nationalizes the Suez Canal"
+    ],
+    [
+     "1958–61",
+     "Egypt and Syria form the United Arab Republic"
+    ],
+    [
+     "1967",
+     "Defeat in the Six-Day War"
+    ]
+   ]
+  },
+  {
+   "id": "humanrights",
+   "label": "Universal human rights",
+   "name": "Universal human rights",
+   "fam": "rights",
+   "y": 1948,
+   "ds": "1948",
+   "date": "10 December 1948 (the Universal Declaration)",
+   "how": "founded",
+   "size": "xl",
+   "status": "Living",
+   "story": "After World War II's atrocities, the UN adopted the Universal Declaration of Human Rights in 1948, by 48 votes to none with 8 abstentions. Eleanor Roosevelt chaired the drafting committee, and the Canadian John Humphrey wrote the first draft.",
+   "ideas": "Every person has the same basic rights, whatever their country: life, liberty, equality, free speech, religion and a fair trial.",
+   "texts": "Universal Declaration of Human Rights (1948); European Convention on Human Rights (1950)",
+   "critique": "Hard to enforce, and some governments call it a Western idea imposed on others.",
+   "today": "The basis of international law on rights and of charters such as Canada's (1982)",
+   "parents": [
+    [
+     "liberalism",
+     "grew"
+    ],
+    [
+     "frenchrev",
+     "drew"
+    ],
+    [
+     "nazism",
+     "against"
+    ]
+   ],
+   "wiki": "Universal_Declaration_of_Human_Rights",
+   "people": [
+    [
+     "Eleanor Roosevelt",
+     "1884–1962",
+     "chaired the drafting committee"
+    ],
+    [
+     "John Humphrey",
+     "1905–1995",
+     "Canadian; wrote the first draft"
+    ],
+    [
+     "René Cassin",
+     "1887–1976",
+     "French jurist; Nobel Peace Prize 1968"
+    ],
+    [
+     "P. C. Chang",
+     "1892–1957",
+     "Chinese diplomat and drafter"
+    ],
+    [
+     "Charles Malik",
+     "1906–1987",
+     "Lebanese drafter"
+    ]
+   ],
+   "moments": [
+    [
+     "1945",
+     "The UN Charter commits members to human rights"
+    ],
+    [
+     "1948",
+     "The Universal Declaration is adopted (10 December)"
+    ],
+    [
+     "1950",
+     "The European Convention on Human Rights"
+    ],
+    [
+     "1966",
+     "The two UN human rights covenants"
+    ],
+    [
+     "1982",
+     "Canada's Charter of Rights and Freedoms"
+    ]
+   ],
+   "compass": [
+    0,
+    -6
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Human Rights",
+     "https://plato.stanford.edu/entries/rights-human/"
+    ],
+    [
+     "United Nations: history of the Declaration",
+     "https://www.un.org/en/about-us/udhr/history-of-the-declaration"
+    ]
+   ],
+   "primary": [
+    "Universal Declaration of Human Rights (United Nations)",
+    "https://www.un.org/en/about-us/universal-declaration-of-human-rights"
+   ]
+  },
+  {
+   "id": "maoism",
+   "label": "Maoism",
+   "name": "Maoism (Mao Zedong Thought)",
+   "fam": "left",
+   "y": 1949,
+   "ds": "1949",
+   "date": "1949 (the People's Republic of China); ideas from the late 1920s",
+   "range": [
+    1927,
+    1949
+   ],
+   "rangeLabel": "From the turn to rural revolution (1927) to victory (1949)",
+   "how": "founded",
+   "size": "s",
+   "status": "Living",
+   "story": "Mao Zedong adapted Lenin's ideas to a peasant country: revolution from the countryside, through guerrilla war. After victory in 1949 he launched the Great Leap Forward (1958–62), whose famine killed tens of millions, and the Cultural Revolution (1966–76).",
+   "ideas": "Peasant-based revolution and \"people's war\"; continuous class struggle and mass mobilization; self-reliance.",
+   "texts": "Mao, On Contradiction (1937); Quotations from Chairman Mao (the 'Little Red Book', 1964)",
+   "critique": "The Great Leap Forward famine and the Cultural Revolution's persecutions caused immense loss of life.",
+   "today": "Still honoured in China's official ideology, though its economics were abandoned after 1978; inspires insurgents in India",
+   "parents": [
+    [
+     "leninism",
+     "grew"
+    ]
+   ],
+   "wiki": "Maoism",
+   "compass": [
+    -10,
+    9
+   ],
+   "refs": [],
+   "primary": [
+    "Mao Zedong's works (Marxists Internet Archive reference section)",
+    "https://www.marxists.org/reference/archive/mao/"
+   ],
+   "people": [
+    [
+     "Mao Zedong",
+     "1893–1976",
+     "founder"
+    ],
+    [
+     "Zhou Enlai",
+     "1898–1976",
+     "premier"
+    ],
+    [
+     "Lin Biao",
+     "1907–1971",
+     "promoted the Little Red Book"
+    ],
+    [
+     "Deng Xiaoping",
+     "1904–1997",
+     "moved China away from it after 1978"
+    ]
+   ],
+   "moments": [
+    [
+     "1927",
+     "Mao turns to peasant-based rural revolution"
+    ],
+    [
+     "1934–35",
+     "The Long March"
+    ],
+    [
+     "1949",
+     "The People's Republic is proclaimed"
+    ],
+    [
+     "1958–62",
+     "The Great Leap Forward and famine"
+    ],
+    [
+     "1966–76",
+     "The Cultural Revolution"
+    ]
+   ]
+  },
+  {
+   "id": "developmental",
+   "label": "Developmental state",
+   "name": "The developmental state (the East Asian model)",
+   "fam": "econ",
+   "y": 1955,
+   "ds": "1950s",
+   "date": "1950s–1990s (Japan, then South Korea, Taiwan and Singapore)",
+   "range": [
+    1949,
+    1997
+   ],
+   "rangeLabel": "From Japan's MITI (1949) to the Asian financial crisis (1997)",
+   "how": "grew",
+   "size": "m",
+   "status": "Living",
+   "story": "After World War II, Japan's ministries steered banks and firms toward chosen export industries. South Korea under Park Chung-hee, Taiwan and Singapore followed, turning poor countries rich within a generation. The political scientist Chalmers Johnson named the model in 1982.",
+   "ideas": "A strong, capable bureaucracy guides the market: targeted credit, export promotion, protection of young industries and heavy investment in education.",
+   "texts": "Johnson, MITI and the Japanese Miracle (1982); World Bank, The East Asian Miracle (1993)",
+   "critique": "Often authoritarian (South Korea and Taiwan were dictatorships during their booms), and critics blame close state–business ties ('crony capitalism') for the 1997 Asian financial crisis.",
+   "today": "Its tools are back: China's state-led growth and Western industrial policy for chips and clean energy",
+   "parents": [
+    [
+     "mercantilism",
+     "drew"
+    ],
+    [
+     "keynes",
+     "drew"
+    ]
+   ],
+   "wiki": "Developmental_state",
+   "compass": [
+    1,
+    6
+   ],
+   "refs": [],
+   "primary": null,
+   "people": [
+    [
+     "Shigeru Yoshida",
+     "1878–1967",
+     "Japan's post-war prime minister"
+    ],
+    [
+     "Park Chung-hee",
+     "1917–1979",
+     "South Korea's military ruler"
+    ],
+    [
+     "Lee Kuan Yew",
+     "1923–2015",
+     "Singapore's first prime minister"
+    ],
+    [
+     "Chalmers Johnson",
+     "1931–2010",
+     "named the model"
+    ]
+   ],
+   "moments": [
+    [
+     "1949",
+     "Japan creates MITI"
+    ],
+    [
+     "1961",
+     "Park Chung-hee takes power in South Korea"
+    ],
+    [
+     "1965",
+     "Singapore becomes independent"
+    ],
+    [
+     "1993",
+     "The World Bank's East Asian Miracle report"
+    ],
+    [
+     "1997",
+     "The Asian financial crisis"
+    ]
+   ]
+  },
+  {
+   "id": "libertarianism",
+   "label": "Libertarianism",
+   "name": "Libertarianism",
+   "fam": "lib",
+   "y": 1971,
+   "ds": "1971",
+   "date": "1971 (the U.S. Libertarian Party); ideas from the 1950s–70s",
+   "range": [
+    1957,
+    1974
+   ],
+   "rangeLabel": "From Rand's Atlas Shrugged (1957) to Nozick (1974)",
+   "how": "grew",
+   "size": "s",
+   "status": "Living",
+   "story": "Writers such as Ayn Rand, Murray Rothbard and Robert Nozick pushed classical liberalism further: the state should do little more than protect people and property. The U.S. Libertarian Party was founded in 1971; Argentina's president Javier Milei (elected 2023) calls himself a libertarian.",
+   "ideas": "Maximum individual freedom in both economic and personal life; a minimal state; low taxes and few regulations.",
+   "texts": "Rand, Atlas Shrugged (1957); Nozick, Anarchy, State, and Utopia (1974)",
+   "critique": "A thin safety net; it struggles with pollution, monopolies and other shared problems.",
+   "today": "Small parties, but influential on the U.S. right and in tech circles",
+   "parents": [
+    [
+     "liberalism",
+     "grew"
+    ],
+    [
+     "anarchism",
+     "drew"
+    ],
+    [
+     "neoliberalism",
+     "drew"
+    ]
+   ],
+   "wiki": "Libertarianism",
+   "people": [
+    [
+     "Ayn Rand",
+     "1905–1982",
+     "Atlas Shrugged"
+    ],
+    [
+     "Murray Rothbard",
+     "1926–1995",
+     "anarcho-capitalism"
+    ],
+    [
+     "Robert Nozick",
+     "1938–2002",
+     "Anarchy, State, and Utopia"
+    ],
+    [
+     "Ron Paul",
+     "b. 1935",
+     "U.S. congressman"
+    ],
+    [
+     "Javier Milei",
+     "b. 1970",
+     "Argentina's president"
+    ]
+   ],
+   "moments": [
+    [
+     "1957",
+     "Atlas Shrugged"
+    ],
+    [
+     "1971",
+     "The U.S. Libertarian Party is founded"
+    ],
+    [
+     "1974",
+     "Nozick's Anarchy, State, and Utopia"
+    ],
+    [
+     "2023",
+     "Milei is elected in Argentina"
+    ]
+   ],
+   "compass": [
+    9,
+    -9
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Libertarianism",
+     "https://plato.stanford.edu/entries/libertarianism/"
+    ],
+    [
+     "Stanford Encyclopedia of Philosophy: Robert Nozick's Political Philosophy",
+     "https://plato.stanford.edu/entries/nozick-political/"
+    ]
+   ],
+   "primary": null
+  },
+  {
+   "id": "greens",
+   "label": "Green politics",
+   "name": "Green politics",
+   "fam": "rights",
+   "y": 1972,
+   "ds": "1970s",
+   "date": "1972 (first national green party, New Zealand); German Greens 1980",
+   "range": [
+    1962,
+    1980
+   ],
+   "rangeLabel": "From Silent Spring (1962) to the German Greens (1980)",
+   "how": "grew",
+   "size": "m",
+   "status": "Living",
+   "story": "Rachel Carson's Silent Spring (1962) and the first Earth Day (1970) sparked an environmental movement. New Zealand's Values Party (1972) was the first national green party; the German Greens (1980) later shared power (1998–2005).",
+   "ideas": "Ecological sustainability, social justice, grassroots democracy and non-violence.",
+   "texts": "Carson, Silent Spring (1962); The Limits to Growth (1972)",
+   "critique": "Its policies can raise costs, and climate action is hard to coordinate across countries.",
+   "today": "Green parties sit in many parliaments; climate policy is mainstream across parties",
+   "parents": [
+    [
+     "socialdem",
+     "drew"
+    ]
+   ],
+   "wiki": "Green_politics",
+   "people": [
+    [
+     "Rachel Carson",
+     "1907–1964",
+     "Silent Spring"
+    ],
+    [
+     "Petra Kelly",
+     "1947–1992",
+     "co-founded the German Greens"
+    ],
+    [
+     "Bob Brown",
+     "b. 1944",
+     "Australian Greens leader"
+    ],
+    [
+     "Elizabeth May",
+     "b. 1954",
+     "longtime leader of Canada's Green Party"
+    ]
+   ],
+   "moments": [
+    [
+     "1962",
+     "Silent Spring"
+    ],
+    [
+     "1970",
+     "The first Earth Day"
+    ],
+    [
+     "1972",
+     "New Zealand's Values Party; the UN Stockholm Conference"
+    ],
+    [
+     "1983",
+     "The German Greens enter parliament"
+    ],
+    [
+     "2015",
+     "The Paris climate agreement"
+    ]
+   ],
+   "compass": [
+    -5,
+    -4
+   ],
+   "refs": [
+    [
+     "Stanford Encyclopedia of Philosophy: Environmental Ethics",
+     "https://plato.stanford.edu/entries/ethics-environmental/"
+    ],
+    [
+     "UN Climate Change: the Paris Agreement",
+     "https://unfccc.int/process-and-meetings/the-paris-agreement"
+    ]
+   ],
+   "primary": null
+  },
+  {
+   "id": "neoconservatism",
+   "label": "Neoconservatism",
+   "name": "Neoconservatism",
+   "fam": "con",
+   "y": 1973,
+   "ds": "1970s",
+   "date": "1960s–70s (Irving Kristol and former liberals)",
+   "range": [
+    1965,
+    2003
+   ],
+   "rangeLabel": "From The Public Interest (1965) to the Iraq War (2003)",
+   "how": "grew",
+   "size": "s",
+   "status": "Faded",
+   "story": "Former liberals and leftists around Irving Kristol grew sceptical of 1960s social programs and the New Left, and pressed for a hard line against the Soviet Union. Influential under Reagan, neoconservatives championed promoting democracy abroad, including by military force, after 9/11, above all in the 2003 Iraq War.",
+   "ideas": "Strong anti-communism, and later anti-terrorism; using American power to spread democracy; scepticism of large social programs.",
+   "texts": "The journal The Public Interest (1965–2005); Kristol, Neoconservatism: The Autobiography of an Idea (1995)",
+   "critique": "Blamed for the costly 2003 Iraq War and for overconfidence in military power.",
+   "today": "Faded after Iraq; many of its figures broke with Trump",
+   "parents": [
+    [
+     "conservatism",
+     "drew"
+    ],
+    [
+     "leninism",
+     "against"
+    ]
+   ],
+   "wiki": "Neoconservatism",
+   "compass": [
+    6,
+    5
+   ],
+   "refs": [],
+   "primary": null,
+   "people": [
+    [
+     "Irving Kristol",
+     "1920–2009",
+     "\"godfather\" of neoconservatism"
+    ],
+    [
+     "Jeane Kirkpatrick",
+     "1926–2006",
+     "Reagan's UN ambassador"
+    ],
+    [
+     "Norman Podhoretz",
+     "1930–2025",
+     "editor of Commentary"
+    ],
+    [
+     "Paul Wolfowitz",
+     "b. 1943",
+     "an architect of the Iraq War"
+    ]
+   ],
+   "moments": [
+    [
+     "1965",
+     "The Public Interest is founded"
+    ],
+    [
+     "1973",
+     "Michael Harrington popularizes the label \"neoconservative\""
+    ],
+    [
+     "1981",
+     "Reagan brings neoconservatives into government"
+    ],
+    [
+     "2003",
+     "The Iraq War"
+    ]
+   ]
+  },
+  {
+   "id": "thirdway",
+   "label": "Third Way",
+   "name": "The Third Way",
+   "fam": "left",
+   "y": 1994,
+   "ds": "1990s",
+   "date": "1990s (Clinton, Blair, Schröder)",
+   "how": "grew",
+   "size": "s",
+   "status": "Faded",
+   "story": "Centre-left leaders such as Bill Clinton (1993–2001), Tony Blair (1997–2007) and Gerhard Schröder accepted markets and free trade while keeping targeted social spending. The sociologist Anthony Giddens gave it a name in 1998.",
+   "ideas": "Markets and globalization plus investment in education, training and a reformed welfare state.",
+   "texts": "Giddens, The Third Way (1998)",
+   "critique": "The left sees it as neoliberalism with a friendly face.",
+   "today": "Faded after the 2008 financial crisis",
+   "parents": [
+    [
+     "socialdem",
+     "grew"
+    ],
+    [
+     "neoliberalism",
+     "drew"
+    ]
+   ],
+   "wiki": "Third_Way",
+   "people": [
+    [
+     "Jean Chrétien",
+     "b. 1934",
+     "Canadian PM; balanced the budget in the 1990s"
+    ],
+    [
+     "Anthony Giddens",
+     "b. 1938",
+     "its leading theorist"
+    ],
+    [
+     "Gerhard Schröder",
+     "b. 1944",
+     "German chancellor, 1998–2005"
+    ],
+    [
+     "Bill Clinton",
+     "b. 1946",
+     "U.S. president, 1993–2001"
+    ],
+    [
+     "Tony Blair",
+     "b. 1953",
+     "UK prime minister, 1997–2007"
+    ]
+   ],
+   "moments": [
+    [
+     "1992",
+     "Clinton is elected as a \"New Democrat\""
+    ],
+    [
+     "1994",
+     "Blair launches \"New Labour\""
+    ],
+    [
+     "1996",
+     "U.S. welfare reform"
+    ],
+    [
+     "1998",
+     "Giddens's The Third Way"
+    ],
+    [
+     "2008",
+     "The financial crisis ends its dominance"
+    ]
+   ],
+   "compass": [
+    1,
+    0
+   ],
+   "refs": [],
+   "primary": null
+  },
+  {
+   "id": "natcon",
+   "label": "National conservatism",
+   "name": "National conservatism",
+   "fam": "nat",
+   "y": 2016,
+   "ds": "2010s",
+   "date": "2010s (Orbán 2014; Brexit and Trump 2016)",
+   "how": "grew",
+   "size": "l",
+   "status": "Living",
+   "story": "In the 2010s, a new right rejected free-trade globalism and mass immigration. Hungary's Viktor Orbán called for an 'illiberal state' (2014), and 2016 brought Brexit and Donald Trump's 'America First'. The first National Conservatism conference was held in 2019.",
+   "ideas": "The nation-state and its culture first: border control, tariffs and industrial policy, traditional values and scepticism of global institutions.",
+   "texts": "Hazony, The Virtue of Nationalism (2018)",
+   "critique": "Critics say it weakens courts, the press and minority rights, and that its tariffs raise prices.",
+   "today": "Shapes governments including the U.S. under Trump and Italy under Meloni; Orbán governed Hungary until 2026",
+   "parents": [
+    [
+     "conservatism",
+     "grew"
+    ],
+    [
+     "populism",
+     "drew"
+    ],
+    [
+     "nationalism",
+     "drew"
+    ],
+    [
+     "neoliberalism",
+     "against"
+    ]
+   ],
+   "wiki": "National_conservatism",
+   "people": [
+    [
+     "Donald Trump",
+     "b. 1946",
+     "\"America First\""
+    ],
+    [
+     "Viktor Orbán",
+     "b. 1963",
+     "Hungary's prime minister (1998–2002, 2010–26); \"illiberal state\""
+    ],
+    [
+     "Yoram Hazony",
+     "b. 1964",
+     "The Virtue of Nationalism"
+    ],
+    [
+     "Giorgia Meloni",
+     "b. 1977",
+     "Italy's prime minister"
+    ]
+   ],
+   "moments": [
+    [
+     "2014",
+     "Orbán's \"illiberal state\" speech"
+    ],
+    [
+     "2016",
+     "The Brexit vote; Trump is elected"
+    ],
+    [
+     "2019",
+     "The first National Conservatism conference"
+    ],
+    [
+     "2025",
+     "Trump's second term: tariffs, including on Canada"
+    ],
+    [
+     "2026",
+     "Orbán loses Hungary's election to Péter Magyar's Tisza party"
+    ]
+   ],
+   "compass": [
+    2,
+    6
+   ],
+   "refs": [],
+   "primary": null
+  }
+ ]
+}

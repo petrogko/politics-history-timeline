@@ -1,0 +1,946 @@
+<title>Politics Through Time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a star-chart timeline, companion to "Religions Through Time". A time band runs across the middle; each
+   political system or ideology is a star on a stem: above the band if a founding thinker or leader set it out,
+   below if it grew out of movements, events or custom. A second view lays the families out in lanes.
+   Accent: the copper-green patina of Parliament Hill's roofs. Display type: Caslon, the face of the 1776 Declaration.
+   Family colours are the validated dataviz categorical set (adjacent lanes pass CVD and normal-vision checks in both
+   themes); "Rule by one or few" is neutral grey. No family wears its party colour. Day = light tokens on :root;
+   Night = dark tokens, by device setting or the in-page switch. */
+:root {
+  color-scheme: light;
+  --sky: #edf0ee;
+  --sky-glow: #ffffff;
+  --panel: #fbfcfb;
+  --raised: #ffffff;
+  --band: #e4e9e7;
+  --ink: #17202b;
+  --ink-2: #435060;
+  --muted: #66727f;
+  --rule: #cdd5d4;
+  --rule-soft: #e2e7e6;
+  --era: rgba(23, 32, 43, 0.035);
+  --accent: #1b7663;
+  --accent-soft: rgba(27, 118, 99, 0.12);
+  --accent-span: rgba(27, 118, 99, 0.2);
+  --shadow: rgba(18, 28, 38, 0.14);
+  --f-dem: #1baf7a; --f-lib: #eda100; --f-con: #4a3aa7; --f-left: #eb6834; --f-auth: #7b8592;
+  --f-nat: #e87ba4; --f-faith: #008300; --f-econ: #2a78d6; --f-rights: #e34948;
+  --f-display: "Libre Caslon Display", "Libre Caslon Text", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --f-serif: "Libre Caslon Text", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-label: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --sky: #0b1018; --sky-glow: #172334; --panel: #101823; --raised: #192433; --band: #141e2b;
+    --ink: #ece7dc; --ink-2: #b5bac4; --muted: #8a92a1; --rule: #29364a; --rule-soft: #1b2533;
+    --era: rgba(236, 231, 220, 0.022); --accent: #74cdb5; --accent-soft: rgba(116, 205, 181, 0.16);
+    --accent-span: rgba(116, 205, 181, 0.24); --shadow: rgba(2, 5, 10, 0.55);
+    --f-dem: #199e70; --f-lib: #c98500; --f-con: #9085e9; --f-left: #d95926; --f-auth: #8a93a3;
+    --f-nat: #d55181; --f-faith: #008300; --f-econ: #3987e5; --f-rights: #e66767;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --sky: #0b1018; --sky-glow: #172334; --panel: #101823; --raised: #192433; --band: #141e2b;
+  --ink: #ece7dc; --ink-2: #b5bac4; --muted: #8a92a1; --rule: #29364a; --rule-soft: #1b2533;
+  --era: rgba(236, 231, 220, 0.022); --accent: #74cdb5; --accent-soft: rgba(116, 205, 181, 0.16);
+  --accent-span: rgba(116, 205, 181, 0.24); --shadow: rgba(2, 5, 10, 0.55);
+  --f-dem: #199e70; --f-lib: #c98500; --f-con: #9085e9; --f-left: #d95926; --f-auth: #8a93a3;
+  --f-nat: #d55181; --f-faith: #008300; --f-econ: #3987e5; --f-rights: #e66767;
+}
+* { box-sizing: border-box; }
+html { background: var(--sky); }
+body {
+  background: radial-gradient(1200px 520px at 50% -140px, var(--sky-glow), var(--sky) 70%) no-repeat, var(--sky);
+  color: var(--ink);
+  font: 15px/1.55 var(--f-body);
+}
+.wrap { max-width: 1320px; margin: 0 auto; padding-inline: clamp(16px, 3vw, 40px); padding-block: 30px 56px; }
+.eyebrow { font: 500 11px/1 var(--f-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin: 0; }
+h1 { font: 400 clamp(40px, 6.2vw, 68px)/1 var(--f-display); margin: 14px 0 14px; letter-spacing: -0.005em; text-wrap: balance; }
+h1 em { font-family: var(--f-serif); font-style: italic; color: var(--accent); }
+.dek { max-width: 74ch; color: var(--ink-2); margin: 0; font-size: 15.5px; }
+.dek b { color: var(--ink); font-weight: 600; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between; margin-top: 26px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; }
+.chip, .seg button, .rel-chip {
+  font: 500 12.5px/1 var(--f-body); color: var(--ink-2); background: transparent;
+  border: 1px solid var(--rule); border-radius: 999px; padding: 7px 12px; cursor: pointer;
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+.chip { display: inline-flex; align-items: center; gap: 6px; }
+.chip:hover, .seg button:hover, .rel-chip:hover { border-color: var(--muted); color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--sky); border-color: var(--ink); }
+.chip .n { font-family: var(--f-mono); font-size: 11px; opacity: .7; }
+.sw { width: 9px; height: 9px; border-radius: 50%; flex: none; display: inline-block; }
+.chip[aria-pressed="true"] .sw { box-shadow: 0 0 0 2px var(--ink), 0 0 0 3px var(--sky); }
+.toggles { display: flex; flex-wrap: wrap; gap: 10px; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 2px; }
+.seg button { border: 0; padding: 6px 12px; }
+.seg button[aria-pressed="true"] { background: var(--raised); color: var(--ink); box-shadow: 0 0 0 1px var(--rule); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 16px; font-size: 12.5px; color: var(--ink-2); align-items: center; }
+.legend .item { display: inline-flex; align-items: center; gap: 8px; }
+.legend svg { flex: none; overflow: visible; }
+
+.chart-shell { position: relative; margin-top: 16px; border: 1px solid var(--rule); border-radius: 16px; background: var(--panel); overflow: hidden; }
+.scroller { overflow-x: auto; overscroll-behavior-x: contain; }
+#chart, #lanes-svg { display: block; }
+.caption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; padding: 10px 16px 12px; border-top: 1px solid var(--rule-soft); font-size: 12px; color: var(--muted); }
+.scroll-hint { display: none; }
+@media (max-width: 1040px) { .scroll-hint { display: inline; } }
+
+/* chart */
+.era-band { fill: var(--era); }
+.era-name { font: 500 10px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; fill: var(--muted); }
+.axis-band { fill: var(--band); stroke: var(--rule); stroke-width: 1; }
+.tick-label { font: 400 10.5px/1 var(--f-mono); fill: var(--muted); }
+.tick { stroke: var(--rule); stroke-width: 1; }
+.now-mark { fill: var(--accent); }
+.now-label { font: 500 10px/1 var(--f-mono); letter-spacing: .1em; fill: var(--accent); }
+.pre-label { font: 500 9.5px/1 var(--f-mono); letter-spacing: .16em; fill: var(--muted); }
+.break { stroke: var(--muted); stroke-width: 1.2; }
+.span { fill: var(--accent-span); }
+.span-range { fill: none; stroke: var(--accent); stroke-width: 1; stroke-dasharray: 2 3; }
+.ms { cursor: help; outline: none; }
+.ms .gem { fill: var(--ink-2); stroke: var(--panel); stroke-width: 1.5; transition: fill .15s; }
+.ms .ms-hit { fill: transparent; }
+.ms:hover .gem, .ms:focus-visible .gem { fill: var(--accent); }
+.ms-line { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 2 4; opacity: .55; }
+.edge { fill: none; stroke: var(--ink-2); stroke-width: 1; opacity: .2; transition: opacity .2s; }
+.edge.drew { stroke-dasharray: 4 4; }
+.edge.against { stroke-dasharray: 1 4; stroke-linecap: round; }
+.edge.hot { stroke: var(--accent); opacity: .95; stroke-width: 1.4; }
+.edge.fam { opacity: .6; }
+.edge.cold { opacity: .05; }
+.stem { stroke: var(--rule); stroke-width: 1; }
+.foot { fill: var(--muted); }
+.dot { fill: var(--ink); stroke: var(--panel); stroke-width: 2; }
+.dot.hist { fill: var(--panel); stroke: var(--ink-2); stroke-width: 1.5; }
+.halo { fill: none; stroke: var(--accent); stroke-width: 1.5; opacity: 0; }
+.lbl { paint-order: stroke; stroke: var(--panel); stroke-width: 5px; stroke-linejoin: round; }
+.lbl .nm { font: 500 12.5px/1 var(--f-label); fill: var(--ink); }
+.lbl .dt { font: 400 10px/1 var(--f-mono); fill: var(--muted); }
+.hit { fill: transparent; cursor: pointer; }
+.item { transition: opacity .2s; outline: none; }
+.item:focus-visible .halo { opacity: 1; stroke-dasharray: 2 2; }
+.item.dim { opacity: .18; }
+.item.predim { opacity: .4; }
+.item.rel .halo { opacity: .8; }
+.item.rel .lbl .nm { fill: var(--accent); }
+.item.sel .dot { fill: var(--accent); }
+.item.sel .dot.hist { fill: var(--panel); stroke: var(--accent); stroke-width: 2.4; }
+.item.sel .halo { opacity: 1; }
+.item.sel .stem { stroke: var(--accent); }
+.item.sel .lbl .nm { fill: var(--accent); font-weight: 600; }
+.item:hover .lbl .nm { text-decoration: underline; text-decoration-color: var(--muted); }
+/* colour on pick: one family at a time, always distinguishable */
+svg.picking .item.inpick .dot { fill: var(--pick); }
+svg.picking .item.inpick .dot.hist { fill: var(--panel); stroke: var(--pick); stroke-width: 2; }
+svg.picking .item.inpick .stem { stroke: var(--pick); }
+/* whole lineage on hover */
+svg.tracing .item:not(.lin) { opacity: .14; }
+svg.tracing .item.lin { opacity: 1; }
+svg.tracing .edge { opacity: .03; }
+svg.tracing .edge.linedge { opacity: .9; stroke: var(--ink); stroke-width: 1.3; }
+/* lanes */
+.lane-bg { stroke: none; }
+.lane-title { font: 500 10px/1 var(--f-mono); letter-spacing: .13em; text-transform: uppercase; fill: var(--ink-2); }
+.lane-count { font: 400 10px/1 var(--f-mono); fill: var(--muted); }
+#lanes-svg .dot { fill: var(--lc); }
+#lanes-svg .dot.hist { fill: var(--panel); stroke: var(--lc); stroke-width: 1.8; }
+#lanes-svg .item.sel .dot { fill: var(--lc); }
+#lanes-svg .item.sel .dot.hist { fill: var(--panel); stroke: var(--lc); }
+#lanes-svg .edge { opacity: 0; }
+#lanes-svg .edge.hot { opacity: .9; }
+#lanes-svg.tracing .edge.linedge { opacity: .85; }
+
+.tip { position: absolute; left: 0; top: 0; pointer-events: none; width: max-content; max-width: 300px;
+  background: var(--raised); border: 1px solid var(--rule); border-radius: 12px; padding: 10px 12px 11px;
+  box-shadow: 0 10px 30px var(--shadow); font-size: 12.5px; line-height: 1.45; color: var(--ink-2); z-index: 5; }
+.tip strong { display: block; font: 600 15px/1.2 var(--f-body); color: var(--ink); }
+.tip .when { font: 400 11px/1.4 var(--f-mono); color: var(--accent); margin: 2px 0 6px; display: block; }
+.tip .foll { display: block; margin-top: 6px; color: var(--muted); font-size: 11.5px; }
+.tip .fam { display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+
+/* list view */
+.listwrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 760px; }
+th { text-align: left; font: 500 10.5px/1 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: 14px 14px 10px; border-bottom: 1px solid var(--rule); }
+td { padding: 10px 14px; border-bottom: 1px solid var(--rule-soft); color: var(--ink-2); vertical-align: top; }
+td:first-child { color: var(--ink); font-weight: 500; white-space: nowrap; }
+td.when { font-family: var(--f-mono); font-size: 12px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+td .fam { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+tbody tr { cursor: pointer; }
+tbody tr:hover td { background: var(--rule-soft); }
+tbody tr[aria-selected="true"] td { background: var(--accent-soft); }
+tbody tr[aria-selected="true"] td:first-child { color: var(--accent); }
+
+/* detail */
+.detail { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 28px 44px; margin-top: 20px;
+  padding: clamp(18px, 3vw, 30px); border-radius: 16px; background: var(--panel); border: 1px solid var(--rule); }
+@media (max-width: 820px) { .detail { grid-template-columns: minmax(0, 1fr); } }
+.detail > div { min-width: 0; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; font: 400 12px/1.3 var(--f-mono); color: var(--muted); }
+.fam-tag { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--rule); border-radius: 999px; padding: 4px 10px; color: var(--ink-2); font-family: var(--f-body); font-size: 12px; }
+.detail h2 { font: 400 clamp(30px, 4.2vw, 44px)/1.05 var(--f-display); margin: 12px 0 6px; text-wrap: balance; }
+.detail .when-big { font: 500 13.5px/1.4 var(--f-mono); color: var(--accent); margin: 0 0 14px; }
+.kicker { font: 500 10.5px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 22px 0 9px; }
+.story { font-size: 16.5px; line-height: 1.6; color: var(--ink); max-width: 62ch; margin: 0; }
+.story.small { font-size: 14.5px; color: var(--ink-2); }
+.moments { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.moments li { display: grid; grid-template-columns: 7.2em minmax(0, 1fr); gap: 12px; color: var(--ink-2); font-size: 14.5px; line-height: 1.45; }
+.moments .yr { font: 500 12px/1.75 var(--f-mono); color: var(--accent); font-variant-numeric: tabular-nums; }
+.people { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 14.5px; color: var(--ink-2); }
+.people b { color: var(--ink); font-weight: 600; }
+.people .yrs { font: 400 12px/1 var(--f-mono); color: var(--muted); margin-left: 4px; }
+dl { display: grid; grid-template-columns: minmax(0, 1fr); gap: 15px; margin: 0; }
+dt { font: 500 10.5px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+dd { margin: 0; color: var(--ink-2); }
+dd a, .refs a, .links a, .sources a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+dd a:hover, .refs a:hover, .links a:hover, .sources a:hover { border-bottom-color: var(--accent); }
+.read { display: inline-block; margin-top: 6px; font-size: 13.5px; }
+.rels { display: flex; flex-wrap: wrap; gap: 6px; }
+.rel-chip { padding: 6px 10px; display: inline-flex; align-items: center; gap: 6px; }
+.rel-chip .k { color: var(--muted); font-size: 11px; }
+.none { color: var(--muted); font-size: 13px; }
+.compass { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.compass svg { flex: none; }
+.compass p { margin: 0; font-size: 12.5px; color: var(--muted); max-width: 30ch; line-height: 1.45; }
+.cp-box { fill: var(--rule-soft); stroke: var(--rule); }
+.cp-axis { stroke: var(--rule); stroke-width: 1; }
+.cp-lab { font: 500 9.5px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; fill: var(--muted); }
+.cp-dot { stroke: var(--panel); stroke-width: 2.5; }
+.refs { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 13.5px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 20px; font-size: 13.5px; }
+
+.sources { margin-top: 26px; padding: clamp(18px, 3vw, 28px); border-radius: 16px; border: 1px solid var(--rule); background: var(--panel); }
+.sources h2 { font: 400 26px/1.1 var(--f-display); margin: 0 0 6px; }
+.sources > p { color: var(--ink-2); margin: 0 0 14px; max-width: 80ch; font-size: 14px; }
+.sources ul { margin: 0; padding-left: 18px; columns: 2 320px; column-gap: 40px; font-size: 13.5px; color: var(--ink-2); }
+.sources li { margin-bottom: 6px; break-inside: avoid; }
+footer { margin-top: 22px; font-size: 12px; color: var(--muted); max-width: 92ch; }
+footer p { margin: 0 0 6px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Political systems &amp; ideologies</p>
+    <h1>Politics <em>Through</em> Time</h1>
+    <p class="dek" id="dek">Ways of running a society, from tribal councils to national conservatism, on one line of time. Stars <b>above the line</b> were set out by a founding thinker or leader. Stars <b>below</b> grew out of movements, events or custom. Hover a star to light up its whole family tree; tap it for its story, key people and moments, its critics, where it sits on the political compass, and sources.</p>
+  </header>
+
+  <div class="controls">
+    <div class="chips" id="chips" role="group" aria-label="Colour and highlight a family of ideas"></div>
+    <div class="toggles">
+      <div class="seg" role="group" aria-label="View">
+        <button type="button" id="v-time" aria-pressed="true">Timeline</button>
+        <button type="button" id="v-lanes" aria-pressed="false">By family</button>
+        <button type="button" id="v-list" aria-pressed="false">List</button>
+      </div>
+      <div class="seg" role="group" aria-label="Time scale">
+        <button type="button" id="sc-stretch" aria-pressed="true">Recent stretched</button>
+        <button type="button" id="sc-true" aria-pressed="false">True to time</button>
+      </div>
+      <div class="seg" role="group" aria-label="Theme">
+        <button type="button" id="th-auto" aria-pressed="true">Auto</button>
+        <button type="button" id="th-day" aria-pressed="false">Day</button>
+        <button type="button" id="th-night" aria-pressed="false">Night</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend" aria-label="How to read the chart">
+    <span class="item"><svg width="14" height="18" viewBox="0 0 14 18"><line x1="7" y1="17" x2="7" y2="6" style="stroke:var(--muted)"/><circle cx="7" cy="5" r="4" style="fill:var(--ink)"/></svg>Above: set out by a founding thinker or leader</span>
+    <span class="item"><svg width="14" height="18" viewBox="0 0 14 18"><line x1="7" y1="1" x2="7" y2="12" style="stroke:var(--muted)"/><circle cx="7" cy="13" r="4" style="fill:var(--ink)"/></svg>Below: grew out of movements, events or custom</span>
+    <span class="item"><svg width="66" height="20" viewBox="0 0 66 20"><circle cx="9" cy="10" r="9" style="fill:var(--ink)"/><circle cx="29" cy="10" r="7" style="fill:var(--ink)"/><circle cx="45" cy="10" r="5.2" style="fill:var(--ink)"/><circle cx="58" cy="10" r="3.8" style="fill:var(--ink)"/></svg>Influence today: worldwide · major · significant · minor</span>
+    <span class="item"><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="5" style="fill:var(--panel);stroke:var(--ink-2);stroke-width:1.5"/></svg>No longer practised as a system</span>
+    <span class="item"><svg width="88" height="10" viewBox="0 0 88 10"><line x1="0" y1="5" x2="24" y2="5" style="stroke:var(--ink-2)"/><line x1="32" y1="5" x2="56" y2="5" style="stroke:var(--ink-2);stroke-dasharray:4 4"/><line x1="64" y1="5" x2="88" y2="5" style="stroke:var(--ink-2);stroke-dasharray:1 4;stroke-linecap:round"/></svg>Grew out of · drew on · reacted against</span>
+    <span class="item"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 1 L11 6 L6 11 L1 6Z" style="fill:var(--ink-2)"/></svg>Turning point (hover for what happened)</span>
+  </div>
+
+  <section class="chart-shell" id="shell">
+    <div class="scroller" id="scroller">
+      <svg id="chart" role="img" aria-label="Timeline of political systems and ideologies by when they appeared"></svg>
+    </div>
+    <div class="scroller" id="lanescroller" hidden>
+      <svg id="lanes-svg" role="img" aria-label="Political systems and ideologies arranged in one lane per family"></svg>
+    </div>
+    <div class="listwrap" id="listwrap" hidden>
+      <table>
+        <thead><tr><th scope="col">System or idea</th><th scope="col">Began</th><th scope="col">How</th><th scope="col">Family</th><th scope="col">Today</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="tip" id="tip" hidden></div>
+    <div class="caption">
+      <span id="scale-note">Time is stretched toward the present so the crowded last two centuries have room. Forms of rule older than any record sit in the block on the left.</span>
+      <span class="scroll-hint">Scroll sideways to see the whole timeline.</span>
+    </div>
+  </section>
+
+  <section class="detail" id="detail" aria-live="polite"></section>
+
+  <section class="sources" aria-labelledby="src-h">
+    <h2 id="src-h">Sources &amp; further reading</h2>
+    <p>Each entry lists its own references and, where one is freely available, a link to its founding text; every link was checked to load on 1 October 2026. These general works and collections stand behind the whole chart:</p>
+    <ul id="sources"></ul>
+  </section>
+
+  <footer>
+    <p>Dates are approximate: most ideas grew over decades, and each star sits at a widely used starting point (a founding text, a first party, a first government). "Influence today" and the political compass are judgments for orientation, not measurements.</p>
+    <p>Each entry describes an idea in its own terms and gives its main criticism; inclusion is not endorsement. Companion to <i>Religions Through Time</i>. October 2026.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var DATA = /*__DATA__*/null;
+  var FAMS = DATA.families, D = DATA.entries, MIL = DATA.milestones;
+  var FAM_NAME = {};
+  FAMS.forEach(function (f) { FAM_NAME[f[0]] = f[1]; });
+  var W_BASE = "https://en.wikipedia.org/wiki/";
+
+  var BY = {};
+  D.forEach(function (d) { BY[d.id] = d; d.kids = []; });
+  D.forEach(function (d) { d.parents.forEach(function (p) { BY[p[0]].kids.push([d.id, p[1]]); }); });
+  var EDGES = [];
+  D.forEach(function (d) { d.parents.forEach(function (p) { EDGES.push({ from: p[0], to: d.id, kind: p[1] }); }); });
+  var ORDER = D.slice().sort(function (a, b) {
+    var ay = a.pre != null ? -1e6 + a.pre : a.y, by = b.pre != null ? -1e6 + b.pre : b.y;
+    return ay - by;
+  });
+  var R = { xl: 9, l: 7, m: 5.2, s: 3.8, none: 4.6 };
+  var SIZE_NAME = { xl: "Worldwide", l: "Major", m: "Significant", s: "Minor", none: "No longer practised" };
+  document.getElementById("dek").firstChild.textContent = D.length + " ways of running a society, from tribal councils to national conservatism, on one line of time. Stars ";
+
+  var Y0 = -3300, Y1 = 2030, NOW = 2026, K = 40;
+  var ERAS = [
+    { a: -3300, b: -800, name: "First states" }, { a: -800, b: 500, name: "Classical" }, { a: 500, b: 1500, name: "Medieval" },
+    { a: 1500, b: 1789, name: "Early modern" }, { a: 1789, b: 1914, name: "Revolutions" },
+    { a: 1914, b: 1991, name: "Wars & Cold War" }, { a: 1991, b: Y1, name: "Since 1991" }
+  ];
+  var TICKS = [1, -1000, -2000, -3000, 1000, 1500, 2000, -500, 500, 1800, 1900, 1950, 1700, 1600, 1850];
+
+  // ---------- per-viewer conveniences (storage may be unavailable) ----------
+  function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function save(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+  var state = { s: load("ptt-scale") === "1" ? 1 : 0, fam: "all", hoverFam: null, sel: "parliament", view: "time" };
+  var savedView = load("ptt-view");
+  if (savedView === "lanes" || savedView === "list") state.view = savedView;
+  var hash = (location.hash || "").slice(1);
+  if (BY[hash]) state.sel = hash;
+  if (hash === "lanes" || hash === "list" || hash === "timeline") state.view = hash === "timeline" ? "time" : hash;
+
+  // ---------- theme ----------
+  function setTheme(t, persist) {
+    var root = document.documentElement;
+    if (t === "day") root.setAttribute("data-theme", "light");
+    else if (t === "night") root.setAttribute("data-theme", "dark");
+    else root.removeAttribute("data-theme");
+    ["auto", "day", "night"].forEach(function (k) { document.getElementById("th-" + k).setAttribute("aria-pressed", k === t ? "true" : "false"); });
+    if (persist) save("ptt-theme", t);
+  }
+  var savedTheme = load("ptt-theme");
+  if (savedTheme === "day" || savedTheme === "night" || savedTheme === "auto") setTheme(savedTheme, false);
+  ["auto", "day", "night"].forEach(function (k) {
+    document.getElementById("th-" + k).addEventListener("click", function () { setTheme(k, true); });
+  });
+
+  var svg = document.getElementById("chart"), lanesSvg = document.getElementById("lanes-svg");
+  var shell = document.getElementById("shell");
+  var scroller = document.getElementById("scroller"), laneScroller = document.getElementById("lanescroller");
+  var tip = document.getElementById("tip");
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+  function fmtYear(y) { return y < 0 ? (-y) + " BCE" : (y === 1 ? "1 CE" : String(y)); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function famVar(f) { return "var(--f-" + f + ")"; }
+  function swatch(f) { return '<span class="sw" style="background:' + famVar(f) + '"></span>'; }
+
+  // ---------- text measurement ----------
+  var ctx = document.createElement("canvas").getContext("2d");
+  var widths = {};
+  function measure() {
+    D.forEach(function (d) {
+      ctx.font = '500 12.5px "IBM Plex Sans Condensed", "Arial Narrow", sans-serif';
+      var a = ctx.measureText(d.label).width;
+      ctx.font = '400 10px "IBM Plex Mono", Menlo, monospace';
+      var b = ctx.measureText(d.ds).width;
+      widths[d.id] = Math.ceil(Math.max(a, b));
+    });
+  }
+
+  // ---------- scale ----------
+  function geometry(s, width) {
+    var W = Math.max(width || shell.clientWidth || 1100, 1060);
+    var ml = 18, mr = 26;
+    var preW = Math.max(96, (W - ml - mr) * 0.085);
+    var x0 = ml + preW + 26, x1 = W - mr - 36;
+    return { W: W, s: s, ml: ml, preW: preW, x0: x0, mainW: x1 - x0 };
+  }
+  // log stretch: most ideologies are from the last 250 years, so recent decades get far more room
+  function X(g, y) {
+    var fs = 1 - Math.log(1 + Math.max(0, Y1 - y) / K) / Math.log(1 + (Y1 - Y0) / K);
+    var fl = (y - Y0) / (Y1 - Y0);
+    return g.x0 + ((1 - g.s) * fs + g.s * fl) * g.mainW;
+  }
+  function preX(g, i) { return g.ml + 16 + i * ((g.preW - 24) / 2.2); }
+  function xOf(g, d) { return d.pre != null ? preX(g, d.pre) : X(g, d.y); }
+  function placeLabel(g, x, r, w, rows, maxRows) {
+    var anchor = (x + r + 6 + w > g.W - 10) ? "end" : "start";
+    var bx0 = anchor === "start" ? x - r - 3 : x - r - 6 - w - 4;
+    var bx1 = anchor === "start" ? x + r + 6 + w + 6 : x + r + 3;
+    var L = 0;
+    for (; L < maxRows; L++) {
+      var row = rows[L] || (rows[L] = []);
+      if (!row.some(function (b) { return !(bx1 < b[0] || bx0 > b[1]); })) break;
+    }
+    (rows[L] || (rows[L] = [])).push([bx0, bx1]);
+    return { anchor: anchor, level: L };
+  }
+
+  // ---------- timeline layout ----------
+  var BAND = 24, BASE = 30, STEP = 33, TOPPAD = 34, BOTPAD = 26;
+  function layout(s) {
+    var g = geometry(s, scroller.clientWidth);
+    var pos = {}, levels = { up: [], down: [] }, maxL = { up: 0, down: 0 };
+    ORDER.forEach(function (d) {
+      var x = xOf(g, d), r = R[d.size], side = d.how === "founded" ? "up" : "down";
+      var p = placeLabel(g, x, r, widths[d.id] || 80, levels[side], 40);
+      if (p.level > maxL[side]) maxL[side] = p.level;
+      pos[d.id] = { x: x, side: side, level: p.level, anchor: p.anchor, r: r };
+    });
+    var upH = BASE + maxL.up * STEP + 18, downH = BASE + maxL.down * STEP + 22;
+    var axisY = TOPPAD + upH + BAND / 2;
+    var H = axisY + BAND / 2 + downH + BOTPAD;
+    D.forEach(function (d) {
+      var p = pos[d.id], off = BAND / 2 + BASE + p.level * STEP;
+      p.y = p.side === "up" ? axisY - off : axisY + off;
+    });
+    return { g: g, pos: pos, axisY: axisY, H: H };
+  }
+
+  // ---------- lanes layout ----------
+  var LANE_HEAD = 26, LANE_ROW = 32, LANE_PAD = 10, LANE_TOP = 46;
+  function laneLayout(s) {
+    var g = geometry(s, laneScroller.clientWidth || scroller.clientWidth);
+    var pos = {}, lanes = [], top = LANE_TOP;
+    FAMS.forEach(function (f) {
+      var rows = [], maxL = 0;
+      ORDER.forEach(function (d) {
+        if (d.fam !== f[0]) return;
+        var x = xOf(g, d), r = R[d.size];
+        var p = placeLabel(g, x, r, widths[d.id] || 80, rows, 20);
+        if (p.level > maxL) maxL = p.level;
+        pos[d.id] = { x: x, level: p.level, anchor: p.anchor, r: r };
+      });
+      var h = LANE_HEAD + (maxL + 1) * LANE_ROW + LANE_PAD;
+      ORDER.forEach(function (d) {
+        if (d.fam === f[0]) pos[d.id].y = top + LANE_HEAD + pos[d.id].level * LANE_ROW + 9;
+      });
+      lanes.push({ fam: f[0], top: top, h: h });
+      top += h + 4;
+    });
+    return { g: g, pos: pos, lanes: lanes, H: top + 8 };
+  }
+
+  // ---------- items (shared by both charts) ----------
+  var lastPT = "mouse";
+  function buildItems(host, withStem, registry, laneMode) {
+    var gEdges = el("g", {}, host.edges);
+    var edgeEls = EDGES.map(function (e) { return el("path", { "class": "edge " + e.kind }, gEdges); });
+    ORDER.forEach(function (d) {
+      var gi = el("g", { "class": "item", tabindex: "0", role: "button", "aria-label": d.name + ", " + d.date + ", " + FAM_NAME[d.fam] }, host.items);
+      if (laneMode) gi.setAttribute("style", "--lc:" + famVar(d.fam));
+      var o = { g: gi };
+      if (withStem) { o.stem = el("line", { "class": "stem" }, gi); o.foot = el("circle", { "class": "foot", r: "1.6" }, gi); }
+      o.halo = el("circle", { "class": "halo" }, gi);
+      o.dot = el("circle", { "class": "dot" + (d.size === "none" ? " hist" : "") }, gi);
+      o.lbl = el("text", { "class": "lbl" }, gi);
+      o.nm = el("tspan", { "class": "nm" }, o.lbl); o.nm.textContent = d.label;
+      o.dt = el("tspan", { "class": "dt" }, o.lbl); o.dt.textContent = d.ds;
+      o.hit = el("rect", { "class": "hit" }, gi);
+      registry[d.id] = o;
+      gi.addEventListener("click", function () { select(d.id, true); });
+      gi.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); select(d.id, true); }
+        if (ev.key === "ArrowRight" || ev.key === "ArrowLeft") {
+          ev.preventDefault();
+          var i = ORDER.indexOf(d) + (ev.key === "ArrowRight" ? 1 : -1);
+          registry[ORDER[(i + ORDER.length) % ORDER.length].id].g.focus();
+        }
+        if (ev.key === "Escape") { hideTip(); untrace(); }
+      });
+      gi.addEventListener("pointerenter", function (ev) { if (ev.pointerType === "mouse") { showTip(d.id, ev.clientX, ev.clientY); trace(d.id); } });
+      gi.addEventListener("pointermove", function (ev) { if (ev.pointerType === "mouse") placeTip(ev.clientX, ev.clientY); });
+      gi.addEventListener("pointerleave", function () { hideTip(); untrace(); });
+      gi.addEventListener("focus", function () {
+        if (lastPT === "touch") return;
+        var b = o.dot.getBoundingClientRect();
+        showTip(d.id, b.right, b.bottom);
+        trace(d.id);
+      });
+      gi.addEventListener("blur", function () { hideTip(); untrace(); });
+    });
+    return edgeEls;
+  }
+  function positionItem(o, d, p, w, stemFrom) {
+    if (o.stem) {
+      o.stem.setAttribute("x1", p.x); o.stem.setAttribute("x2", p.x);
+      o.stem.setAttribute("y1", stemFrom); o.stem.setAttribute("y2", p.y);
+      o.foot.setAttribute("cx", p.x); o.foot.setAttribute("cy", stemFrom);
+    }
+    o.dot.setAttribute("cx", p.x); o.dot.setAttribute("cy", p.y); o.dot.setAttribute("r", p.r);
+    o.halo.setAttribute("cx", p.x); o.halo.setAttribute("cy", p.y); o.halo.setAttribute("r", p.r + 4.5);
+    var tx = p.anchor === "start" ? p.x + p.r + 6 : p.x - p.r - 6;
+    o.lbl.setAttribute("text-anchor", p.anchor);
+    o.nm.setAttribute("x", tx); o.nm.setAttribute("y", p.y - 0.5);
+    o.dt.setAttribute("x", tx); o.dt.setAttribute("y", p.y + 11);
+    var hx = p.anchor === "start" ? p.x - 12 : p.x - p.r - 8 - w;
+    o.hit.setAttribute("x", hx); o.hit.setAttribute("y", p.y - 14);
+    o.hit.setAttribute("width", w + p.r + 20); o.hit.setAttribute("height", 30);
+  }
+  function curve(a, b) {
+    var mx = (a.x + b.x) / 2;
+    return "M" + a.x.toFixed(1) + "," + a.y.toFixed(1) + " C" + mx.toFixed(1) + "," + a.y.toFixed(1) + " " + mx.toFixed(1) + "," + b.y.toFixed(1) + " " + b.x.toFixed(1) + "," + b.y.toFixed(1);
+  }
+
+  // ---------- milestones ----------
+  function buildMilestones(parent, registry) {
+    MIL.forEach(function (m, i) {
+      var gm = el("g", { "class": "ms", tabindex: "0", role: "img", "aria-label": m.when + ": " + m.label + ". " + m.note }, parent);
+      var o = { g: gm, line: null, gem: null, hit: null };
+      o.hit = el("rect", { "class": "ms-hit", width: "18", height: "18" }, gm);
+      o.gem = el("path", { "class": "gem" }, gm);
+      registry.push(o);
+      gm.addEventListener("pointerenter", function (ev) { if (ev.pointerType === "mouse") showMilestone(i, ev.clientX, ev.clientY); });
+      gm.addEventListener("pointermove", function (ev) { if (ev.pointerType === "mouse") placeTip(ev.clientX, ev.clientY); });
+      gm.addEventListener("pointerleave", hideTip);
+      gm.addEventListener("focus", function () { var b = o.gem.getBoundingClientRect(); showMilestone(i, b.right, b.bottom); });
+      gm.addEventListener("blur", hideTip);
+      gm.addEventListener("click", function (ev) { var b = o.gem.getBoundingClientRect(); showMilestone(i, b.right, b.bottom); ev.stopPropagation(); });
+    });
+  }
+  function placeGem(o, x, y) {
+    o.gem.setAttribute("d", "M" + x.toFixed(1) + "," + (y - 5) + " l5,5 l-5,5 l-5,-5z");
+    o.hit.setAttribute("x", (x - 9).toFixed(1)); o.hit.setAttribute("y", y - 9);
+  }
+
+  // ---------- timeline: static structure ----------
+  var T = { bands: el("g", {}, svg), axis: el("g", {}, svg), span: el("g", {}, svg), ticks: el("g", {}, svg) };
+  T.mil = el("g", {}, svg); T.edges = el("g", {}, svg); T.items = el("g", {}, svg);
+  var itemEls = {}, milEls = [];
+  buildMilestones(T.mil, milEls);
+  var edgeEls = buildItems(T, true, itemEls, false);
+  svg.addEventListener("pointerdown", function (ev) { lastPT = ev.pointerType; });
+
+  // ---------- lanes: static structure ----------
+  var LN = { bands: el("g", {}, lanesSvg), lanebg: el("g", {}, lanesSvg), ticks: el("g", {}, lanesSvg), mil: el("g", {}, lanesSvg) };
+  LN.edges = el("g", {}, lanesSvg); LN.items = el("g", {}, lanesSvg);
+  var laneEls = {}, laneMilEls = [];
+  buildMilestones(LN.mil, laneMilEls);
+  var laneEdgeEls = buildItems(LN, false, laneEls, true);
+  lanesSvg.addEventListener("pointerdown", function (ev) { lastPT = ev.pointerType; });
+
+  function drawEras(group, g, H, labelY, preLabel) {
+    var bh = "";
+    ERAS.forEach(function (e, i) {
+      var a = X(g, e.a), b = Math.min(X(g, e.b), g.x0 + g.mainW + 30);
+      if (i % 2 === 0) bh += '<rect class="era-band" x="' + a.toFixed(1) + '" y="0" width="' + (b - a).toFixed(1) + '" height="' + H.toFixed(1) + '"/>';
+      ctx.font = '500 10px "IBM Plex Mono", monospace';
+      var tw = ctx.measureText(e.name.toUpperCase()).width + e.name.length * 1.4;
+      if (b - a > tw + 12) bh += '<text class="era-name" x="' + ((a + b) / 2).toFixed(1) + '" y="' + labelY + '" text-anchor="middle">' + e.name + "</text>";
+    });
+    if (preLabel) bh += '<text class="era-name" x="' + (g.ml + g.preW / 2).toFixed(1) + '" y="' + labelY + '" text-anchor="middle">' + preLabel + "</text>";
+    group.innerHTML = bh;
+  }
+  function tickMarks(g, y, withLines, top, bot) {
+    var h = "", kept = [];
+    ctx.font = '400 10.5px "IBM Plex Mono", Menlo, monospace';
+    TICKS.forEach(function (t) {
+      var x = X(g, t), hw = ctx.measureText(fmtYear(t)).width / 2 + 9;
+      if (kept.some(function (k) { return x + hw > k[0] && x - hw < k[1]; })) return;
+      kept.push([x - hw, x + hw]);
+      if (withLines) {
+        h += '<line class="tick" x1="' + x.toFixed(1) + '" y1="' + (top - 4) + '" x2="' + x.toFixed(1) + '" y2="' + top + '"/>';
+        h += '<line class="tick" x1="' + x.toFixed(1) + '" y1="' + bot + '" x2="' + x.toFixed(1) + '" y2="' + (bot + 4) + '"/>';
+      }
+      h += '<text class="tick-label" x="' + x.toFixed(1) + '" y="' + y + '" text-anchor="middle">' + fmtYear(t) + "</text>";
+    });
+    return h;
+  }
+
+  // ---------- timeline: drawing ----------
+  var frame = null;
+  function draw(f) {
+    frame = f;
+    var g = f.g, ay = f.axisY, top = ay - BAND / 2, bot = ay + BAND / 2;
+    svg.setAttribute("width", g.W); svg.setAttribute("height", Math.round(f.H));
+    svg.setAttribute("viewBox", "0 0 " + g.W + " " + Math.round(f.H));
+    drawEras(T.bands, g, f.H, 20, "Before states");
+    var ah = '<rect class="axis-band" x="' + g.ml + '" y="' + top + '" width="' + (g.preW + 4).toFixed(1) + '" height="' + BAND + '" rx="12"/>';
+    ah += '<rect class="axis-band" x="' + (g.x0 - 10).toFixed(1) + '" y="' + top + '" width="' + (g.mainW + 46).toFixed(1) + '" height="' + BAND + '" rx="12"/>';
+    ah += '<text class="pre-label" x="' + (g.ml + g.preW / 2 + 2).toFixed(1) + '" y="' + (ay + 3.5) + '" text-anchor="middle">UNDATED</text>';
+    var bx = g.ml + g.preW + 15;
+    ah += '<line class="break" x1="' + (bx - 4) + '" y1="' + (ay + 6) + '" x2="' + bx + '" y2="' + (ay - 6) + '"/>';
+    ah += '<line class="break" x1="' + (bx + 1) + '" y1="' + (ay + 6) + '" x2="' + (bx + 5) + '" y2="' + (ay - 6) + '"/>';
+    T.axis.innerHTML = ah;
+    var th = tickMarks(g, ay + 3.8, true, top, bot);
+    var nx = X(g, NOW);
+    th += '<path class="now-mark" d="M' + nx.toFixed(1) + "," + (top - 7) + ' l4,4 l-4,4 l-4,-4z"/>';
+    th += '<text class="now-label" x="' + (nx + 8).toFixed(1) + '" y="' + (top - 3) + '">TODAY</text>';
+    T.ticks.innerHTML = th;
+    MIL.forEach(function (m, i) { placeGem(milEls[i], X(g, m.y), bot + 13); });
+    D.forEach(function (d) {
+      var p = f.pos[d.id];
+      positionItem(itemEls[d.id], d, p, widths[d.id] || 80, p.side === "up" ? top : bot);
+    });
+    EDGES.forEach(function (e, i) { edgeEls[i].setAttribute("d", curve(f.pos[e.from], f.pos[e.to])); });
+    drawSpan();
+  }
+  function drawSpan() {
+    if (!frame) return;
+    var d = BY[state.sel], g = frame.g, top = frame.axisY - BAND / 2, h = "";
+    if (d && d.pre == null) {
+      var a = X(g, d.y), b = X(g, d.end != null ? d.end : NOW);
+      h += '<rect class="span" x="' + a.toFixed(1) + '" y="' + (top + 2) + '" width="' + Math.max(3, b - a).toFixed(1) + '" height="' + (BAND - 4) + '" rx="10"/>';
+      if (d.range) {
+        var ra = X(g, d.range[0]), rb = X(g, d.range[1]);
+        h += '<rect class="span-range" x="' + ra.toFixed(1) + '" y="' + (top - 3) + '" width="' + Math.max(2, rb - ra).toFixed(1) + '" height="' + (BAND + 6) + '" rx="12"/>';
+      }
+    }
+    T.span.innerHTML = h;
+  }
+
+  // ---------- lanes: drawing ----------
+  var laneFrame = null;
+  function drawLanes(f) {
+    laneFrame = f;
+    var g = f.g;
+    lanesSvg.setAttribute("width", g.W); lanesSvg.setAttribute("height", Math.round(f.H));
+    lanesSvg.setAttribute("viewBox", "0 0 " + g.W + " " + Math.round(f.H));
+    drawEras(LN.bands, g, f.H, 16, "Before states");
+    LN.ticks.innerHTML = tickMarks(g, 32, false);
+    var lb = "";
+    f.lanes.forEach(function (ln) {
+      var n = D.filter(function (d) { return d.fam === ln.fam; }).length;
+      lb += '<rect class="lane-bg" x="8" y="' + ln.top + '" width="' + (g.W - 16) + '" height="' + ln.h + '" rx="10" style="fill:color-mix(in srgb, ' + famVar(ln.fam) + ' 9%, transparent)"/>';
+      lb += '<circle cx="24" cy="' + (ln.top + 14) + '" r="4.5" style="fill:' + famVar(ln.fam) + '"/>';
+      lb += '<text class="lane-title" x="34" y="' + (ln.top + 17.5) + '">' + esc(FAM_NAME[ln.fam]) + '</text>';
+      ctx.font = '500 10px "IBM Plex Mono", monospace';
+      var tw = ctx.measureText(FAM_NAME[ln.fam].toUpperCase()).width + FAM_NAME[ln.fam].length * 1.3;
+      lb += '<text class="lane-count" x="' + (40 + tw).toFixed(1) + '" y="' + (ln.top + 17.5) + '">' + n + "</text>";
+    });
+    LN.lanebg.innerHTML = lb;
+    MIL.forEach(function (m, i) {
+      var x = X(g, m.y), o = laneMilEls[i];
+      if (!o.line) o.line = el("line", { "class": "ms-line" }, LN.mil.insertBefore(el("g", {}), LN.mil.firstChild));
+      o.line.setAttribute("x1", x); o.line.setAttribute("x2", x); o.line.setAttribute("y1", LANE_TOP - 2); o.line.setAttribute("y2", f.H - 8);
+      placeGem(o, x, LANE_TOP - 4);
+    });
+    D.forEach(function (d) { positionItem(laneEls[d.id], d, f.pos[d.id], widths[d.id] || 80); });
+    EDGES.forEach(function (e, i) { laneEdgeEls[i].setAttribute("d", curve(f.pos[e.from], f.pos[e.to])); });
+  }
+
+  // ---------- highlight state ----------
+  function famPick() { return state.hoverFam || (state.fam !== "all" ? state.fam : null); }
+  function applyState() {
+    var sel = state.sel, fam = state.fam, pick = famPick();
+    var rel = {};
+    BY[sel].parents.forEach(function (p) { rel[p[0]] = 1; });
+    BY[sel].kids.forEach(function (k) { rel[k[0]] = 1; });
+    svg.classList.toggle("picking", !!pick);
+    svg.style.setProperty("--pick", pick ? famVar(pick) : "transparent");
+    [itemEls, laneEls].forEach(function (reg) {
+      D.forEach(function (d) {
+        var c = reg[d.id].g.classList;
+        c.toggle("dim", fam !== "all" && d.fam !== fam && d.id !== sel);
+        c.toggle("predim", fam === "all" && !!state.hoverFam && d.fam !== state.hoverFam && d.id !== sel);
+        c.toggle("inpick", !!pick && d.fam === pick);
+        c.toggle("sel", d.id === sel);
+        c.toggle("rel", !!rel[d.id]);
+        reg[d.id].g.setAttribute("aria-pressed", d.id === sel ? "true" : "false");
+      });
+    });
+    EDGES.forEach(function (e, i) {
+      var hot = e.from === sel || e.to === sel;
+      var famEdge = fam !== "all" && BY[e.from].fam === fam && BY[e.to].fam === fam;
+      [edgeEls[i], laneEdgeEls[i]].forEach(function (p) {
+        p.classList.toggle("hot", hot);
+        p.classList.toggle("fam", !hot && famEdge);
+        p.classList.toggle("cold", !hot && !famEdge);
+      });
+    });
+    drawSpan();
+    document.querySelectorAll("#chips .chip").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.fam === fam ? "true" : "false"); });
+    document.querySelectorAll("#tbody tr").forEach(function (tr) {
+      tr.hidden = fam !== "all" && BY[tr.dataset.id].fam !== fam;
+      tr.setAttribute("aria-selected", tr.dataset.id === sel ? "true" : "false");
+    });
+  }
+
+  // ---------- whole lineage on hover ----------
+  function lineage(id) {
+    var up = {}, down = {};
+    (function climb(x) { up[x] = 1; BY[x].parents.forEach(function (p) { if (!up[p[0]]) climb(p[0]); }); })(id);
+    (function descend(x) { down[x] = 1; BY[x].kids.forEach(function (k) { if (!down[k[0]]) descend(k[0]); }); })(id);
+    return { up: up, down: down };
+  }
+  function trace(id) {
+    var L = lineage(id);
+    [[svg, itemEls, edgeEls], [lanesSvg, laneEls, laneEdgeEls]].forEach(function (set) {
+      set[0].classList.add("tracing");
+      D.forEach(function (d) { set[1][d.id].g.classList.toggle("lin", !!(L.up[d.id] || L.down[d.id])); });
+      EDGES.forEach(function (e, i) { set[2][i].classList.toggle("linedge", !!((L.up[e.from] && L.up[e.to]) || (L.down[e.from] && L.down[e.to]))); });
+    });
+  }
+  function untrace() { svg.classList.remove("tracing"); lanesSvg.classList.remove("tracing"); }
+
+  // ---------- tooltip ----------
+  function showTip(id, cx, cy) {
+    var d = BY[id];
+    tip.innerHTML = '<strong></strong><span class="when"></span><span class="s"></span><span class="fam"></span><span class="foll"></span>';
+    tip.querySelector("strong").textContent = d.name;
+    tip.querySelector(".when").textContent = d.date + (d.end != null ? " – ended " + d.endLabel.split(",")[0] : "");
+    tip.querySelector(".s").textContent = d.story.split(/(?<=[A-Za-z)\d]{2}[.!?])\s+(?=[A-Z"'])/)[0];
+    tip.querySelector(".fam").innerHTML = swatch(d.fam) + esc(FAM_NAME[d.fam]);
+    tip.querySelector(".foll").textContent = "Today: " + d.today;
+    tip.hidden = false;
+    placeTip(cx, cy);
+  }
+  function showMilestone(i, cx, cy) {
+    var m = MIL[i];
+    tip.innerHTML = '<strong></strong><span class="when"></span><span class="s"></span>';
+    tip.querySelector("strong").textContent = m.label;
+    tip.querySelector(".when").textContent = "Turning point · " + m.when;
+    tip.querySelector(".s").textContent = m.note;
+    tip.hidden = false;
+    placeTip(cx, cy);
+  }
+  function placeTip(cx, cy) {
+    if (tip.hidden) return;
+    var r = shell.getBoundingClientRect();
+    var tw = tip.offsetWidth, th = tip.offsetHeight;
+    var x = cx - r.left + 16, y = cy - r.top + 16;
+    if (x + tw > r.width - 8) x = cx - r.left - tw - 16;
+    if (x < 8) x = 8;
+    if (y + th > r.height - 8) y = cy - r.top - th - 16;
+    if (y < 8) y = 8;
+    tip.style.transform = "translate(" + Math.round(x) + "px," + Math.round(y) + "px)";
+  }
+  function hideTip() { tip.hidden = true; }
+  document.addEventListener("click", function (ev) { if (!ev.target.closest || !ev.target.closest(".ms")) { if (lastPT === "touch") hideTip(); } });
+
+  // ---------- detail ----------
+  var KIND_UP = { grew: "grew out of", drew: "drew on", against: "reacted against" };
+  var KIND_DOWN = { grew: "grew out of it", drew: "drew on it", against: "reacted against it" };
+  function relChips(list, kinds) {
+    if (!list.length) return '<span class="none">None shown on this chart</span>';
+    return list.map(function (p) {
+      return '<button type="button" class="rel-chip" data-go="' + p[0] + '">' + swatch(BY[p[0]].fam) + esc(BY[p[0]].label) + '<span class="k">' + kinds[p[1]] + "</span></button>";
+    }).join("");
+  }
+  function link(label, url) { return '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(label) + " ↗</a>"; }
+  function compassSvg(d) {
+    var bx = 30, by = 18, s = 120, cx = bx + (d.compass[0] + 10) / 20 * s, cy = by + (10 - d.compass[1]) / 20 * s;
+    return '<svg width="180" height="160" viewBox="0 0 180 160" role="img" aria-label="Political compass: ' +
+      (d.compass[0] < 0 ? "economic left " + (-d.compass[0]) : "economic right " + d.compass[0]) + ", " +
+      (d.compass[1] < 0 ? "liberty " + (-d.compass[1]) : "authority " + d.compass[1]) + ' out of 10">' +
+      '<rect class="cp-box" x="' + bx + '" y="' + by + '" width="' + s + '" height="' + s + '" rx="6"/>' +
+      '<line class="cp-axis" x1="' + (bx + s / 2) + '" y1="' + by + '" x2="' + (bx + s / 2) + '" y2="' + (by + s) + '"/>' +
+      '<line class="cp-axis" x1="' + bx + '" y1="' + (by + s / 2) + '" x2="' + (bx + s) + '" y2="' + (by + s / 2) + '"/>' +
+      '<text class="cp-lab" x="' + (bx + s / 2) + '" y="' + (by - 6) + '" text-anchor="middle">Authority</text>' +
+      '<text class="cp-lab" x="' + (bx + s / 2) + '" y="' + (by + s + 13) + '" text-anchor="middle">Liberty</text>' +
+      '<text class="cp-lab" x="' + (bx - 5) + '" y="' + (by + s / 2 + 3) + '" text-anchor="end">L</text>' +
+      '<text class="cp-lab" x="' + (bx + s + 5) + '" y="' + (by + s / 2 + 3) + '">R</text>' +
+      '<circle class="cp-dot" cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="7" style="fill:' + famVar(d.fam) + '"/></svg>';
+  }
+  function renderDetail() {
+    var d = BY[state.sel];
+    var det = document.getElementById("detail");
+    var span = d.pre != null ? "It is older than any written record, so it sits in the undated block on the left." :
+      (d.end != null ? "Practised until " + d.endLabel + ". The band on the timeline shows its whole span." :
+      "Still part of politics today. The band on the timeline shows its span from " + d.ds + " to now.");
+    if (d.rangeLabel) span += " The dotted outline marks the gradual or debated start: " + d.rangeLabel + ".";
+    var moments = d.moments.length ? '<p class="kicker">Key moments</p><ol class="moments">' + d.moments.map(function (m) {
+      return '<li><span class="yr">' + esc(m[0]) + "</span><span>" + esc(m[1]) + "</span></li>";
+    }).join("") + "</ol>" : "";
+    var people = d.people.length ? '<p class="kicker">Key people</p><ul class="people">' + d.people.map(function (p) {
+      return "<li><b>" + esc(p[0]) + "</b>" + (p[1] ? '<span class="yrs">' + esc(p[1]) + "</span>" : "") + (p[2] ? " · " + esc(p[2]) : "") + "</li>";
+    }).join("") + "</ul>" : '<p class="kicker">Key people</p><p class="none">No individual founders: it grew from how people lived.</p>';
+    var refs = d.refs.map(function (r) { return "<li>" + link(r[0], r[1]) + "</li>"; });
+    refs.push("<li>" + link("Wikipedia: " + d.wiki.replace(/_/g, " ").replace(/%E2%80%93/g, "–"), W_BASE + d.wiki) + "</li>");
+    det.innerHTML =
+      "<div>" +
+        '<div class="meta"><span class="fam-tag">' + swatch(d.fam) + esc(FAM_NAME[d.fam]) + "</span><span>" + (d.how === "founded" ? "Set out by a founding thinker or leader" : "Grew out of movements, events or custom") + "</span><span>" + esc(d.status) + "</span></div>" +
+        "<h2>" + esc(d.name) + "</h2>" +
+        '<p class="when-big">' + esc(d.date) + "</p>" +
+        '<p class="kicker">How it began</p><p class="story">' + esc(d.story) + "</p>" +
+        moments + people +
+        '<p class="kicker">On the timeline</p><p class="story small">' + esc(span) + "</p>" +
+      "</div>" +
+      "<div><dl>" +
+        "<div><dt>Core ideas</dt><dd>" + esc(d.ideas) + "</dd></div>" +
+        "<div><dt>Key texts</dt><dd>" + esc(d.texts) + (d.primary ? '<br><span class="read">Read it: ' + link(d.primary[0], d.primary[1]) + "</span>" : "") + "</dd></div>" +
+        "<div><dt>Main criticism</dt><dd>" + esc(d.critique) + "</dd></div>" +
+        "<div><dt>Today · influence: " + esc(SIZE_NAME[d.size].toLowerCase()) + "</dt><dd>" + esc(d.today) + "</dd></div>" +
+        '<div><dt>Political compass</dt><dd class="compass">' + compassSvg(d) + "<p>A rough placement for orientation: economic left or right, and liberty or authority. Many ideas span a range, and historical systems are placed by how they worked.</p></dd></div>" +
+        '<div><dt>Came out of</dt><dd class="rels">' + relChips(d.parents, KIND_UP) + "</dd></div>" +
+        '<div><dt>What came out of it</dt><dd class="rels">' + relChips(d.kids, KIND_DOWN) + "</dd></div>" +
+        '<div><dt>Sources</dt><dd><ul class="refs">' + refs.join("") + "</ul></dd></div>" +
+      "</dl></div>";
+    det.querySelectorAll("[data-go]").forEach(function (b) {
+      b.addEventListener("click", function () { select(b.dataset.go, false); focusItem(b.dataset.go); });
+    });
+  }
+  function focusItem(id) {
+    var sc = state.view === "lanes" ? laneScroller : state.view === "time" ? scroller : null;
+    var fr = state.view === "lanes" ? laneFrame : frame;
+    if (!sc || !fr) return;
+    var p = fr.pos[id], sw = sc.clientWidth;
+    if (p.x < sc.scrollLeft + 40 || p.x > sc.scrollLeft + sw - 40) {
+      sc.scrollTo({ left: Math.max(0, p.x - sw / 2), behavior: reduced() ? "auto" : "smooth" });
+    }
+  }
+  function select(id, fromChart) {
+    state.sel = id;
+    applyState();
+    renderDetail();
+    try { history.replaceState(null, "", "#" + id); } catch (e) {}
+    if (fromChart) {
+      var det = document.getElementById("detail");
+      if (det.getBoundingClientRect().top > window.innerHeight - 80) det.scrollIntoView({ block: "nearest", behavior: reduced() ? "auto" : "smooth" });
+    }
+  }
+
+  // ---------- controls ----------
+  var chips = document.getElementById("chips");
+  [["all", "All"]].concat(FAMS).forEach(function (f) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.dataset.fam = f[0];
+    var n = f[0] === "all" ? D.length : D.filter(function (d) { return d.fam === f[0]; }).length;
+    b.innerHTML = (f[0] === "all" ? "" : swatch(f[0])) + esc(f[1]) + '<span class="n">' + n + "</span>";
+    b.addEventListener("click", function () { state.fam = (state.fam === f[0] && f[0] !== "all") ? "all" : f[0]; state.hoverFam = null; applyState(); });
+    if (f[0] !== "all") {
+      b.addEventListener("pointerenter", function (ev) { if (ev.pointerType === "mouse") { state.hoverFam = f[0]; applyState(); } });
+      b.addEventListener("pointerleave", function () { if (state.hoverFam) { state.hoverFam = null; applyState(); } });
+    }
+    chips.appendChild(b);
+  });
+
+  function reduced() { return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; }
+  var anim = null;
+  function setScale(s) {
+    if (s === state.s) return;
+    state.s = s;
+    save("ptt-scale", String(s));
+    document.getElementById("sc-stretch").setAttribute("aria-pressed", s === 0 ? "true" : "false");
+    document.getElementById("sc-true").setAttribute("aria-pressed", s === 1 ? "true" : "false");
+    setNote();
+    if (state.view === "lanes") { drawLanes(laneLayout(s)); return; }
+    var A = frame, B = layout(s);
+    if (!A || reduced() || state.view !== "time") { draw(B); return; }
+    if (anim) cancelAnimationFrame(anim);
+    var t0 = performance.now(), dur = 650;
+    function stepFn(now) {
+      var t = Math.min(1, (now - t0) / dur);
+      var e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      var g = geometry(A.g.s + (B.g.s - A.g.s) * e, scroller.clientWidth);
+      var pos = {};
+      D.forEach(function (d) {
+        var a = A.pos[d.id], b = B.pos[d.id];
+        pos[d.id] = { x: a.x + (b.x - a.x) * e, y: a.y + (b.y - a.y) * e, side: b.side, anchor: e < 0.5 ? a.anchor : b.anchor, r: b.r, level: b.level };
+      });
+      draw({ g: g, pos: pos, axisY: A.axisY + (B.axisY - A.axisY) * e, H: A.H + (B.H - A.H) * e });
+      if (t < 1) anim = requestAnimationFrame(stepFn); else { anim = null; draw(B); }
+    }
+    anim = requestAnimationFrame(stepFn);
+  }
+  function setNote() {
+    var n = document.getElementById("scale-note");
+    if (state.view === "lanes") {
+      n.textContent = "One lane per family, in its own colour. The lane tells you the family; hover a star to see its whole family tree across lanes.";
+    } else {
+      n.textContent = state.s === 0
+        ? "Time is stretched toward the present so the crowded last two centuries have room. Forms of rule older than any record sit in the block on the left."
+        : "True to time: every century gets the same width. Almost every modern ideology was born in the last 250 years.";
+    }
+  }
+  document.getElementById("sc-stretch").addEventListener("click", function () { setScale(0); });
+  document.getElementById("sc-true").addEventListener("click", function () { setScale(1); });
+
+  function setView(v) {
+    state.view = v;
+    save("ptt-view", v);
+    ["time", "lanes", "list"].forEach(function (k) { document.getElementById("v-" + k).setAttribute("aria-pressed", k === v ? "true" : "false"); });
+    scroller.hidden = v !== "time";
+    laneScroller.hidden = v !== "lanes";
+    document.getElementById("listwrap").hidden = v !== "list";
+    document.querySelector(".caption").hidden = v === "list";
+    hideTip(); untrace();
+    if (v === "time") draw(layout(state.s));
+    if (v === "lanes") drawLanes(laneLayout(state.s));
+    setNote();
+    requestAnimationFrame(function () { focusItem(state.sel); });
+  }
+  ["time", "lanes", "list"].forEach(function (k) { document.getElementById("v-" + k).addEventListener("click", function () { setView(k); }); });
+
+  // list view
+  var tbody = document.getElementById("tbody");
+  ORDER.forEach(function (d) {
+    var tr = document.createElement("tr");
+    tr.dataset.id = d.id; tr.tabIndex = 0;
+    tr.innerHTML = "<td>" + esc(d.name) + '</td><td class="when">' + esc(d.ds) + "</td><td>" + (d.how === "founded" ? "Founded" : "Grew") +
+      '</td><td><span class="fam">' + swatch(d.fam) + esc(FAM_NAME[d.fam]) + "</span></td><td>" + esc(d.today) + "</td>";
+    tr.addEventListener("click", function () { select(d.id, true); });
+    tr.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); select(d.id, true); } });
+    tbody.appendChild(tr);
+  });
+
+  // general sources
+  document.getElementById("sources").innerHTML = DATA.sources.map(function (s) {
+    return "<li>" + (s[1] ? link(s[0], s[1]) : esc(s[0])) + "</li>";
+  }).join("");
+
+  // ---------- boot ----------
+  function relayout() {
+    measure();
+    if (state.view === "lanes") drawLanes(laneLayout(state.s)); else draw(layout(state.s));
+  }
+  document.getElementById("sc-stretch").setAttribute("aria-pressed", state.s === 0 ? "true" : "false");
+  document.getElementById("sc-true").setAttribute("aria-pressed", state.s === 1 ? "true" : "false");
+  measure();
+  draw(layout(state.s));
+  setView(state.view);
+  applyState();
+  renderDetail();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { relayout(); applyState(); });
+  var lastW = shell.clientWidth;
+  if (window.ResizeObserver) {
+    new ResizeObserver(function () {
+      var w = shell.clientWidth;
+      if (Math.abs(w - lastW) > 4) { lastW = w; relayout(); }
+    }).observe(shell);
+  }
+})();
+</script>
